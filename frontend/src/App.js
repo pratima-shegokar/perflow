@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
+
+
+// Import custom styles for our application
 import './App.css';
 
+// Import pages
+import HomePage from './components/home/HomePage';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  /*
+  Code for logged in state - carried over from other project
+  const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
+  Auth.bindLoggedInStateSetter(setLoggedIn);
+  */
+
+  const loggedInRouter = (
+            <Router>
+                <div className="container mt-5">
+                    <Switch>
+                        <Route path="/">
+                          <HomePage/>
+                        </Route>
+                    </Switch>
+                </div>
+            </Router>
   );
+
+  return <HomePage/>;
 }
 
 export default App;
