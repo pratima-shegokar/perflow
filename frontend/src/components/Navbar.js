@@ -1,5 +1,8 @@
 import React from 'react';
 
+//This whole file (or component) should only be touch if the team decides to change it.
+//This component it's already set up for appear in every page.
+
 class Navbar extends React.Component {
     render() {
         return (

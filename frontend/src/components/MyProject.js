@@ -3,6 +3,7 @@ import React from 'react';
 class MyProjects extends React.Component {
     render() {
         return (
+            // /Projects should be the page where you can see the project specifically
             <React.Fragment>
                 <div className="text-center mt-5">
                     <p className="text-muted">
