@@ -3,7 +3,7 @@ import React from 'react';
 class MyProjects extends React.Component {
     render() {
         return (
-            // /ProjectForm should be the page where you can see the project specifically
+            // /ProjectForm should be the page where you can create a new project.
             <React.Fragment>
                 <div className="text-center mt-5">
                     <p className="text-muted">
