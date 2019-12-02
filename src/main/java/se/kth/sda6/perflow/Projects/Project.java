@@ -10,7 +10,7 @@ public class Project {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     @Column(name = "projectName")
     private String projectName;
     @Column(name = "duration")
@@ -39,11 +39,11 @@ public class Project {
         this.discountRate = discountRate;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
