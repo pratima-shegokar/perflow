@@ -7,14 +7,14 @@ import javax.persistence.*;
 public class Project {
     //General purpose related fields
     @Id
-    @Column (name = "project-id")
+    @Column (name = "project_id")
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long projectId; //To be used internally in the software and DB
 
-    @Column (name = "project-unique-number")
+    @Column (name = "project_unique_number")
     private String projectUniqueNumber; //To be provided by the user
 
-    @Column (name = "project-name")
+    @Column (name = "project_name")
     private String projectName;
 
     //Scheduling related fields
@@ -24,28 +24,30 @@ public class Project {
     @Column (name = "budget")
     private double budget;
 
-    @Column (name = "peak-interval")
+    @Column (name = "peak_interval")
     private int peakInterval;
 
-    @Column (name = "first-pv")
+    @Column (name = "first_pv")
     private double firstPV; //First planned value
 
-    @Column (name = "last-pv")
+    @Column (name = "last_pv")
     private double lastPV;  //Last planned value
 
     //Financial related fields
-    @Column (name = "adv-payment")
+    @Column (name = "adv_payment")
     private double advPayment; //The advance payment
 
-    @Column (name = "perf-bond")
+    @Column (name = "perf_bond")
     private double perfBond;   //The performance bond, it's a percentage value start from zero & < 1
 
-    @Column (name = "credit-time")
+    @Column (name = "credit_time")
     private int creditTime; //The period allowed after the submit of payment to get paid
 
-    @Column (name = "discount-rate")
+    @Column (name = "discount_rate")
     private double discountRate; //This percentage value showing how much the money loosing their value by the time
 
+    public Project() {
+    }
 
     public Project(String projectUniqueNumber, String projectName, int duration, double budget, int peakInterval, double firstPV, double lastPV, double advPayment, double perfBond, int creditTime, double discountRate) {
         this.projectUniqueNumber = projectUniqueNumber;
