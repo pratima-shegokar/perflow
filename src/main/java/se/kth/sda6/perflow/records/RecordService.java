@@ -34,6 +34,25 @@ class RecordService {
         }).collect(Collectors.toList());
     }
 
+    //Warning: must be tested
+    //get the latest updated record on the project if exists
+    Record getLastUpdatedOnProject(Project project){
+        List<Record> allRecordsOnProject = getByProject(project);
+        Record currRecord = null;
+
+        //check if the list is empty to return null
+        if (allRecordsOnProject.isEmpty()) return null;
+
+        //check the first record if updated by actual values
+        for (Record r : allRecordsOnProject) {
+            if (r.isUpdated()) {
+                currRecord = r;
+            } else break;
+        }
+
+        return currRecord;
+    }
+
     Record add(Record record){
         return recordRepo.save(record);
     }
