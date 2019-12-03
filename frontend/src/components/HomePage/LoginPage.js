@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import LoginForm from "./LoginForm";
 
-class LoginPage extends Component {
+class LoginPage extends React.Component {
     /*async login(loginData) {
         const loginSuccess = await Auth.login(loginData);
         if (!loginSuccess) {
@@ -18,6 +18,7 @@ class LoginPage extends Component {
 
     render() {
         return (
+            <React.Fragment>
             <div className="wrapper">
                 <div className="container">
                     <div className="row mt-4">
@@ -36,6 +37,7 @@ class LoginPage extends Component {
                     </div>
                 </div>
             </div>
+            </React.Fragment>
         );
     }
 }
