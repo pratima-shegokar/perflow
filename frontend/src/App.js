@@ -33,12 +33,7 @@ class App extends Component {
           
           <br/> <br/>
          </div>
-
          
-        
-
-            
-        
         </div> 
       </div>
     );
