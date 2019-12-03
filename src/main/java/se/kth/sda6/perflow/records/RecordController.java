@@ -32,9 +32,15 @@ public class RecordController {
     }
 
     // get all records by Project, and sorted by interval
-    @GetMapping("/records")
+    @GetMapping("/records-project")
     public List<Record> getByProject(@RequestBody Project project) {
         return recordService.getByProject(project);
+    }
+
+    // get the latest updated records in a Project
+    @GetMapping("/project-latest-record")
+    public Record getLatestOnProject(@RequestBody Project project) {
+        return recordService.getLatestOnProject(project);
     }
 
     // update a record
