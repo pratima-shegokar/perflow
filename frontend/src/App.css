@@ -20,3 +20,8 @@
 .App-link {
   color: #09d3ac;
 }
+
+#why-pf-info-column {
+    background-image: url("/Perflow2.2.png");
+    font-size: 150%;
+}

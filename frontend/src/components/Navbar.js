@@ -1,7 +1,7 @@
 import React from 'react';
 
-//This whole file (or component) should only be touch if the team decides to change it.
-//This component it's already set up for appear in every page.
+//This whole file (or component) should only be touched if the team decides to change it.
+//This component is set up to appear in every page
 
 class Navbar extends React.Component {
     render() {
@@ -16,6 +16,9 @@ class Navbar extends React.Component {
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
                                 <a class="nav-link" href="/MyProjects">MyProjects <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/WhyPerflow">Why Perflow</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/AboutUS">About Us</a>
