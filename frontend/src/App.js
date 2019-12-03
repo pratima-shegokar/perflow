@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import MyProjects from './components/ProjectsList/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
 import Navbar from './components/Navbar';
-import LoginPage from "./components/HomePage/LoginPage";
+import LoginPage from "./components/Login/LoginPage";
 
 function App() {
   return (
