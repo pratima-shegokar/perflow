@@ -4,10 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.kth.sda6.perflow.projects.Project;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import static java.lang.Math.pow;
 
 @Service
 class RecordService {
@@ -51,6 +54,36 @@ class RecordService {
         }
 
         return currRecord;
+    }
+
+    //To be Tested
+    //Once the project created the records for all the contract/financial period must be initialized, and PV & PCIF
+    //must be filled in, and this is what this method is doing
+    List<Record> CreatePlannedValuesRecords(Project project){
+        double a = project.getBudget();
+        double n = (double) project.getDuration();
+        double p = (double) project.getPeakInterval();
+        double t = n-p-1;
+        double y0 = project.getFirstPV();
+        double yw = project.getLastPV();
+
+        double c = pow(p, 2) / 3d + p / 3d;
+        double c2 = (a-3d/(2d*p)*(yw-y0)* c -y0*(p+1)-yw*t)/(t/p* c +pow(t,2)/3d-t/3d);
+        double c1 = c2*t/p+3d/(2d*p)*(yw-y0);
+
+        List<Double> pv = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++ ){
+            double k = 0;
+            if ((i-1)<=p){
+                k = y0+c1*(-4d/(3d* pow(p,2))*pow((i-p/2d-1d),3)+(i-p/2d-1d)+p/3d);
+            } else {
+                k = yw+c2*(4d/(3d*pow(t,2))*pow((i-t/2d-p-1d),3)-(i-t/2d-p-1d)+t/3d);
+            }
+
+            pv.add(k);
+        }
+
     }
 
     Record add(Record record){
