@@ -36,7 +36,7 @@ class RecordService {
 
     //Warning: must be tested
     //get the latest updated record on the project if exists
-    Record getLastUpdatedOnProject(Project project){
+    Record getLatestOnProject(Project project){
         List<Record> allRecordsOnProject = getByProject(project);
         Record currRecord = null;
 
