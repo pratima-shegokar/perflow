@@ -33,6 +33,16 @@ class App extends Component {
           
           <br/> <br/>
          </div>
+         <div class="graph-button">
+           
+            <button type="button-gr" class="btn btn-outline-primary "  >Periodical S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
+            <button type="button-gr" class="btn btn-outline-primary" >Periodical Cash Flow Graph</button> &nbsp;&nbsp;&nbsp;
+            <button type="button-gr" class="btn btn-outline-primary" >Cumulative S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
+            <button type="button-gr" class="btn btn-outline-primary">Cumulative Cash Flow Graph</button> &nbsp;&nbsp;&nbsp;
+            <button type="button-gr" class="btn btn-outline-primary" >EVM Board</button> &nbsp;&nbsp;&nbsp;
+            <button type="button-gr" class="btn btn-outline-primary">CFM Board</button>
+
+         </div>
          
         </div> 
       </div>
