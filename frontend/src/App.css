@@ -1,3 +1,8 @@
+body{
+  background-image: url("/Perflowback.png") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .App {
   text-align: center;
   background-color: green;
@@ -19,5 +24,5 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #c7bc1a;
 }

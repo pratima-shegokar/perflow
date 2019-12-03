@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LoginForm from "./LoginForm";
 /**
 These import statements might be useful if we decide to put the login form on the homepage (like in the web app)
 import LoginForm from "./LoginForm";
@@ -26,12 +27,10 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div className="wrapper">
+            <section id="section1">
                 <div className="container">
                     <div className="row mt-4">
                         <div className="col-md-6 ">
-                            // TODO: add logo to line below
-                            // <img class="logo" alt="PerFlowLogo" src="logo_name.png" />
                             <h1>PerFlow</h1>
                             <h2>A Cash Flow Projection Tool for Project Managers</h2>
                             <p>
@@ -40,8 +39,16 @@ class HomePage extends Component {
                             </p>
                         </div>
                     </div>
+                    <div className="col-md-6">
+                        <div className="row">
+                                <div className="col-12  strong-shadow">
+                                    <LoginForm onSubmit={this.login} />
+                                </div>
+
+                        </div>                    
+                    </div>
                 </div>
-            </div>
+            </section>
         );
     }
 }
