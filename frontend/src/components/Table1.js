@@ -16,11 +16,11 @@ export class Table1 extends Component{
   refreshlist(){
     this.setState({
       proj:[{'Name': "ProjectName", 'Value':"Silver Tower"},
-      {'Name': "Budget", 'Value':"10000"},
-      {'Name': "Duration", 'Value':"24" },
-      {'Name': "Expected First Payment", 'Value':"593472873"},
-      {'Name': "Expected last Payment", 'Value':"13435488"},
-      {'Name': "Peak Interval", 'Value':"12"},
+      {'Name': "Budget", 'Value':10000},
+      {'Name': "Duration", 'Value':24 },
+      {'Name': "Expected First Payment", 'Value':593472873},
+      {'Name': "Expected last Payment", 'Value':13435488},
+      {'Name': "Peak Interval", 'Value':12},
      ]
 
     })

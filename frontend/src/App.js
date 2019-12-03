@@ -15,12 +15,29 @@ class App extends Component {
   render() {
     return (
       <div>
-       
+        <React.Fragment>
+      <Navigation />
+      <Router>
+        <Route path="/" component={App}>
+          <Route path="/Table1" component={Table1} />         
+        </Route>
+      </Router>
+    </React.Fragment>
       
       <div className="App">
         <p className="Table-header">Project Specific  Details</p>
         <Table1 data={data}/>
+
+        <div class="wrapper">
+          <button type="button" class="btn btn-outline-primary">Edit</button> &nbsp;&nbsp;&nbsp;
+          
+          <br/> <br/>
+         </div>
+
+         
         
+
+            
         
         </div> 
       </div>
