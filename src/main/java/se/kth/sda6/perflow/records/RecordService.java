@@ -96,6 +96,45 @@ class RecordService {
         return cPvList;
     }
 
+    List<Double> calcCPCIFList(List<Double> cPvList, Project project){
+        int creditTime = project.getCreditTime();
+        int intervals = project.getDuration();
+        int totalNumberIntervals = intervals + creditTime;
+
+        //TODO:here we have to check the consistency between cPvList and the project, which means that the number of
+        // intervals equals the size of the cPvList
+
+        double adv = project.getAdvPayment();
+        double budget = project.getBudget();
+        double advPercent = adv / budget;
+        double perBond = project.getPerfBond();
+
+        //add zeros in the first months as per the credit time
+        List<Double> cPCIFList = new ArrayList<>();
+        for (int i = 1; i <= creditTime; i++){
+            cPCIFList.add(0d);
+        }
+
+        //set the advance payment value to the first months before the credit time comes
+        for (int i = 1; i <= creditTime; i++) {
+            cPCIFList.set(i - 1, adv);
+        }
+
+        //add the cum PV values reduced by the advance payment percentage to the rest of the months
+        for (int i = creditTime + 1; i <= totalNumberIntervals; i++){
+            cPCIFList.add(adv + cPvList.get(i-creditTime-1) * (1 - advPercent));
+        }
+
+        /* fix the beginning of the cum PCIF and reduce the month before the last month in payment by the percentage of
+         *  the performance bond, and all months values with same modified percentage. */
+        for (int i = creditTime + 1; i <= totalNumberIntervals-1; i++){
+            cPCIFList.set(i-1, adv + (cPCIFList.get(i-1) - adv) * ((1 - perBond) * budget -adv) /
+                    (cPCIFList.get(totalNumberIntervals-2) - adv));
+        }
+
+        return cPCIFList;
+    }
+
     Record add(Record record){
         return recordRepo.save(record);
     }
