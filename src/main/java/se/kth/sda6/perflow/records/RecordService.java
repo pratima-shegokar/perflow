@@ -59,7 +59,13 @@ class RecordService {
     //To be Tested
     //Once the project created the records for all the contract/financial period must be initialized, and PV & PCIF
     //must be filled in, and this is what this method is doing
-    List<Record> CreatePlannedValuesRecords(Project project){
+    /*List<Record> CreatePlannedValuesRecords(Project project){
+
+        List<Double> cPvList = CalcCPVList(project);
+
+    }*/
+
+    List<Double> calcCPVList(Project project) {
         double a = project.getBudget();
         double n = (double) project.getDuration();
         double p = (double) project.getPeakInterval();
@@ -71,19 +77,23 @@ class RecordService {
         double c2 = (a-3d/(2d*p)*(yw-y0)* c -y0*(p+1)-yw*t)/(t/p* c +pow(t,2)/3d-t/3d);
         double c1 = c2*t/p+3d/(2d*p)*(yw-y0);
 
-        List<Double> pv = new ArrayList<>();
+        List<Double> cPvList = new ArrayList<>();
 
+        double k = 0;
+        double cumK = 0;
         for (int i = 1; i <= n; i++ ){
-            double k = 0;
             if ((i-1)<=p){
                 k = y0+c1*(-4d/(3d* pow(p,2))*pow((i-p/2d-1d),3)+(i-p/2d-1d)+p/3d);
             } else {
                 k = yw+c2*(4d/(3d*pow(t,2))*pow((i-t/2d-p-1d),3)-(i-t/2d-p-1d)+t/3d);
             }
 
-            pv.add(k);
+            cumK = cumK + k;
+
+            cPvList.add(cumK);
         }
 
+        return cPvList;
     }
 
     Record add(Record record){
