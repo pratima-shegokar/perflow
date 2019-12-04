@@ -23,7 +23,7 @@ class RecordServiceTest {
 
         //use the calcCPVList method to provide the cum PV List
         List<Double> cPvList;
-        cPvList = recordService.calcCPVList(project);
+        cPvList = recordService.calcPvList(project);
 
         //The cum planned values are estimated on excel and filled here manually in a compare list
         List<Double> compareList = new ArrayList<>();
@@ -58,11 +58,11 @@ class RecordServiceTest {
 
         //use the calcCPVList method to provide the cum PV List
         List<Double> cPvList;
-        cPvList = recordService.calcCPVList(project);
+        cPvList = recordService.calcPvList(project);
 
         //use the calcCPCIFList method to provide the cum CPCIF List
         List<Double> cPCIFList;
-        cPCIFList = recordService.calcCPCIFList(cPvList, project);
+        cPCIFList = recordService.calcPcifList(cPvList, project);
 
         //The cum planned cash inflow are estimated on excel and filled here manually in a compare list
         List<Double> compareList = new ArrayList<>();
@@ -85,6 +85,45 @@ class RecordServiceTest {
         boolean approxEquality = (Math.abs((cPCIFList.get(0) - compareList.get(0))) < 1);
         for (int i = 1; i < cPCIFList.size(); i++){
             approxEquality = approxEquality && (Math.abs((cPCIFList.get(i) - compareList.get(i))) < 1);
+        }
+
+        assertTrue(approxEquality);
+    }
+
+    @Test
+    void createPlannedValuesRecordsTest() {
+        //define a project obj
+        Project project = new Project("P111","Swiss Tower",12,150000000
+                ,6,50000,50000,30000000,0.05,2,0.08);
+
+        //make the records list using the method recordService.CreatePlannedValuesRecords
+        List<Record> records = recordService.createPlannedValuesRecords(project);
+
+        //get the planned values from the records
+        List<Double> pv = new ArrayList<>();
+        List<Double> pcif = new ArrayList<>();
+        for (int i = 0; i < project.getDuration(); i++){
+            pv.add(records.get(i).getPv());
+            pcif.add(records.get(i).getPcif());
+        }
+
+        for (int i = project.getDuration(); i < records.size(); i++ ){
+            pcif.add(records.get(i).getPcif());
+        }
+
+        //get the planned values and planned cash inflow using already tested methods
+        List<Double> comparePv = recordService.calcPvList(project);
+        List<Double> comparePcif = recordService.calcPcifList(comparePv,project);
+
+        //all items in the list should be approximately equivalent with a margin less than 1
+        boolean approxEquality = (Math.abs((pv.get(0) - comparePv.get(0))) < 1);
+        for (int i = 1; i < pv.size(); i++){
+            approxEquality = approxEquality && (Math.abs((pv.get(i) - comparePv.get(i))) < 1);
+        }
+
+        approxEquality = approxEquality && (Math.abs((pcif.get(0) - comparePcif.get(0))) < 1);
+        for (int i = 1; i < pcif.size(); i++){
+            approxEquality = approxEquality && (Math.abs((pcif.get(i) - comparePcif.get(i))) < 1);
         }
 
         assertTrue(approxEquality);
