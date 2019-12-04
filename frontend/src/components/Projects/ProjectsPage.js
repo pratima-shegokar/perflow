@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectsApi from "./../../api/ProjectsApi";
+import ProjectsApi from "./../../Api/ProjectsApi";
 import ProjectForm from "./ProjectForm";
 
 class ProjectsPage extends React.Component {
@@ -36,8 +36,7 @@ class ProjectsPage extends React.Component {
 
         return (
             <div>
-                <ProjectForm onSubmit={(projectData) => this.createProject(projectData);}/>
-
+                <ProjectForm onSubmit={(projectData) => this.createProject(projectData)}/>
          )}
             </div>
         );

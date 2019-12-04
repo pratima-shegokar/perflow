@@ -1,43 +1,34 @@
-import React, {useState} from "react";
-//import styles from './button.css';
-//import button from "./button.css";
-//import './button.css';
-
+import React from "react";
 
 function ProjectForm({onSubmit}) {
-
-    const [projectUniqueNumber,setProjectUniqueNumber] = useState("");
-    const [projectName,setProjectName] = useState("");
-    const [duration,setDuration] = useState("");
-    const [budget,setBudget] = useState("");
-    const [peakInterval,setPeakInterval] = useState("");
-    const [firstPV,setFirstPV] = useState("");
-    const [lastPV,setLastPV] = useState("");
-    const [advPayment,setAdvPayment] = useState("");
-    const [perfBond,setPerfBond] = useState("");
-    const [creditTime,setCreditTime] = useState("");
-    const [discountRate,setDiscountRate] = useState("");
+    console.log(onSubmit)
+    const [projectUniqueNumber,setProjectUniqueNumber] = React.useState("");
+    const [projectName,setProjectName] = React.useState("");
+    const [duration,setDuration] = React.useState("");
+    const [budget,setBudget] = React.useState("");
+    const [peakInterval,setPeakInterval] = React.useState("");
+    const [firstPV,setFirstPV] = React.useState("");
+    const [lastPV,setLastPV] = React.useState("");
+    const [advPayment,setAdvPayment] = React.useState("");
+    const [perfBond,setPerfBond] = React.useState("");
+    const [creditTime,setCreditTime] = React.useState("");
+    const [discountRate,setDiscountRate] = React.useState("");
 
     const handleSubmit = () => {
         // Invoke the passed in event callback
-        onSubmit(
-        {
+        onSubmit({
             projectUniqueNumber: projectUniqueNumber,
             projectName: projectName,
             duration: duration,
             budget: budget,
-            peakInterval: peakInterval,
             firstPV: firstPV,
             lastPV: lastPV,
-            advPayment: advPayment,
             perfBond: perfBond,
             creditTime: creditTime,
-            discountRate: discountRate,
-        });
-
-        handleClearForm();
-    };
-
+            discountRate: discountRate
+         });
+          handleClearForm();
+    }
     // Clear the input field
     const handleClearForm = () => {
         setProjectUniqueNumber("");
@@ -192,16 +183,13 @@ function ProjectForm({onSubmit}) {
                         <div class="container-fluid">
                           <div className="form-group">
                                 <button
-                                      className="btn btn-primary btn-lg"
+                                      className="btn btn-outline-primary btn-lg "
                                       onClick = {handleSubmit}>
                                       Save
                                 </button>
 
-                                <button
-                                      className="btn btn-outline-primary btn-lg "
-                                      onClick = {handleClearForm}>
-                                      Cancel
-                                </button>
+                                <a href="/MyProjects" className="btn btn-outline-primary btn-lg ml-4" role="button">Cancel</a>
+
                           </div>
                         </div>
                     </div>
