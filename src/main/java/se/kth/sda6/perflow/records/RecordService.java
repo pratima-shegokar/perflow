@@ -177,6 +177,11 @@ class RecordService {
         //create the planned values records of the new project without adding to DB
         List<Record> records = createPlannedValuesRecords(project);
 
+        //make the project field in all records to equal the new project
+        for (Record record : records){
+            record.setProject(project);
+        }
+
         //add the created list of records to the DB
         return addList(records);
     }
