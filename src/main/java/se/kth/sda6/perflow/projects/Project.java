@@ -7,14 +7,14 @@ import javax.persistence.*;
 public class Project {
     //General purpose related fields
     @Id
-    @Column (name = "project_id")
+    @Column (name = "id")
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long projectId; //To be used internally in the software and DB
 
-    @Column (name = "project_unique_number")
+    @Column (name = "unique_number")
     private String projectUniqueNumber; //To be provided by the user
 
-    @Column (name = "project_name")
+    @Column (name = "name")
     private String projectName;
 
     //Scheduling related fields
