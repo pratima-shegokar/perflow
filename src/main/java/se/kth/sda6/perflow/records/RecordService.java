@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 import static java.lang.Math.pow;
 
 @Service
+public
 class RecordService {
 
     @Autowired
@@ -172,7 +173,7 @@ class RecordService {
 
     //not tested yet
     //This add all records required for a project in DB, including all planned values and planned cash inflow
-    List<Record> addNewProjectRecords(Project project){
+    public List<Record> addNewProjectRecords(Project project){
         //create the planned values records of the new project without adding to DB
         List<Record> records = createPlannedValuesRecords(project);
 
