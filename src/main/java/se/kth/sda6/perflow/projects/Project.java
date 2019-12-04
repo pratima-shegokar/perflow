@@ -93,6 +93,8 @@ public class Project {
         return duration;
     }
 
+
+
     public void setDuration(int duration) {
         this.duration = duration;
     }
