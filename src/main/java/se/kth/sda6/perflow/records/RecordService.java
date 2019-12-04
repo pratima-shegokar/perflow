@@ -158,6 +158,18 @@ class RecordService {
         return recordRepo.save(record);
     }
 
+    //not tested yet
+    //will be used mainly when the project is created and planned values are calculated and going to be saved in the DB
+    List<Record> addList(List<Record> records){
+        List<Record> storedRecords= new ArrayList<>();
+
+        for (Record record: records) {
+            storedRecords.add(recordRepo.save(record));
+        }
+
+        return storedRecords;
+    }
+
     Record update(Record record){
         return recordRepo.save(record);
     }
