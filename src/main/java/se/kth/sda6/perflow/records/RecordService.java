@@ -96,7 +96,7 @@ class RecordService {
         double c2 = (a-3d/(2d*p)*(yw-y0)* c -y0*(p+1)-yw*t)/(t/p* c +pow(t,2)/3d-t/3d);
         double c1 = c2*t/p+3d/(2d*p)*(yw-y0);
 
-        List<Double> cPvList = new ArrayList<>();
+        List<Double> pvList = new ArrayList<>();
 
         double k = 0;
         double cumK = 0;
@@ -109,10 +109,10 @@ class RecordService {
 
             cumK = cumK + k;
 
-            cPvList.add(cumK);
+            pvList.add(cumK);
         }
 
-        return cPvList;
+        return pvList;
     }
 
     List<Double> calcPcifList(List<Double> cPvList, Project project){
