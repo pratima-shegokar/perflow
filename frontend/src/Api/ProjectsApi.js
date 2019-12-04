@@ -11,7 +11,7 @@ class ProjectsApi {
     }
 
     createProject(project) {
-        return Api.project('/projects', project);
+        return Api.post('/projects', project);
     }
 
     updateProject(project) {
