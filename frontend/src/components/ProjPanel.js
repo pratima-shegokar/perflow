@@ -29,42 +29,49 @@ export class ProjPanel extends Component {
 
     return (
       <div className="App">
+        
         <p className="Table-header">Project Specific  Details</p>
-        <div class="col-sm-6">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              
 
 
-          <div class="card-body">
+
+              <div class="card-body">
 
 
-            <Table className="mt-2" striped bordered hover size="sm">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                {proj.map(dep =>
-                  <tr key={dep.Name}>
-                    <td>{dep.Name}</td>
-                    <td>{dep.Value}</td>
-                  </tr>
-                )}
+                <Table className="mt-2" striped bordered hover size="sm">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {proj.map(dep =>
+                      <tr key={dep.Name}>
+                        <td>{dep.Name}</td>
+                        <td>{dep.Value}</td>
+                      </tr>
+                    )}
 
-              </tbody>
+                  </tbody>
 
-            </Table>
+                </Table>
+              </div>
+            </div>
           </div>
-        </div>
+          </div>
 
-        <div class="wrapper">
-          <a href="/EditProject" className="btn btn-outline-primary btn-lg ml-4" role="button">Edit</a>
+          <div class="wrapper">
+            <a href="/EditProject" className="btn btn-outline-primary btn-sm ml-4" role="button">Edit</a>
 
-          <br /> <br />
-        </div>
-        <div class="graph-button">
+            <br /> <br />
+          </div>
+          <div class="graph-button">
 
-          <button type="button-gr" class="btn btn-outline-primary" >Periodical S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
+            <button type="button-gr" class="btn btn-outline-primary" >Periodical S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
            <button type="button-gr" class="btn btn-outline-primary" >Periodical Cash Flow Graph</button> &nbsp;&nbsp;&nbsp;
            <button type="button-gr" class="btn btn-outline-primary" >Cumulative S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
            <button type="button-gr" class="btn btn-outline-primary">Cumulative Cash Flow Graph</button> &nbsp;&nbsp;&nbsp;
@@ -72,7 +79,7 @@ export class ProjPanel extends Component {
            <button type="button-gr" class="btn btn-outline-primary">CFM Board</button>
 
 
-
+          
         </div>
       </div>
 
