@@ -1,10 +1,4 @@
 import React, {useState} from 'react';
-import Registration from "./Registration";
-
-
-function showRegister() {
-    return <Registration/>
-}
 
 function LoginForm({onSubmit}) {
     const [email, setEmail] = useState("");
@@ -44,7 +38,7 @@ function LoginForm({onSubmit}) {
                                 </button>
                             </div>
                             <div class="col-md-6 offset-md-3">
-                                <a href="/Registration" class="btn btn-link">
+                                <a href="/RegistrationPage" class="btn btn-link">
                                     Need a Account? Register
                                 </a>
                             </div>
