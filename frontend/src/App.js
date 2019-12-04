@@ -1,53 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import Table1 from './components/Table1'
-import Navigation from './components/Navigation'
+import ProjPanel from './components/ProjPanel';
+import Navbar from './components/Navbar';
+import MyProjects from './components/MyProject';
+import EditProject from './components/EditProject';
 import { BrowserRouter as Router, Route } from "react-router-dom";
- 
-var data = [
-  { name: 'Project Name', value: 'Swiss Tower'},
-  { name: 'Duration', value: '24 months'},
-  { name: 'Budget', value: '40000'}
-];
- 
- 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <React.Fragment>
-      <Navigation />
+
+function App() {
+  return (
+    <React.Fragment>
+      <Navbar />
       <Router>
         <Route path="/" component={App}>
-          <Route path="/Table1" component={Table1} />         
+        <Route path="/MyProjects" component={MyProjects} />
+          <Route path="/ProjPanel" component={ProjPanel} />
+          <Route path="/EditProject" component={EditProject} />
         </Route>
       </Router>
     </React.Fragment>
-      
-      <div className="App">
-        <p className="Table-header">Project Specific  Details</p>
-        <Table1 data={data}/>
-
-        <div class="wrapper">
-          <button type="button" class="btn btn-outline-primary">Edit</button> &nbsp;&nbsp;&nbsp;
-          
-          <br/> <br/>
-         </div>
-         <div class="graph-button">
-           
-            <button type="button-gr" class="btn btn-outline-primary "  >Periodical S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
-            <button type="button-gr" class="btn btn-outline-primary" >Periodical Cash Flow Graph</button> &nbsp;&nbsp;&nbsp;
-            <button type="button-gr" class="btn btn-outline-primary" >Cumulative S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
-            <button type="button-gr" class="btn btn-outline-primary">Cumulative Cash Flow Graph</button> &nbsp;&nbsp;&nbsp;
-            <button type="button-gr" class="btn btn-outline-primary" >EVM Board</button> &nbsp;&nbsp;&nbsp;
-            <button type="button-gr" class="btn btn-outline-primary">CFM Board</button>
-
-         </div>
-         
-        </div> 
-      </div>
-    );
-  }
+  );
 }
- 
 export default App;
