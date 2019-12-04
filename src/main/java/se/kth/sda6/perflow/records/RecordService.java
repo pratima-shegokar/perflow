@@ -56,16 +56,35 @@ class RecordService {
         return currRecord;
     }
 
-    //To be Tested
+
     //Once the project created the records for all the contract/financial period must be initialized, and PV & PCIF
     //must be filled in, and this is what this method is doing
-    /*List<Record> CreatePlannedValuesRecords(Project project){
+    List<Record> createPlannedValuesRecords(Project project){
 
-        List<Double> cPvList = CalcCPVList(project);
+        //get the cum planned values and cum planned CIF calculated
+        List<Double> pvList = calcPvList(project);
+        List<Double> PcifList = calcPcifList(pvList,project);
 
-    }*/
+        List<Record> records = new ArrayList<>();
+        for (int i = 0; i < pvList.size(); i++) {
+            Record record = new Record();
+            record.setPv(pvList.get(i));
+            record.setPcif(PcifList.get(i));
 
-    List<Double> calcCPVList(Project project) {
+            records.add(record);
+        }
+
+        for (int i = pvList.size(); i < PcifList.size(); i++){
+            Record record = new Record();
+            record.setPcif(PcifList.get(i));
+
+            records.add(record);
+        }
+
+        return records;
+    }
+
+    List<Double> calcPvList(Project project) {
         double a = project.getBudget();
         double n = (double) project.getDuration();
         double p = (double) project.getPeakInterval();
@@ -96,7 +115,7 @@ class RecordService {
         return cPvList;
     }
 
-    List<Double> calcCPCIFList(List<Double> cPvList, Project project){
+    List<Double> calcPcifList(List<Double> cPvList, Project project){
         int creditTime = project.getCreditTime();
         int intervals = project.getDuration();
         int totalNumberIntervals = intervals + creditTime;
