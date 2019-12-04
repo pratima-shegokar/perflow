@@ -170,6 +170,16 @@ class RecordService {
         return storedRecords;
     }
 
+    //not tested yet
+    //This add all records required for a project in DB, including all planned values and planned cash inflow
+    List<Record> addNewProjectRecords(Project project){
+        //create the planned values records of the new project without adding to DB
+        List<Record> records = createPlannedValuesRecords(project);
+
+        //add the created list of records to the DB
+        return addList(records);
+    }
+
     Record update(Record record){
         return recordRepo.save(record);
     }
