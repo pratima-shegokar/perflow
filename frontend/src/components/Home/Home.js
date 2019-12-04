@@ -3,7 +3,7 @@ import React from 'react';
 class Home extends React.Component {
 
     componentDidMount() {
-        document.body.style = 'background: #d7f5fc;';
+        document.body.style = 'background: #986AD9; color: white;';
     }
 
     goToRegistrationPage() {
@@ -23,7 +23,7 @@ class Home extends React.Component {
                          calculate data that a project management team has traditionally had to laboriously calculate by hand.
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary btn-lg" id="home-signup-button">Sign Up For A Free Trial</button>
+                        <a href="/Register"><button type="button" class="btn btn-primary btn-lg" id="home-signup-button">Sign Up For A Free Trial</button></a>
                     </div>
             </React.Fragment>
 
