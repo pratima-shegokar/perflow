@@ -5,6 +5,7 @@ import MyProjects from './components/ProjectsList/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
 import Navbar from './components/Navbar';
 import ProjectForm from './components/Projects/ProjectForm';
+import ProjectsPage from './components/Projects/ProjectsPage';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path="/" component={App}>
           <Route path="/MyProjects" component={MyProjects} />
           <Route path="/WhyPerflow" component={WhyPerflow} />
-          <Route path="/ProjectForm" component={ProjectForm} />
+          <Route path="/ProjectForm" component={ProjectsPage} />
         </Route>
       </Router>
     </React.Fragment>
