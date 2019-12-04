@@ -25,3 +25,13 @@
     background-image: url("/Perflow2.2.png");
     font-size: 150%;
 }
+
+.container{
+  vertical-align: middle
+}
+
+#loginLogoDiv {
+  margin: 0px;
+  padding: 0px;
+}
+

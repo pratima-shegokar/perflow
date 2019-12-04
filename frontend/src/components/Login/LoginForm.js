@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {Redirect} from 'react-router-dom';
+import Registration from "./Registration";
 
-function redirect() {
-    return  <Redirect  to="/register" />
+
+function showRegister() {
+    return <Registration/>
 }
 
 function LoginForm({onSubmit}) {
@@ -34,20 +35,18 @@ function LoginForm({onSubmit}) {
                             onChange={e => setPassword(e.target.value)} />
                     </div>
                     <div className="container">
-                        <div className="row mt-4">
-                            <div className="form-group col-md-3">
+                        <div className="row mt-12">
+                            <div className="form-group col-md-6 offset-md-5">
                                 <button
                                     className="btn btn-info"
                                     onClick={() => onSubmit({email, password})}>
                                     Login
                                 </button>
                             </div>
-                            <div className="form-group col-md-1">
-                                <button
-                                    className="btn btn-info"
-                                    onClick={redirect()}>
-                                    Register
-                                </button>
+                            <div class="col-md-6 offset-md-3">
+                                <a href="/Registration" class="btn btn-link">
+                                    Need a Account? Register
+                                </a>
                             </div>
                         </div>
                     </div>

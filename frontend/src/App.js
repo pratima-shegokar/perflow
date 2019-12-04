@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import MyProjects from './components/ProjectsList/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
 import Navbar from './components/Navbar';
@@ -14,7 +14,7 @@ function App() {
           <Route path="/" component={App}>
           <Route path="/MyProjects" component={MyProjects} />
           <Route path="/WhyPerflow" component={WhyPerflow} />
-          <Route path="/Login" component={LoginPage} />
+          <Route path="/LoginPage" component={LoginPage} />
         </Route>
       </Router>
     </React.Fragment>
