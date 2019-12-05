@@ -23,7 +23,7 @@ class Home extends React.Component {
                          calculate data that a project management team has traditionally had to laboriously calculate by hand.
                     </div>
                     <div>
-                        <a href="/Register" style={{textDecoration: 'none'}}><button type="button" class="btn btn-primary btn-lg" id="home-signup-button">Sign Up For A Free Trial</button></a>
+                        <a href="/RegistrationPage" style={{textDecoration: 'none'}}><button type="button" class="btn btn-primary btn-lg" id="home-signup-button">Sign Up For A Free Trial</button></a>
                     </div>
             </React.Fragment>
 
