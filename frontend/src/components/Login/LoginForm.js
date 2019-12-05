@@ -39,7 +39,7 @@ function LoginForm({onSubmit}) {
                             </div>
                             <div class="col-md-6 offset-md-3">
                                 <a href="/RegistrationPage" class="btn btn-link">
-                                    Need a Account? Register
+                                    Need an Account? Register
                                 </a>
                             </div>
                         </div>
