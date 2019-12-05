@@ -142,3 +142,4 @@ dist
 # bin folder
 /bin/
 
+/gradle/
