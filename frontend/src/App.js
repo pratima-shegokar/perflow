@@ -6,7 +6,7 @@ import MyProjects from './components/ProjectsList/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
 
 import ProjPanel from './components/ProjPanel';
-
+import GraphExperiment from "./components/Graphs/GraphExperiment";
 import Navbar from './components/Navbar';
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
@@ -40,6 +40,7 @@ function App() {
                         <Route path="/WhyPerflow" component={WhyPerflow} />
                         <Route path="/LoginPage" component={LoginPage} />
                         <Route path="/RegistrationPage" component={RegistrationPage}/>
+                        <Route path="/Graph" component={GraphExperiment}/>
                     </Route>
             </div>
         </Router>
