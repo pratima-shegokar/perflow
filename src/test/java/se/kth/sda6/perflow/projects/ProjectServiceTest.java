@@ -2,6 +2,7 @@ package se.kth.sda6.perflow.projectsTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import se.kth.sda6.perflow.projects.Project;
 import se.kth.sda6.perflow.projects.ProjectService;
@@ -10,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 @SpringBootTest
-class ProjectTest {
+class ProjectServiceTest {
 
     @Autowired
     private ProjectService projectService;
