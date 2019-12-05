@@ -33,6 +33,7 @@
     ]
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "react-scripts": "3.2.0"
   }
 }

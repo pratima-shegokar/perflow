@@ -1,9 +1,10 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import MyProjects from './components/MyProject';
+import MyProjects from './components/ProjectsList/MyProject';
+import WhyPerflow from './components/WhyPerflow/WhyPerflow';
 import Navbar from './components/Navbar';
 import AboutUs from './components/AboutUs';
+import './App.css';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" component={App}>
           <Route path="/MyProjects" component={MyProjects} />
           <Route path="/AboutUs" component={AboutUs} />
+          <Route path="/WhyPerflow" component={WhyPerflow} />
         </Route>
       </Router>
     </React.Fragment>
