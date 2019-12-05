@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Home from './components/Home/Home'
 import MyProjects from './components/ProjectsList/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
 
@@ -35,6 +36,7 @@ function App() {
             <Navbar/>
             <div className="container mt-5">
                     <Route path="/" component={App}>
+                        <Route path="/Homepage" component={Home} />
                         <Route path="/WhyPerflow" component={WhyPerflow} />
                         <Route path="/LoginPage" component={LoginPage} />
                         <Route path="/RegistrationPage" component={RegistrationPage}/>

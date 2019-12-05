@@ -31,6 +31,29 @@
   top: 50%;
 }
 
+#home-header {
+  font-size: 350%;
+  text-align: center;
+  margin-top: 2em;
+}
+
+#home-blurb {
+    text-align: center;
+    margin-left: 15em;
+    margin-right: 15em;
+    font-size: 145%;
+    margin-top: 2em;
+}
+
+#home-signup-button {
+    margin: 2em auto 0px auto;
+    width: 14em;
+    height: 3em;
+    display: block;
+    font-size: 150%;
+    background-color: #84CEEB;
+}
+
 #why-pf-info-column {
     background-image: url("/Perflow2.2.png");
     font-size: 150%;
@@ -54,4 +77,3 @@
   bottom: 5%;
   right:20%;
 }
-
