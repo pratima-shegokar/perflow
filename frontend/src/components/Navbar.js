@@ -14,9 +14,6 @@ class Navbar extends React.Component {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/MyProjects">MyProjects <span class="sr-only">(current)</span></a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/WhyPerflow">Why Perflow</a>
                             </li>
@@ -24,7 +21,7 @@ class Navbar extends React.Component {
                                 <a class="nav-link" href="/AboutUS">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Login">Login</a>
+                                <a class="nav-link" href="/LoginPage">Login</a>
                             </li>
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
