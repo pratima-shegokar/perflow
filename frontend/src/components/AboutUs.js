@@ -12,6 +12,9 @@ class AboutUs extends React.Component {
                                 <div className="col-md-7">
                                     <h1 className="font-weight-light mt-4 text-black">About Us</h1>
                                     <p className="lead text-black-50">We are a team!</p>
+                                    <img src="" class="rounded circle" alt="pictire">
+                                        <img src="" class="rounded circle" alt="profile"></img>
+                                    </img>
                                 </div>
                             </div>
                         </div>
