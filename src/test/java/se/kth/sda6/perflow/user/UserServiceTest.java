@@ -26,7 +26,7 @@ class UserServiceTest {
 
     @Test
     void returnNoneWhenNoMatchingUserFound() {
-        User newUser = new User("user@dummy.com", "somepassword", "dummy name", "dummy");
+        User newUser = new User("newuser@dummy.com", "somepassword", "dummy name", "dummy");
         userService.register(newUser);
         Optional<User> userByEmail = userService.getUserByEmail("not@available.com");
         assertTrue(userByEmail.isEmpty());
