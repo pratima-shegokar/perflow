@@ -13,12 +13,15 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MvcResult;
 
 import java.nio.charset.StandardCharsets;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -31,48 +34,30 @@ class ProjectControllerTest {
     private static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType()
             , MediaType.APPLICATION_JSON.getSubtype(), StandardCharsets.UTF_8);
 
-
-    //Access is denied
     @Test
     public void add() throws Exception{
-        //MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 
+        //the request url
         String url = "/projects";
 
+        //define a project obj
         Project project = new Project("P111","Swiss Tower",12,150000000
                 ,6,50000,50000,30000000,0.05,2,0.08);
 
+        //transform the Project object to jason data form
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
         ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
         String requestJson=ow.writeValueAsString(project);
 
-        mockMvc.perform(post(url).contentType(APPLICATION_JSON_UTF8)
+        //use MockMvc object to send the request, check the status of the response and store in a variable
+        MvcResult mvcResult = mockMvc.perform(post(url).contentType(APPLICATION_JSON_UTF8)
                 .content(requestJson))
-                .andExpect(status().isForbidden());
+                .andExpect(status().isOk())
+                .andReturn();
 
-
-        /*//define a project obj
-        Project project = new Project("P111","Swiss Tower",12,150000000
-                ,6,50000,50000,30000000,0.05,2,0.08);
-
-        *//* add the project through the project controller, this suppose to add the project data to DB and the planned
-        * values records as well *//*
-        projectController.add(project);
-
-        //retrieve the projects list from DB to see if our project is contained there
-        List<Project> projects = projectController.getAll();
-
-        boolean isContained = false;
-        for (Project p: projects){
-            if (p.getProjectName().equals(project.getProjectName())
-                    && p.getProjectUniqueNumber().equals(project.getProjectUniqueNumber())) {
-                isContained = true;
-                break;
-            }
-        }
-
-        assertTrue(isContained);*/
+        //check if the returned jason object contains a certain string to assert true
+        assertTrue(mvcResult.getResponse().getContentAsString().contains("Swiss Tower"));
 
     }
 }
