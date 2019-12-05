@@ -6,10 +6,6 @@ class Home extends React.Component {
         document.body.style = 'background: #986AD9; color: white;';
     }
 
-    goToRegistrationPage() {
-
-    }
-
     render() {
 
         return (
