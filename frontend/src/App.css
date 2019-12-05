@@ -19,6 +19,16 @@
 
 .App-link {
   color: #09d3ac;
+
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
 }
 
 #why-pf-info-column {
@@ -33,5 +43,15 @@
 #loginLogoDiv {
   margin: 0px;
   padding: 0px;
+}
+
+.graph-button{
+  text-align: bottom;
+}
+
+.button{
+  position:absolute;
+  bottom: 5%;
+  right:20%;
 }
 

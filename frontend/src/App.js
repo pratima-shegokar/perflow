@@ -3,6 +3,9 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import MyProjects from './components/ProjectsList/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
+
+import ProjPanel from './components/ProjPanel';
+
 import Navbar from './components/Navbar';
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
@@ -20,6 +23,7 @@ function App() {
                 <Switch>
                     <Route path="/" component={App}>
                         <Route path="/MyProjects" component={MyProjects} />
+                          <Route path="/ProjPanel" component={ProjPanel} />
                     </Route>
                 </Switch>
             </div>
@@ -40,5 +44,4 @@ function App() {
     );
     return (loggedIn ? loggedInRouter : defaultRouter);
 }
-
 export default App;
