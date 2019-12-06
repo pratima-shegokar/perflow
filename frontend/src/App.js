@@ -28,7 +28,7 @@ function App() {
                 <Switch>
                     <Route path="/" component={App}>
                         <Route path="/MyProjects" component={MyProjects} />
-                        <Route path="/ProjectForm" component={ProjectsPage} />
+                        <Route path="/ProjectsPage" component={ProjectsPage} />
                         <Route path="/ProjPanel" component={ProjPanel} />
                     </Route>
                 </Switch>
