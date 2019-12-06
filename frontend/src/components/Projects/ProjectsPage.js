@@ -37,7 +37,6 @@ class ProjectsPage extends React.Component {
         return (
             <div>
                 <ProjectForm onSubmit={(projectData) => this.createProject(projectData)}/>
-         )}
             </div>
         );
     }

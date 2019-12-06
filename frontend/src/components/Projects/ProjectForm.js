@@ -47,7 +47,7 @@ function ProjectForm({onSubmit}) {
     return (
          <div className = "card">
               <div className = "card-body">
-                   <h1>New Project Form</h1>
+                   <h1 style={{color:"black"}}>New Project Form</h1>
                     <br></br>
                    <div>
                         <div class="container-fluid">
