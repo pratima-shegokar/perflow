@@ -2,15 +2,15 @@ import React, {useState} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from './components/Home/Home'
-import MyProjects from './components/Projects/MyProject';
+import MyProjects from './components/projects/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
 
 import ProjPanel from './components/ProjPanel';
 
 import Navbar from './components/Navbar';
 
-import ProjectForm from './components/Projects/ProjectForm';
-import ProjectsPage from './components/gitg/ProjectsPage';
+import ProjectForm from './components/projects/ProjectForm';
+import ProjectsPage from './components/projects/ProjectsPage';
 
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
