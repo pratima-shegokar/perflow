@@ -10,7 +10,7 @@ import ProjPanel from './components/ProjPanel';
 import Navbar from './components/Navbar';
 
 import ProjectForm from './components/Projects/ProjectForm';
-import ProjectsPage from './components/gitg/ProjectsPage';
+import ProjectsPage from './components/Projects/ProjectsPage';
 
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
