@@ -189,7 +189,6 @@ function ProjectForm({onSubmit}) {
                                 </button>
 
                                 <a href="/MyProjects" className="btn btn-outline-primary btn-lg ml-4" role="button">Cancel</a>
-
                           </div>
                         </div>
                     </div>

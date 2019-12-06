@@ -1,6 +1,6 @@
 import axios from "axios";
 import Auth from "../services/Auth";
-
+const Auth = {}
 const BASE_URL = "http://localhost:8080";
 
 const Api = axios.create({
