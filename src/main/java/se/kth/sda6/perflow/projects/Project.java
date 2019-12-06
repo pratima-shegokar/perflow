@@ -1,4 +1,4 @@
-package se.kth.sda6.perflow.Projects;
+package se.kth.sda6.perflow.projects;
 
 
 import javax.persistence.*;

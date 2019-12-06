@@ -90,8 +90,9 @@ class RecordService {
         double n = (double) project.getDuration();
         double p = (double) project.getPeakInterval();
         double t = n-p-1;
-        double y0 = project.getFirstPV();
-        double yw = project.getLastPV();
+        // TODO: Set values of y0 and yw
+        double y0 = 0.0;
+        double yw = 0.0;
 
         double c = pow(p, 2) / 3d + p / 3d;
         double c2 = (a-3d/(2d*p)*(yw-y0)* c -y0*(p+1)-yw*t)/(t/p* c +pow(t,2)/3d-t/3d);
@@ -99,6 +100,7 @@ class RecordService {
 
         List<Double> pvList = new ArrayList<>();
 
+        // TODO: Confirm that k and cumk should be 0
         double k = 0;
         double cumK = 0;
         for (int i = 1; i <= n; i++ ){
@@ -117,17 +119,20 @@ class RecordService {
     }
 
     List<Double> calcPcifList(List<Double> pvList, Project project){
-        int creditTime = project.getCreditTime();
+        // TODO fix creditTime
+        int creditTime = 0;
         int intervals = project.getDuration();
         int totalNumberIntervals = intervals + creditTime;
 
         //TODO:here we have to check the consistency between pvList and the project, which means that the number of
         // intervals equals the size of the pvList
 
-        double adv = project.getAdvPayment();
+        // TODO fix adv
+        double adv = 0;
         double budget = project.getBudget();
         double advPercent = adv / budget;
-        double perBond = project.getPerfBond();
+        // TODO fix perBond
+        double perBond = 0;
 
         //add zeros in the first months as per the credit time
         List<Double> pcifList = new ArrayList<>();
