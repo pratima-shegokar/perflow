@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectsApi from "./../../Api/ProjectsApi";
+import ProjectsApi from "../../api/ProjectsApi";
 import ProjectForm from "./ProjectForm";
 
 class ProjectsPage extends React.Component {
