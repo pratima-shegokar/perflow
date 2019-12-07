@@ -10,11 +10,15 @@ class WhyPerflow extends React.Component {
                     </div>
                     <div className="container-fluid">
                         <div className="pwcRow row">
-                            <div className="col-lg-5 col-md-4 col-sm-12" id="wcpGraph">
+                            <div className="col-lg-4 ml-lg-auto mt-lg-auto mb-lg-auto 
+                                            col-md-6 ml-md-auto mt-md-auto mb-md-auto 
+                                            col-sm-6 ml-sm-auto" id="wcpGraph">
                                 <img alt="placeholdergraph" src="sample_graph.jpg" width="80%" height="auto" class="d-inline-block align-top" />
-                                <p>This graph shows the cashflow of a project at any given time</p>
+                                <p id= "graphText">This graph shows the cashflow of a project at any given time</p>
                             </div>
-                            <div className="col-lg-6 col-md-6 col-sm-6" id="why-pf-info-column">
+                            <div className="col-lg-6 mt-lg-auto mr-lg-auto mb-lg-auto ml-lg-1
+                                            col-md-6 ml-md-auto mt-md-3 mr-md-auto mb-md-3
+                                            col-sm-6 mr-sm-6" id="why-pf-info-column">
                                 <h3 className="part1">Perflow is a precision tool designed to be used by experienced Project Managers.</h3>
                                 <br></br>
                                 <p className="part2">It provides visual representations of KPI, EV, (Abed finish this list) that are updated each month to reflect the ongoing status of a given project.</p>
