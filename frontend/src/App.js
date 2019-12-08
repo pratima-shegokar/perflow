@@ -17,6 +17,8 @@ import RegistrationPage from "./components/Login/RegistrationPage";
 import Auth from "./services/Auth"
 import LoggedInNavbar from "./components/layout/LoggedInNavbar";
 
+import SCurve from  "./components/charts/SCurve";
+
 function App() {
     const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
     Auth.bindLoggedInStateSetter(setLoggedIn);
@@ -45,6 +47,7 @@ function App() {
                         <Route path="/WhyPerflow" component={WhyPerflow} />
                         <Route path="/LoginPage" component={LoginPage} />
                         <Route path="/RegistrationPage" component={RegistrationPage}/>
+                        <Route path="/scurve" component={SCurve}/>
                     </Route>
             </div>
         </Router>
