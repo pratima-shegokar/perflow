@@ -20,7 +20,7 @@ function App() {
     const loggedInRouter = (
         <Router>
             <LoggedInNavbar onLogout={() => Auth.logout()} />
-            <div className="container mt-5">
+            <div>
                 <Switch>
                     <Route path="/" component={App}>
                         <Route path="/MyProjects" component={MyProjects} />
@@ -34,7 +34,7 @@ function App() {
     const defaultRouter = (
         <Router>
             <Navbar/>
-            <div className="container mt-5">
+            <div>
                     <Route path="/" component={App}>
                         <Route path="/Homepage" component={Home} />
                         <Route path="/WhyPerflow" component={WhyPerflow} />

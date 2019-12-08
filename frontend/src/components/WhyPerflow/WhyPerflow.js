@@ -35,18 +35,40 @@ class WhyPerflow extends React.Component {
                     </div>
                     <div className="container-fluid">
                         <div className="row">
-                            <div className="col-sm-6">
-                                <div>
-                                    <h1 className="text-center">"Perflow has completely changed how I manage my products. With PerFlow, I'm able to immediately see
-                                how ahead of or behind schedule we are and adjust accordingly" </h1>
-                                    <p className="text-right">--Anders Anderson, Project Manager and PerFlow user</p>
+                            <div className="col-lg-4 mt-lg-4 mr-lg-1 mb-lg-5 ml-lg-auto
+                                            col-md-6 ml-md-auto mt-md-3 mr-md-auto mb-md-3
+                                            col-sm-6 mr-sm-6">
+                                
+                                <div className="card" id="card1">
+                                    <div className="card-body" id="cardup1">
+                                    </div>
+                                    <div className="card-body" id="cardbody1">
+                                        <img className="avatar rounded-circle" src="cardimg.png" id="cardimage1"></img>
+                                        <h4 className="card-title">Anders Anderson</h4>
+                                        <h6 className="card-subtitle mb-4 text-muted">Project Manager and PerFlow user</h6>
+                                        <p className="card-text">"Perflow has completely changed how
+                                        I manage my products. With PerFlow, I'm able to immediately
+                                         see how ahead of or behind schedule we are and adjust accordingly." </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col-sm-6">
-                                <div>
-                                    <h1 className="text-center">"Since my team started using PerFlow, we've communicated better - both with each
-                                other, as well as with our clients. We're able to give clients an updated, clear picture of how their project is going." </h1>
-                                    <p className="text-right">--Kjell Gustavson, Project Manager and PerFlow user</p>
+
+                            <div className="col-lg-4 mt-lg-4 mr-lg-auto mb-lg-5 ml-lg-1
+                                            col-md-6 ml-md-auto mt-md-3 mr-md-auto mb-md-3
+                                            col-sm-6 mr-sm-6">
+                                
+                                <div className="card" id="card2">
+                                    <div className="card-body" id="cardup2">
+                                    </div>
+
+                                    <div className="card-body"id="cardbody2">
+                                        <img className="avatar rounded-circle" src="cardimg.png" id="cardimage2"></img>
+                                        <h4 className="card-title">Kjell Gustavson</h4>
+                                        <h6 className="card-subtitle mb-4 text-muted">Project Manager and PerFlow user</h6>
+                                        <p className="card-text">"Since my team started using PerFlow, we've communicated 
+                                        better - both with each other, as well as with our clients. We're able to give 
+                                        clients an updated, clear picture of how their project is going." </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
