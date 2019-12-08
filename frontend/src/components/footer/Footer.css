@@ -1,9 +1,18 @@
 
 #footer {
     width: 100%;
-    background-color: dark;
+    background-color: light;
     color: white;
     text-align: center;
 }
 
+.LogoFooter{
+    width:141px;
+    height: 132px;
+}
 
+a.disabled{
+    color: gray;
+  /* Disable the pointer events */
+  pointer-events: none;
+}

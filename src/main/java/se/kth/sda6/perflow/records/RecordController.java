@@ -8,6 +8,7 @@ import se.kth.sda6.perflow.projects.Project;
 
 import java.util.List;
 
+@RestController
 public class RecordController {
     @Autowired
     private RecordService recordService;
