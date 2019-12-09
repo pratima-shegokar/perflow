@@ -43,7 +43,7 @@ class WhyPerflow extends React.Component {
                                     <div className="card-body" id="cardup1">
                                     </div>
                                     <div className="card-body" id="cardbody1">
-                                        <img className="avatar rounded-circle" src="cardimg.png" id="cardimage1"></img>
+                                        <img className="avatar rounded-circle" src="person1.png" id="cardimage1"></img>
                                         <h4 className="card-title">Anders Anderson</h4>
                                         <h6 className="card-subtitle mb-4 text-muted">Project Manager and PerFlow user</h6>
                                         <p className="card-text">"Perflow has completely changed how
@@ -62,7 +62,7 @@ class WhyPerflow extends React.Component {
                                     </div>
 
                                     <div className="card-body"id="cardbody2">
-                                        <img className="avatar rounded-circle" src="cardimg.png" id="cardimage2"></img>
+                                        <img className="avatar rounded-circle" src="person2.png" id="cardimage2"></img>
                                         <h4 className="card-title">Kjell Gustavson</h4>
                                         <h6 className="card-subtitle mb-4 text-muted">Project Manager and PerFlow user</h6>
                                         <p className="card-text">"Since my team started using PerFlow, we've communicated 
