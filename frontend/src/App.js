@@ -5,8 +5,8 @@ import Home from './components/Home/Home'
 import MyProjects from './components/Projects/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
 
-import ProjPanel from './components/ProjectPanel/ProjPanel';
-import EditProject from './components/ProjectPanel/EditProject';
+import ProjPanel from './components/Projects/ProjPanel';
+import EditProject from './components/Projects/EditProject';
 
 import Navbar from './components/Navbar';
 

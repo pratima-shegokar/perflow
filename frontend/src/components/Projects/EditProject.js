@@ -85,8 +85,6 @@ function EditProject({ onSubmit }) {
                     </div>
                 </div>
 
-
-
                 <div class="container-fluid">
                     <div className="form-group">
                         <button
@@ -99,10 +97,8 @@ function EditProject({ onSubmit }) {
                     </div>
                 </div>
             </div>
-      
-
-
     )
 }
 
 export default EditProject;
+
