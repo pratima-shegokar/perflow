@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './components/Home/Home'
-import MyProjects from './components/ProjectsList/MyProject';
+import MyProjects from './components/Projects/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
-
-import ProjPanel from './components/ProjPanel';
-
+import ProjPanel from './components/Projects/ProjPanel';
+import EditProject from './components/Projects/EditProject';
 import Navbar from './components/Navbar';
+import ProjectForm from './components/Projects/ProjectForm';
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
 import Auth from "./services/Auth"
@@ -18,31 +18,33 @@ function App() {
     Auth.bindLoggedInStateSetter(setLoggedIn);
 
     const loggedInRouter = (
-        <Router>
-            <LoggedInNavbar onLogout={() => Auth.logout()} />
-            <div>
+        <React.Fragment>
+            <Router>
+                <LoggedInNavbar onLogout={() => Auth.logout()} />
                 <Switch>
                     <Route path="/" component={App}>
                         <Route path="/MyProjects" component={MyProjects} />
-                          <Route path="/ProjPanel" component={ProjPanel} />
+                        <Route path="/ProjectForm" component={ProjectForm} />
+                        <Route path="/ProjPanel" component={ProjPanel} />
+                        <Route path="/EditProject" component={EditProject} />
                     </Route>
                 </Switch>
-            </div>
-        </Router>
+            </Router>
+        </React.Fragment>
     );
 
     const defaultRouter = (
-        <Router>
-            <Navbar/>
-            <div>
-                    <Route path="/" component={App}>
-                        <Route path="/Homepage" component={Home} />
-                        <Route path="/WhyPerflow" component={WhyPerflow} />
-                        <Route path="/LoginPage" component={LoginPage} />
-                        <Route path="/RegistrationPage" component={RegistrationPage}/>
-                    </Route>
-            </div>
-        </Router>
+        <React.Fragment>
+            <Router>
+                <Navbar />
+                <Route path="/" component={App}>
+                    <Route path="/Homepage" component={Home} />
+                    <Route path="/WhyPerflow" component={WhyPerflow} />
+                    <Route path="/LoginPage" component={LoginPage} />
+                    <Route path="/RegistrationPage" component={RegistrationPage} />
+                </Route>
+            </Router>
+        </React.Fragment>
     );
     return (loggedIn ? loggedInRouter : defaultRouter);
 }
