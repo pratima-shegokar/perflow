@@ -25,29 +25,29 @@ function App() {
     const loggedInRouter = (
         <Router>
             <LoggedInNavbar onLogout={() => Auth.logout()} />
-            <div className="container mt-5">
+            
                 <Switch>
                     <Route path="/" component={App}>
                         <Route path="/MyProjects" component={MyProjects} />
                         <Route path="/ProjectForm" component={ProjectsPage} />
+                        <Route path="/ProjPanel" component={ProjPanel} />
+                        <Route path="/EditProject" component={EditProject} />
                         
                     </Route>
                 </Switch>
-            </div>
+            
         </Router>
     );
 
     const defaultRouter = (
         <Router>
             <Navbar/>
-            
                     <Route path="/" component={App}>
                         <Route path="/Homepage" component={Home} />
                         <Route path="/WhyPerflow" component={WhyPerflow} />
                         <Route path="/LoginPage" component={LoginPage} />
                         <Route path="/RegistrationPage" component={RegistrationPage}/>
-                        <Route path="/ProjPanel" component={ProjPanel} />
-                        <Route path="/EditProject" component={EditProject} />
+
                     </Route>
            
         </Router>

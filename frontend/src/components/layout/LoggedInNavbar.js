@@ -14,6 +14,9 @@ function LoggedInNavbar({onLogout}) {
                         <Link to="/MyProjects" className="nav-link">
                             MyProjects
                         </Link>
+                        <Link to="/ProjPanel" className="nav-link">
+                            
+                        </Link>
                     </li>
                 </ul>
                 <button className="btn btn-outline-dark my-2 my-sm-0" onClick={onLogout}>Logout</button>
