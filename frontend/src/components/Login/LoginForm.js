@@ -30,7 +30,7 @@ function LoginForm({onSubmit}) {
                     </div>
                     <div className="container">
                         <div className="row mt-12">
-                            <div className="form-group col-md-6 offset-md-5">
+                            <div className="form-group col-md-6 offset-md-3">
                                 <button
                                     className="btn btn-info"
                                     onClick={() => onSubmit({email, password})}>
