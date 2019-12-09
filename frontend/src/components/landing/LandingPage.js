@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Slider from './src/components/slider/Slider'
 
-export default class Slider extends Component {
+export default class LandingPage extends Component {
   constructor(props) {
     super(props);
 
@@ -9,8 +10,8 @@ export default class Slider extends Component {
 
   render() {
     return (
-      <div className="slider">
-
+      <div>
+        <Slider />
       </div>
     );
   }
