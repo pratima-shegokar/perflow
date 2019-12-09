@@ -5,7 +5,8 @@ import Home from './components/Home/Home'
 import MyProjects from './components/Projects/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
 
-import ProjPanel from './components/ProjPanel';
+import ProjPanel from './components/ProjectPanel/ProjPanel';
+import EditProject from './components/ProjectPanel/EditProject';
 
 import Navbar from './components/Navbar';
 
@@ -29,7 +30,7 @@ function App() {
                     <Route path="/" component={App}>
                         <Route path="/MyProjects" component={MyProjects} />
                         <Route path="/ProjectForm" component={ProjectsPage} />
-                        <Route path="/ProjPanel" component={ProjPanel} />
+                        
                     </Route>
                 </Switch>
             </div>
@@ -39,14 +40,16 @@ function App() {
     const defaultRouter = (
         <Router>
             <Navbar/>
-            <div className="container mt-5">
+            
                     <Route path="/" component={App}>
                         <Route path="/Homepage" component={Home} />
                         <Route path="/WhyPerflow" component={WhyPerflow} />
                         <Route path="/LoginPage" component={LoginPage} />
                         <Route path="/RegistrationPage" component={RegistrationPage}/>
+                        <Route path="/ProjPanel" component={ProjPanel} />
+                        <Route path="/EditProject" component={EditProject} />
                     </Route>
-            </div>
+           
         </Router>
     );
     return (loggedIn ? loggedInRouter : defaultRouter);
