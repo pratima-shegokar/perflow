@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home/Home";
@@ -15,7 +15,6 @@ import ProjectsPage from "./components/Projects/ProjectsPage";
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
 import Auth from "./services/Auth";
-import LoggedInNavbar from "./components/layout/LoggedInNavbar";
 
 import SCurve from "./components/charts/SCurve";
 
@@ -36,13 +35,15 @@ class App extends React.Component {
   render() {
     const loggedInRouter = (
       <Router>
-        <LoggedInNavbar onLogout={() => Auth.logout()} />
         <div className="container mt-5">
           <Switch>
             <Route path="/" component={App}>
+              <Route path="/Homepage" component={Home} />
+              <Route path="/WhyPerflow" component={WhyPerflow} />
               <Route path="/MyProjects" component={MyProjects} />
               <Route path="/ProjectForm" component={ProjectsPage} />
               <Route path="/ProjPanel" component={ProjPanel} />
+              <Route path="/scurve" component={SCurve} />
             </Route>
           </Switch>
         </div>
@@ -51,20 +52,26 @@ class App extends React.Component {
 
     const defaultRouter = (
       <Router>
-        <Navbar />
         <div className="container mt-5">
           <Route path="/" component={App}>
             <Route path="/Homepage" component={Home} />
             <Route path="/WhyPerflow" component={WhyPerflow} />
             <Route path="/LoginPage" component={LoginPage} />
             <Route path="/RegistrationPage" component={RegistrationPage} />
-            <Route path="/scurve" component={SCurve} />
           </Route>
         </div>
       </Router>
     );
 
-    return this.state.loggedIn ? loggedInRouter : defaultRouter;
+    return (
+      <div>
+        <Navbar
+          isLoggedIn={this.state.loggedIn}
+          onLogout={() => Auth.logout()}
+        />
+        {this.state.loggedIn ? loggedInRouter : defaultRouter}
+      </div>
+    );
   }
 }
 export default App;
