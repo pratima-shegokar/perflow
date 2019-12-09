@@ -12,8 +12,15 @@ import AboutUs from "./components/about/AboutUs";
 import LandingPage from "./components/landing/LandingPage"
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
+<<<<<<< HEAD
 import Auth from "./services/Auth";
 import SCurve from "./components/charts/SCurve";
+=======
+import Auth from "./services/Auth"
+import LoggedInNavbar from "./components/layout/LoggedInNavbar";
+import Footer from './components/footer/Footer';
+import PeriodicDataPage from "./components/Projects/PeriodicDataPage";
+>>>>>>> Added material table + materia ui core to package.json
 
 class App extends React.Component {
   constructor() {
@@ -31,6 +38,7 @@ class App extends React.Component {
 
   render() {
     const loggedInRouter = (
+<<<<<<< HEAD
       <Router>
         <Switch>
             <Route path="/" exact component={LandingPage} />
@@ -44,6 +52,22 @@ class App extends React.Component {
             <Route path="/scurve" component={SCurve} />
         </Switch>
       </Router>
+=======
+        <React.Fragment>
+            <Router>
+                <LoggedInNavbar onLogout={() => Auth.logout()} />
+                <Switch>
+                    <Route path="/" component={App}>
+                        <Route path="/MyProjects" component={MyProjects} />
+                        <Route path="/PeriodicData" component={PeriodicDataPage} />
+                        <Route path="/ProjectForm" component={ProjectsPage} />
+                        <Route path="/ProjPanel" component={ProjPanel} />
+                        <Route path="/EditProject" component={EditProject} />
+                    </Route>
+                </Switch>
+            </Router>
+        </React.Fragment>
+>>>>>>> Added material table + materia ui core to package.json
     );
 
     const defaultRouter = (
