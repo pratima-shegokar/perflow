@@ -1,0 +1,11 @@
+
+#main-slider {
+    position:relative;
+    height:700px;
+    width:700px;
+}
+
+.slide{
+    height:100%;
+    width:100%;
+}
