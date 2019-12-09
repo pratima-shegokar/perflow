@@ -1,9 +1,9 @@
 import React from 'react';
 import './Slider.css';
 
-const LeftArrow = () => {
+const LeftArrow = (props) => {
   return (
-    <div className="backArrow" onClick={props.goToPrevSlide}>
+    <div className="backArrow arrow" onClick={props.goToPrevSlide}>
       <i className="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
     </div>
   );
