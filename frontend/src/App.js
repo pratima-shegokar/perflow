@@ -32,7 +32,7 @@ function App() {
                         <Route path="/ProjectForm" component={ProjectsPage} />
                         <Route path="/ProjPanel" component={ProjPanel} />
                         <Route path="/EditProject" component={EditProject} />
-                        
+
                     </Route>
                 </Switch>
             
@@ -42,13 +42,11 @@ function App() {
     const defaultRouter = (
         <Router>
             <Navbar/>
-                    <Route path="/" component={App}>
-                        <Route path="/Homepage" component={Home} />
-                        <Route path="/WhyPerflow" component={WhyPerflow} />
-                        <Route path="/LoginPage" component={LoginPage} />
-                        <Route path="/RegistrationPage" component={RegistrationPage}/>
-
-                    </Route>
+                    <Route path="/" exact component={LandingPage} />
+                    <Route path="/Homepage" component={Home} />
+                    <Route path="/WhyPerflow" component={WhyPerflow} />
+                    <Route path="/LoginPage" component={LoginPage} />
+                    <Route path="/RegistrationPage" component={RegistrationPage}/>
            
         </Router>
     );
