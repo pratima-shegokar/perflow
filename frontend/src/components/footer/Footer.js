@@ -9,7 +9,7 @@ class Footer extends React.Component {
                     <div className="container text-left">
                         <div className="row">
                             <div className="col-xs-12 col-md-4 text-left">
-                                <img src={('./PerflowLogo.png')} className="LogoFooter" />
+                                <img src={('./PerflowLogo.png')} className="LogoFooter" alt="logoFooter" />
                             </div>
                             <div className="col-xs-12 col-md-4">
                                 <div className="text-center mt-5">

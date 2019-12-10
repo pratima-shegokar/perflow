@@ -1,10 +1,27 @@
 img{
-    width: 140px;
-    height: 140px;
-    padding: 20px;
-    align-content: center;
+    width: 168px;
+    height: 168px;
 }
 
 .card{
     padding: 20px;
+}
+
+.heading{
+    color: rgb(5, 5, 5);
+    text-align: center;
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.paragraph{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 50px;
+    font: "Sans-serif";
 }

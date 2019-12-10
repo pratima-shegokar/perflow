@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './components/Home/Home'
 import MyProjects from './components/Projects/MyProject';
 import WhyPerflow from './components/WhyPerflow/WhyPerflow';
-import ProjPanel from './components/ProjPanel';
+import ProjPanel from './components/Projects/ProjPanel';
+import EditProject from './components/Projects/EditProject';
 import Navbar from './components/Navbar';
 import AboutUs from './components/about/AboutUs';
 import ProjectsPage from './components/Projects/ProjectsPage';
@@ -22,17 +23,15 @@ function App() {
         <React.Fragment>
             <Router>
                 <LoggedInNavbar onLogout={() => Auth.logout()} />
-                <div className="container mt-5">
-                    <Switch>
-                        <Route path="/" component={App}>
-                            <Route path="/MyProjects" component={MyProjects} />
-                            <Route path="/ProjectsPage" component={ProjectsPage} />
-                            <Route path="/ProjPanel" component={ProjPanel} />
-                        </Route>
-                    </Switch>
-                </div>
+                <Switch>
+                    <Route path="/" component={App}>
+                        <Route path="/MyProjects" component={MyProjects} />
+                        <Route path="/ProjectForm" component={ProjectsPage} />
+                        <Route path="/ProjPanel" component={ProjPanel} />
+                        <Route path="/EditProject" component={EditProject} />
+                    </Route>
+                </Switch>
             </Router>
-            <Footer></Footer>
         </React.Fragment>
     );
 
@@ -40,15 +39,13 @@ function App() {
         <React.Fragment>
             <Router>
                 <Navbar />
-                <div className="container mt-5">
-                    <Route path="/" component={App}>
-                        <Route path="/Homepage" component={Home} />
-                        <Route path="/WhyPerflow" component={WhyPerflow} />
-                        <Route path="/LoginPage" component={LoginPage} />
-                        <Route path="/RegistrationPage" component={RegistrationPage} />
-                        <Route path="/AboutUs" component={AboutUs} />
-                    </Route>
-                </div>
+                <Route path="/" component={App}>
+                    <Route path="/Homepage" component={Home} />
+                    <Route path="/WhyPerflow" component={WhyPerflow} />
+                    <Route path="/LoginPage" component={LoginPage} />
+                    <Route path="/RegistrationPage" component={RegistrationPage} />
+                    <Route path="/AboutUs" component={AboutUs} />
+                </Route>
             </Router>
             <Footer></Footer>
         </React.Fragment>
