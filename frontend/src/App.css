@@ -77,9 +77,9 @@ p.part2, p.part3 {
   background: rgb(31,36,62);
   background: radial-gradient(circle, rgba(31,36,62,1) 0%, rgba(25,34,49,1) 100%);
   padding-top: 30px;
-  //padding-right: 30px;
+  padding-right: 30px;
   padding-bottom: 0px;
-  //padding-left: 30px;
+  padding-left: 30px;
   margin-bottom: 0px;
 }
 

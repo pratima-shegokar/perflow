@@ -15,7 +15,7 @@ class LoginPage extends React.Component {
             <React.Fragment>
                 <div className="wrapper">
                     <div className="container">
-                        <div className="row justify-content-center " id="loginLogoDiv">
+                        <div className="row justify-content-center" id="loginLogoDiv">
                             <img alt="Logo" src={('./PerflowLogo.png')} width={200} height={200} id="loginLogo" />
                         </div>
                         <div className="row justify-content-center mt-0">
