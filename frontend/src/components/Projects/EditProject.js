@@ -91,7 +91,7 @@ function EditProject({ onSubmit }) {
                             className="btn btn-outline-primary btn-sm "
                             onClick={handleSubmit}>
                             Save
-                                </button>
+                         </button>
 
                         <a href="/ProjPanel" className="btn btn-outline-primary btn-sm ml-4" role="button">Cancel</a>
                     </div>

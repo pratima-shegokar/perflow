@@ -49,7 +49,7 @@ function ProjectForm({onSubmit}) {
               <div className = "card-body">
                    <h1 style={{color:"black"}}>New Project Form</h1>
                     <br></br>
-                   <div>
+                    <div>
                         <div class="container-fluid">
                             <h4>General</h4>
                             <div class="form-row">
