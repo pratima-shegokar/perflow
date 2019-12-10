@@ -2,6 +2,27 @@ import React from "react";
 import ProjectsApi from "./../../api/ProjectsApi";
 
 class MyProjects extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      projects: []
+    };
+
+    this.fetchProjects();
+  }
+
+  async fetchProjects() {
+    try {
+      const response = await ProjectsApi.getAllProjects();
+      const fetchedProjects = response.data;
+      this.setState({
+        projects: fetchedProjects
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   render() {
     return (
       // /ProjectForm should be the page where you can create a new project.
@@ -13,6 +34,17 @@ class MyProjects extends React.Component {
               create a new one?
             </a>
           </p>
+
+          <ul>
+            {this.state.projects.map(p => {
+              return (
+                <li align="left">
+                  {p.projectUniqueNumber} &nbsp;&nbsp;&nbsp;&nbsp;{" "}
+                  {p.projectName}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </React.Fragment>
     );
