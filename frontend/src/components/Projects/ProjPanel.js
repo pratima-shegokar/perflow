@@ -1,22 +1,13 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 
 export class ProjPanel extends Component {
-=======
-import React, { Component } from 'react';
-import { Table } from 'react-bootstrap';
-
-class ProjPanel extends Component {
-
->>>>>>> master
   constructor(props) {
     super(props);
     this.state = { proj: {} };
   }
 
   render() {
-<<<<<<< HEAD
     const { project } = this.props.location.state;
 
     return (
@@ -32,16 +23,6 @@ class ProjPanel extends Component {
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="card-body">
-=======
-    const { proj } = this.state;
-    return (
-      <div className="App">
-        <p className="Table-header">Project Specific  Details</p>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-md-8">
-              <div className="card-body">
->>>>>>> master
                 <Table className="mt-2" striped bordered hover size="sm">
                   <thead>
                     <tr>
@@ -50,7 +31,6 @@ class ProjPanel extends Component {
                     </tr>
                   </thead>
                   <tbody>
-<<<<<<< HEAD
                     {Object.entries(project).map(([name, value]) => {
                       return (
                         <tr key={name}>
@@ -59,21 +39,12 @@ class ProjPanel extends Component {
                         </tr>
                       );
                     })}
-=======
-                    {proj.map(dep =>
-                      <tr key={dep.Name}>
-                        <td>{dep.Name}</td>
-                        <td>{dep.Value}</td>
-                      </tr>
-                    )}
->>>>>>> master
                   </tbody>
                 </Table>
               </div>
             </div>
           </div>
         </div>
-<<<<<<< HEAD
 
         <div class="wrapper">
           <a
@@ -112,22 +83,6 @@ class ProjPanel extends Component {
         </div>
       </div>
     );
-=======
-        <div className="wrapper">
-          <a href="/EditProject" className="btn btn-outline-primary btn-sm ml-4" role="button">Edit</a>
-          <br /> <br />
-        </div>
-        <div className="graph-button">
-          <button type="button-gr" className="btn btn-outline-primary" >Periodical S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
-           <button type="button-gr" className="btn btn-outline-primary" >Periodical Cash Flow Graph</button> &nbsp;&nbsp;&nbsp;
-           <button type="button-gr" className="btn btn-outline-primary" >Cumulative S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
-           <button type="button-gr" className="btn btn-outline-primary">Cumulative Cash Flow Graph</button> &nbsp;&nbsp;&nbsp;
-           <button type="button-gr" className="btn btn-outline-primary" >EVM Board</button> &nbsp;&nbsp;&nbsp;
-           <button type="button-gr" className="btn btn-outline-primary">CFM Board</button>
-        </div>
-      </div>
-    )
->>>>>>> master
   }
 }
 
