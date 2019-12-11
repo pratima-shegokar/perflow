@@ -7,7 +7,18 @@ class PeriodicDataPage extends React.Component {
         super(props);
 
         this.state = {
-            records : []
+            records : [],
+            columns : [
+                { title: 'Id', field: 'recordId' },
+                { title: 'Interval', field: 'interval' },
+                { title: 'PV', field: 'pv' },
+                { title: 'PCIF', field: 'pcif' },
+                { title: 'EV', field: 'ev' },
+                { title: 'AC', field: 'ac' },
+                { title: 'CIF', field: 'cif' },
+                { title: 'COF', field: 'cof' },
+                { title: 'Project', field: 'project.projectName'}
+            ]
         };
     }
 
@@ -18,12 +29,16 @@ class PeriodicDataPage extends React.Component {
     }
 
     render() {
-        console.log(this.state.records);
         return (
-            //ProjectForm should be the page where you can view periodic data and you can update the data.
             <React.Fragment>
                 <MaterialTable title="Periodic Data"
                                data={this.state.records}
+                               columns={this.state.columns}
+                               options={{
+                                   rowStyle: {
+                                       backgroundColor: '#EEE',
+                                   }
+                               }}
                                /*editable={{
                                    onRowAdd: newData =>
                                        new Promise(resolve => {
@@ -62,9 +77,6 @@ class PeriodicDataPage extends React.Component {
                                        }),
                                }}*/
                 />
-                <div className="text-center mt-5">
-                    <p className="text-muted"/>
-                </div>
             </React.Fragment>
         )
     }
