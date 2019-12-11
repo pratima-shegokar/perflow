@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ProjectsApi from "./../../api/ProjectsApi";
+import "./MyProjects.css";
 
 class MyProjects extends React.Component {
   constructor(props) {
@@ -39,8 +41,18 @@ class MyProjects extends React.Component {
             {this.state.projects.map(p => {
               return (
                 <li align="left">
-                  {p.projectUniqueNumber} &nbsp;&nbsp;&nbsp;&nbsp;{" "}
-                  {p.projectName}
+                  <Link
+                    key={p.projectId}
+                    to={{
+                      pathname: "/ProjPanel",
+                      state: {
+                        project: p
+                      }
+                    }}
+                  >
+                    {p.projectUniqueNumber} &nbsp;&nbsp;&nbsp;&nbsp;{" "}
+                    {p.projectName}
+                  </Link>
                 </li>
               );
             })}
