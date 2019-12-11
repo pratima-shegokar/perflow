@@ -43,11 +43,6 @@ class Navbar extends React.Component {
                 MyProjects
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/scurve">
-                Scurve
-              </a>
-            </li>
           </ul>
           <button
             className="btn btn-outline-dark my-2 my-sm-0"
