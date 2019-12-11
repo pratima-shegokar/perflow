@@ -11,7 +11,7 @@ class LoginPage extends React.Component {
     }
 
     componentDidMount() {
-        document.body.style = 'background: #986AD9; color: white;';
+        document.body.style = 'background-image: linear-gradient(to bottom right, #1A54A6, #8db9f7, #1A54A6); color: white;';
     }
 
     render() {
@@ -19,11 +19,11 @@ class LoginPage extends React.Component {
             <React.Fragment>
                 <div className="wrapper">
                     <div className="container">
-                        <div className="row justify-content-center" id="loginLogoDiv">
-                            <img alt="Logo" src={('./PerflowLogo.png')} width={200} height={200} id="loginLogo" />
+                        <div className="row justify-content-center" id="loginLogoDiv" style={{float: "left"}}>
+                            <img alt="Logo" src={('./kth-logo.jpg')} style={{width: "450px", height: "450px", marginLeft:"5px", marginTop: "11px", paddingTop: "30px"}} id="loginLogo" />
                         </div>
-                        <div className="row justify-content-center mt-0">
-                            <div className="col-md-6 strong-shadow">
+                        <div className="row mt-0" style={{paddingLeft: "200px", paddingTop: "35px"}}>
+                            <div className="col strong-shadow">
                                 <LoginForm onSubmit={this.login} />
                             </div>
                         </div>
