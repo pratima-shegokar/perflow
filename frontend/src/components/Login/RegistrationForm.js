@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-function RegisterForm({onSubmit}) {
+function RegisterForm({ onSubmit }) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -17,30 +17,27 @@ function RegisterForm({onSubmit}) {
                             type="text"
                             className="form-control"
                             value={name}
-                            onChange={ e => setName(e.target.value) }
-                            placeholder="Name"/>
+                            onChange={e => setName(e.target.value)}
+                            placeholder="Name" />
                     </div>
-
                     <div className="form-group">
                         <label>Email:</label>
                         <input
                             type="email"
                             value={email}
-                            onChange={ e => setEmail(e.target.value) }
+                            onChange={e => setEmail(e.target.value)}
                             className="form-control"
-                            placeholder="Email"/>
+                            placeholder="Email" />
                     </div>
-
                     <div className="form-group">
                         <label>Company Name:</label>
                         <input
                             type="text"
                             className="form-control"
                             value={companyName}
-                            onChange={ e => setCompanyName(e.target.value) }
-                            placeholder="Company Name"/>
+                            onChange={e => setCompanyName(e.target.value)}
+                            placeholder="Company Name" />
                     </div>
-
                     <div className="form-group">
                         <label>Password:</label>
                         <input
@@ -54,7 +51,7 @@ function RegisterForm({onSubmit}) {
                     <div className="form-group row justify-content-center">
                         <button
                             className="btn btn-info"
-                            onClick={() => onSubmit({name, email, companyName, password})}>
+                            onClick={() => onSubmit({ name, email, companyName, password })}>
                             Create account
                         </button>
                     </div>
@@ -64,7 +61,6 @@ function RegisterForm({onSubmit}) {
                             Already a member? Login here.
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>
