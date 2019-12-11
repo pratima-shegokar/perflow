@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 export class ProjPanel extends Component {
   constructor(props) {
@@ -8,18 +7,30 @@ export class ProjPanel extends Component {
     this.state = { proj: {} };
   }
 
+  componentDidMount() {
+    this.refreshlist();
+  }
+
+  refreshlist() {
+    this.setState({
+      proj: {
+        projectName: "Silver Tower",
+        budget: 10000,
+        duration: 24,
+        firstPv: 593472873,
+        lastPv: 13435488,
+        peak: 12
+      }
+    });
+
+    console.log(Object.entries(this.state.proj));
+  }
   render() {
-    const { project } = this.props.location.state;
+    const { proj } = this.state;
 
     return (
       <div className="App">
-        <p>{this.props.location.state.proj}</p>
-        <p
-          className="Table-header"
-          style={{ color: "black", fontSize: 20, fontWeight: 4 }}
-        >
-          Project Specific Details
-        </p>
+        <p className="Table-header">Project Specific Details</p>
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-8">
@@ -32,7 +43,7 @@ export class ProjPanel extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {Object.entries(project).map(([name, value]) => {
+                    {Object.entries(proj).map(([name, value]) => {
                       return (
                         <tr key={name}>
                           <td>{name}</td>
@@ -58,13 +69,9 @@ export class ProjPanel extends Component {
           <br /> <br />
         </div>
         <div class="graph-button">
-          <Link
-            to={{ pathname: "/SCurve", state: { project: project } }}
-            type="button-gr"
-            class="btn btn-outline-primary"
-          >
+          <button type="button-gr" class="btn btn-outline-primary">
             Periodical S-Curve Graph
-          </Link>{" "}
+          </button>{" "}
           &nbsp;&nbsp;&nbsp;
           <button type="button-gr" class="btn btn-outline-primary">
             Periodical Cash Flow Graph
