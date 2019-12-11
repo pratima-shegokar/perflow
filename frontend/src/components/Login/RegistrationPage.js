@@ -24,7 +24,7 @@ class RegistrationPage extends React.Component {
                 <div className="wrapper">
                     <div className="container ">
                         <div className="row justify-content-center" id="loginLogoDiv">
-                            <img alt="Logo" src={('./PerflowLogo.png')} width={150} height={150} id="registerationLogo"/>
+                            <img alt="Logo" src={('./PerflowLogo.png')} width={150} height={150} id="registerationLogo" />
                         </div>
                         <div className="row justify-content-center mt-0">
                             <div className="col-md-6 strong-shadow">
@@ -37,4 +37,5 @@ class RegistrationPage extends React.Component {
         );
     }
 }
+
 export default RegistrationPage;
