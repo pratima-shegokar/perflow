@@ -1,107 +1,91 @@
 
-import { Table } from 'react-bootstrap';
+import React, { Component } from "react";
+import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-import React from "react";
 
-function ProjPanel({ onSubmit }) {
-  console.log(onSubmit)
-  const [projectUniqueNumber, getProjectUniqueNumber] = React.useState("");
-  const [projectName, getProjectName] = React.useState("");
-  const [duration, getDuration] = React.useState("");
-  const [budget, getBudget] = React.useState("");
-  const [peakInterval, getPeakInterval] = React.useState("");
-  const [firstPV, getFirstPV] = React.useState("");
-  const [lastPV, getLastPV] = React.useState("");
-  const [discountRate, getDiscountRate] = React.useState("");
-
-  const handleSubmit = () => {
-    // Invoke the passed in event callback
-    onSubmit({
-      projectUniqueNumber: projectUniqueNumber,
-      projectName: projectName,
-      duration: duration,
-      budget: budget,
-      peakInterval: peakInterval,
-      firstPV: firstPV,
-      lastPV: lastPV,
-      discountRate: discountRate
-    });
+export class ProjPanel extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { proj: {} };
   }
 
-  return (
-    <div className="App">
+  render() {
+    const { project } = this.props.location.state;
 
-      <p className="Table-header">Project Specific  Details</p>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <div class="card-body">
-              <Table className="mt-2" striped bordered hover size="sm">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Value</th>
-                  </tr>
-                </thead>
-                <tbody>                  
-                    <tr key={projectUniqueNumber}>
-                      <td>ProjectName</td>
-                      <td>{getProjectName}</td>
+    return (
+      <div className="App">
+        <p>{this.props.location.state.proj}</p>
+        <p
+          className="Table-header"
+          style={{ color: "black", fontSize: 20, fontWeight: 4 }}
+        >Project Specific Details
+        </p>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="card-body">
+                <Table className="mt-2" striped bordered hover size="sm">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Value</th>
                     </tr>
-                    <tr >
-                      <td>Duration</td>
-                      <td>{getDuration}</td>
-                    </tr>
-                    <tr >
-                      <td>Budget</td>
-                      <td>{getBudget}</td>
-                    </tr>
-                    <tr >
-                      <td>PeakInterval</td>
-                      <td>{getPeakInterval}</td>
-                    </tr>
-                    <tr >
-                      <td>FirstPV</td>
-                      <td>{getFirstPV}</td>
-                    </tr>
-                    <tr >
-                      <td>LastPV</td>
-                      <td>{getLastPV}</td>
-                    </tr>
-                    <tr >
-                      <td>Discount</td>
-                      <td>{getDiscountRate}</td>
-                    </tr>
-                    
-                      
-
-                </tbody>
-
-              </Table>
+                  </thead>
+                  <tbody>
+                    {Object.entries(project).map(([name, value]) => {
+                      return (
+                        <tr key={name}>
+                          <td>{name}</td>
+                          <td>{value}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </Table>
+              </div>
             </div>
           </div>
         </div>
+
+        <div class="wrapper">
+          <Link
+            to={{pathname:"/EditProject", project: project}}
+            className="btn btn-outline-primary btn-sm ml-4"
+            role="button"
+          >
+            Edit
+          </Link>
+          <br /> <br />
+        </div>
+        <div class="graph-button mr-auto ml-auto">
+          <a href="/SCurve" type="button-gr" class="btn btn-outline-primary">
+            Periodical S-Curve Graph
+          </a>{" "}
+          &nbsp;&nbsp;&nbsp;
+          <button type="button-gr" class="btn btn-outline-primary">
+            Periodical Cash Flow Graph
+          </button>
+          &nbsp;&nbsp;&nbsp;
+          <button type="button-gr" class="btn btn-outline-primary">
+            Cumulative S-Curve Graph
+          </button>
+          &nbsp;&nbsp;&nbsp;
+          <button type="button-gr" class="btn btn-outline-primary">
+            Cumulative Cash Flow Graph
+          </button>
+          &nbsp;&nbsp;&nbsp;
+          <button type="button-gr" class="btn btn-outline-primary">
+            EVM Board
+          </button>
+          &nbsp;&nbsp;&nbsp;
+          <button type="button-gr" class="btn btn-outline-primary">
+            CFM Board
+          </button>
+        </div>
       </div>
-
-      <div class="wrapper">
-        <a href="/EditProject" className="btn btn-outline-primary btn-sm ml-4" role="button">Edit</a>
-
-        <br /> <br />
-      </div>
-      <div class="graph-button">
-
-        <button type="button-gr" class="btn btn-outline-primary" >Periodical S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
-             <button type="button-gr" class="btn btn-outline-primary" >Periodical Cash Flow Graph</button> &nbsp;&nbsp;&nbsp;
-             <button type="button-gr" class="btn btn-outline-primary" >Cumulative S-Curve Graph</button> &nbsp;&nbsp;&nbsp;
-             <button type="button-gr" class="btn btn-outline-primary">Cumulative Cash Flow Graph</button> &nbsp;&nbsp;&nbsp;
-             <button type="button-gr" class="btn btn-outline-primary" >EVM Board</button> &nbsp;&nbsp;&nbsp;
-             <button type="button-gr" class="btn btn-outline-primary">CFM Board</button>
-
-
-
-      </div>
-    </div>
-  )
-
+    );
+  }
 }
+
 export default ProjPanel;

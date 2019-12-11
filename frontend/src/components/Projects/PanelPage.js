@@ -1,46 +1,57 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ProjectsApi from "./../../api/ProjectsApi";
-import ProjPanel from "./ProjPanel";
 
 
 class PanelPage extends React.Component {
     constructor(props) {
-        super(props);
-
-        this.state = {
-            projects : []
-        };
+      super(props);
+      this.state = {
+        projects: []
+      };
+  
+      this.getProjects();
     }
-
-    async getProjectById(projectData) {
-        try {
-            const response = await ProjectsApi.getProjectById(projectData);
-            const project = response.data;
-            const getProject = this.state.get.concat(project);
-
-            this.setState({
-                projects: getProject,
-            });
-        } catch (e) {
-            console.error(e);
-        }
+  
+    async getProjects() {
+      try {
+        const response = await ProjectsApi.getAllProjects();
+        const editProjects = response.data;
+        this.setState({
+          projects: editProjects
+        });
+      } catch (e) {
+        console.error(e);
+      }
     }
-
-    componentDidMount() {
-        ProjectsApi.getProjectById()
-            .then(({data}) => this.setState({projects: data}))
-            .catch(err => console.error(err));
-    }
-
+  
     render() {
-        const projects = this.state.projects;
+      return (
+        // /ProjectForm should be the page where you can create a new project.
+        <React.Fragment>
 
-        return (
-            <div>
-                <ProjPanel onSubmit={(projectData) => this.getProjectById(projectData)}/>
-            </div>
-        );
+            <ul>
+              {this.state.projects.map(p => {
+                return (
+                  <li align="left">
+                    <Link
+                      key={p.projectId}
+                      to={{
+                        pathname: "/EditProject",
+                        state: {
+                          project: p
+                        }
+                      }}
+                    >
+                      
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          
+        </React.Fragment>
+      );
     }
-}
-
-export default PanelPage;
+  }
+  export default PanelPage;
