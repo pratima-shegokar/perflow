@@ -9,7 +9,6 @@ const Slide = ({ image }) => {
         backgroundPosition: '50% 60%'
     }
   return <div className="slide" style={styles}>
-
   </div>
 }
 
