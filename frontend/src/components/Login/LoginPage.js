@@ -10,6 +10,10 @@ class LoginPage extends React.Component {
         }
     }
 
+    componentDidMount() {
+        document.body.style = 'background: #986AD9; color: white;';
+    }
+
     render() {
         return (
             <React.Fragment>
