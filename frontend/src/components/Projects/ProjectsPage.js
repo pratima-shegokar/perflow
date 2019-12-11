@@ -7,7 +7,7 @@ class ProjectsPage extends React.Component {
         super(props);
 
         this.state = {
-            projects : []
+            projects: []
         };
     }
 
@@ -27,7 +27,7 @@ class ProjectsPage extends React.Component {
 
     componentDidMount() {
         ProjectsApi.getAllProjects()
-            .then(({data}) => this.setState({projects: data}))
+            .then(({ data }) => this.setState({ projects: data }))
             .catch(err => console.error(err));
     }
 
@@ -36,7 +36,7 @@ class ProjectsPage extends React.Component {
 
         return (
             <div>
-                <ProjectForm onSubmit={(projectData) => this.createProject(projectData)}/>
+                <ProjectForm onSubmit={(projectData) => this.createProject(projectData)} />
             </div>
         );
     }
