@@ -57,7 +57,7 @@ class AboutUs extends React.Component {
                         <div className="col-xs-12 col-md-4">
                             <div className="card mt-5 mr-5 ml-5">
                                 <div class="card-body text-center">
-                                    <img className="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" alt="..." />
+                                    <img className="rounded-circle" src="./aboutUs-Pratima.jpg" alt="..." />
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Pratima</h5>
@@ -68,7 +68,7 @@ class AboutUs extends React.Component {
                         <div className="col-xs-12 col-md-4">
                             <div className="card mt-5 mr-5 ml-5">
                                 <div class="card-body text-center">
-                                    <img className="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" alt="..." />
+                                    <img className="rounded-circle" src="./aboutUs-Sidhi.jpg" alt="..." />
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Sidhi</h5>
