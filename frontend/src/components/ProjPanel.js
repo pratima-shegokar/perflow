@@ -57,9 +57,9 @@ export class ProjPanel extends Component {
           <br /> <br />
         </div>
         <div class="graph-button">
-          <button type="button-gr" class="btn btn-outline-primary">
+          <a href="/SCurve" type="button-gr" class="btn btn-outline-primary">
             Periodical S-Curve Graph
-          </button>{" "}
+          </a>{" "}
           &nbsp;&nbsp;&nbsp;
           <button type="button-gr" class="btn btn-outline-primary">
             Periodical Cash Flow Graph
