@@ -11,11 +11,13 @@ class AboutUs extends React.Component {
                         <div className="col-xs-12 col-md-4">
                             <div className="card mt-5 mr-5 ml-5">
                                 <div class="card-body text-center">
-                                    <img className="rounded-circle" src="./aboutUs-Jessica.jpg" alt="..." />
+                                    <a href="https://www.linkedin.com/in/jessica-shortz-02572831/" target="_blank" style={{ textDecoration: 'none' }}>
+                                        <img className="rounded-circle" src="./aboutUs-Jessica.jpg" alt="..." />
+                                    </a>
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Jessica</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Junior Developer</h6>
+
                                 </div>
                             </div>
                         </div>
@@ -26,7 +28,6 @@ class AboutUs extends React.Component {
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Milad</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Junior Developer</h6>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +38,6 @@ class AboutUs extends React.Component {
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Tarek</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Junior Developer</h6>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,6 @@ class AboutUs extends React.Component {
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Melany</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Junior Developer</h6>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +60,6 @@ class AboutUs extends React.Component {
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Pratima</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Junior Developer</h6>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +70,6 @@ class AboutUs extends React.Component {
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Sidhi</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Junior Developer</h6>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +82,6 @@ class AboutUs extends React.Component {
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Aasma</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Junior Developer</h6>
                                 </div>
                             </div>
                         </div>
@@ -96,16 +92,18 @@ class AboutUs extends React.Component {
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Abed</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Junior Developer</h6>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="paragraph">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                    <div className="paragraph" style={{paddingLeft: "100px", paddingRight: "100px"}}>
+                        PerFlow is made up of a team of students in Software Development Academy 6, a coding program run by
+                        <a href="https://www.novarepotential.com/" target="_blank"> Novare Potential</a> in conjunction with
+                        <a href="https://www.kth.se/en" target="_blank"> KTH</a>. During the course, we learn Java, git, JavaScript,
+                         C#, SQL, and how to use a variety of frameworks and tools like Hibernate, Spring, Gradle, and more. During the last
+                          three weeks of the program, we are assigned to random groups and tasked to build an application together. PerFlow
+                           is the result of our group's efforts. We are deeply grateful to Novare Potential, KTH, and each other for this
+                            learning opportunity.
                     </div>
                 </div>
             </React.Fragment>
