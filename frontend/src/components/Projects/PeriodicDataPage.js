@@ -31,51 +31,15 @@ class PeriodicDataPage extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <MaterialTable title="Periodic Data"
-                               data={this.state.records}
-                               columns={this.state.columns}
-                               options={{
-                                   rowStyle: {
-                                       backgroundColor: '#EEE',
-                                   }
-                               }}
-                               /*editable={{
-                                   onRowAdd: newData =>
-                                       new Promise(resolve => {
-                                           setTimeout(() => {
-                                               resolve();
-                                               this.setState(prevState => {
-                                                   const data = [...prevState.data];
-                                                   data.push(newData);
-                                                   return { ...prevState, data };
-                                               });
-                                           }, 600);
-                                       }),
-                                   onRowUpdate: (newData, oldData) =>
-                                       new Promise(resolve => {
-                                           setTimeout(() => {
-                                               resolve();
-                                               if (oldData) {
-                                                   this.setState(prevState => {
-                                                       const data = [...prevState.data];
-                                                       data[data.indexOf(oldData)] = newData;
-                                                       return { ...prevState, data };
-                                                   });
-                                               }
-                                           }, 600);
-                                       }),
-                                   onRowDelete: oldData =>
-                                       new Promise(resolve => {
-                                           setTimeout(() => {
-                                               resolve();
-                                               this.setState(prevState => {
-                                                   const data = [...prevState.data];
-                                                   data.splice(data.indexOf(oldData), 1);
-                                                   return { ...prevState, data };
-                                               });
-                                           }, 600);
-                                       }),
-                               }}*/
+                <MaterialTable
+                    title="Periodic Data"
+                    data={this.state.records}
+                    columns={this.state.columns}
+                    options={{
+                        rowStyle: {
+                            backgroundColor: '#EEE',
+                        }
+                    }}
                 />
             </React.Fragment>
         )
