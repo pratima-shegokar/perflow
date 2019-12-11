@@ -50,7 +50,8 @@ export class ProjPanel extends Component {
 
         <div class="wrapper">
           <Link
-            to={{pathname:"/EditProject", project: project}}
+            to={{pathname:"/EditProject",  state: {
+              project: project}}}
             className="btn btn-outline-primary btn-sm ml-4"
             role="button"
           >
