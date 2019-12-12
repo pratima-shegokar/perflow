@@ -40,8 +40,10 @@ class ProjectForm extends React.Component {
       projectName: projectName,
       duration: duration,
       budget: budget,
+      peakInterval:peakInterval
       firstPV: firstPV,
       lastPV: lastPV,
+      advPayment:advPayment
       perfBond: perfBond,
       creditTime: creditTime,
       discountRate: discountRate
