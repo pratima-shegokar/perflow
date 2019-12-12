@@ -1,35 +1,20 @@
 import Api from "./Api";
 
 class RecordsApi {
-<<<<<<< HEAD
-  getPvList(projectId) {
-    return Api.get("/records/pvs/" + projectId);
-  }
+    getPvList(projectId) {
+        return Api.get("/records/pvs/" + projectId);
+    }
 
-  getEvList(projectId) {
-    return Api.get("/records/evs/" + projectId);
-  }
+    getEvList(projectId) {
+        return Api.get("/records/evs/" + projectId);
+    }
 
-  getAcList(projectId) {
-    return Api.get("/records/acs/" + projectId);
-  }
-}
-
-export default new RecordsApi();
-=======
-
+    getAcList(projectId) {
+        return Api.get("/records/acs/" + projectId);
+    }
     getAllRecords() {
-        return Api.get('/records');
-    }
-
-    createRecord(record) {
-        return Api.post('/records', record);
-    }
-
-    updateRecord(record) {
-        return Api.put('/records', record);
+        return Api.get("/records");
     }
 }
 
 export default new RecordsApi();
->>>>>>> Added material table + materia ui core to package.json

@@ -7,12 +7,12 @@ class PeriodicDataPage extends React.Component {
         super(props);
 
         this.state = {
+            evs : [],
             records : [],
             columns : [
-                { title: 'PROJECT', field: 'project.projectName'},
-                { title: 'MONTH', field: 'interval' },
-                { title: 'WORK DONE', field: 'ev' },
-                { title: 'ACTUAL COST', field: 'ac' }
+                { title: 'Month', field: 'interval' },
+                { title: 'Actual Cost', field: 'ac', type: 'numeric' },
+                { title: 'Work Done', field: 'ev', type: 'numeric' },
             ]
         };
     }
@@ -24,6 +24,9 @@ class PeriodicDataPage extends React.Component {
     }
 
     render() {
+        const recs = this.state.records.map(
+            record => record.interval = "M" + record.interval);
+        this.state.records.interval = recs;
         return (
             <React.Fragment>
                 <MaterialTable
@@ -36,42 +39,42 @@ class PeriodicDataPage extends React.Component {
                         }
                     }}
                     editable={{
-                                   onRowAdd: newData =>
-                                       new Promise(resolve => {
-                                           setTimeout(() => {
-                                               resolve();
-                                               this.setState(prevState => {
-                                                   const data = [...prevState.data];
-                                                   data.push(newData);
-                                                   return { ...prevState, data };
-                                               });
-                                           }, 300);
-                                       }),
-                                   onRowUpdate: (newData, oldData) =>
-                                       new Promise(resolve => {
-                                           setTimeout(() => {
-                                               resolve();
-                                               if (oldData) {
-                                                   this.setState(prevState => {
-                                                       const data = [...prevState.data];
-                                                       data[data.indexOf(oldData)] = newData;
-                                                       return { ...prevState, data };
-                                                   });
-                                               }
-                                           }, 300);
-                                       }),
-                                   onRowDelete: oldData =>
-                                       new Promise(resolve => {
-                                           setTimeout(() => {
-                                               resolve();
-                                               this.setState(prevState => {
-                                                   const data = [...prevState.data];
-                                                   data.splice(data.indexOf(oldData), 1);
-                                                   return { ...prevState, data };
-                                               });
-                                           }, 300);
-                                       }),
-                               }}
+                        onRowAdd: newData =>
+                            new Promise(resolve => {
+                                setTimeout(() => {
+                                    resolve();
+                                    /*this.setState(prevState => {
+                                        const data = [...prevState.data];
+                                        data.push(newData);
+                                        return { ...prevState, data };
+                                    });*/
+                                }, 300);
+                            }),
+                        onRowUpdate: (newData, oldData) =>
+                            new Promise(resolve => {
+                                setTimeout(() => {
+                                    resolve();
+                                    /*if (oldData) {
+                                        this.setState(prevState => {
+                                            const data = [...prevState.data];
+                                            data[data.indexOf(oldData)] = newData;
+                                            return { ...prevState, data };
+                                        });
+                                    }*/
+                                }, 300);
+                            }),
+                        onRowDelete: oldData =>
+                            new Promise(resolve => {
+                                setTimeout(() => {
+                                    resolve();
+                                    /*this.setState(prevState => {
+                                        const data = [...prevState.data];
+                                        data.splice(data.indexOf(oldData), 1);
+                                        return { ...prevState, data };
+                                    });*/
+                                }, 300);
+                            }),
+                    }}
                 />
             </React.Fragment>
         )

@@ -34,7 +34,13 @@ class Navbar extends React.Component {
               About Us
             </a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/PeriodicDataPage">
+              Periodic Data Update
+            </a>
+          </li>
         </ul>
+
 
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav mr-auto">
