@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
 export class ProjPanel extends Component {
   constructor(props) {
     super(props);
@@ -39,11 +38,8 @@ export class ProjPanel extends Component {
     });
   }
 
-
-
   render() {
     const { project } = this.props.location.state;
-
     return (
       <div className="App">
         <p>{this.props.location.state.proj}</p>
@@ -63,7 +59,6 @@ export class ProjPanel extends Component {
                       <th>Value</th>
                     </tr>
                   </thead>
-
                   <tbody>
                         <tr >
                           <td>Project Id</td>
@@ -101,14 +96,14 @@ export class ProjPanel extends Component {
                   </tbody>
                   <tbody>
                         <tr >
-                          <td>First PV</td>
+                          <td>First Planned Value</td>
                           <td>{this.state.firstPV}</td>
                         </tr>
 
                   </tbody>
                   <tbody>
                         <tr >
-                          <td>Last PV</td>
+                          <td>Last Planned Value</td>
                           <td>{this.state.lastPV}</td>
                         </tr>
 
@@ -139,20 +134,12 @@ export class ProjPanel extends Component {
                           <td>Discount Rate</td>
                           <td>{this.state.discountRate}</td>
                         </tr>
-
-
-
-
                   </tbody>
                 </Table>
               </div>
             </div>
           </div>
         </div>
-
-
-
-
           <div class="wrapper">
             <Link
               to={{
