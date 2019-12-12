@@ -1,0 +1,113 @@
+#root{
+}
+
+h1.Title {
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+  }
+    
+    p.part2, p.part3 {
+      font-size: 17px;
+    margin-right: auto;
+    margin-bottom: 0px;
+
+    } 
+
+    h3.part1, h4.card-title{
+        color:black;
+    }
+
+    #card1column, #card2column{
+
+    }
+   
+    #title1, #title2{
+      font-size: 80px;
+      background-image: url("/perflowsh.png");
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: rgba(0,0,0,.2);
+      background-size: cover;
+            
+    }
+    
+    #title2{
+        padding-top:40px;
+        padding-bottom: 40px;
+    }
+    #title1{
+      padding-bottom: 40px;
+  }
+
+    .whyChoosePerflowSection, .testimonialsSection {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 30px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+  }
+
+  .pwcRow.row{
+    background-image: url("/perflowst.png");
+    background-size: cover;
+    background-attachment: fixed;
+
+  }
+    
+    #wcpGraph{
+    text-align: center;
+    padding-top: 30px;
+    }
+  
+    #graphText{
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    
+    #why-pf-info-column {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-right: 30px;
+    margin-left:30px;
+    margin-top: 0px;
+    text-align: left;
+    }
+  
+    .avatar {
+      border: 0.3rem solid rgba(rgb(177, 73, 73), 0.3);
+      margin-top: -6rem;
+      margin-bottom: 1rem;
+      max-width: 9rem;
+    }
+  
+    #card1, #card2{
+      color:black;
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    #cardup1{
+      padding-top: 120px;
+      background: rgb(86,128,230);
+      background: linear-gradient(0deg, rgba(86,128,230,1) 0%, rgba(90,176,234,1) 100%);
+          }
+    
+  #cardup2{
+    padding-top: 120px;
+    background: rgb(136,96,208);
+    background: linear-gradient(0deg, rgba(136,96,208,1) 0%, rgba(187,119,217,1) 100%);
+  }
+    #cardimage1, #cardimage2{
+      width: 50%;
+      height: auto;  
+      margin-bottom: 30px;
+    }
+  
+    #cardbody1, #cardbody2{
+      height: 340px;
+      margin-top: 0px;
+    }
+  
+    
