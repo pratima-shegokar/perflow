@@ -70,6 +70,7 @@ public class RecordService {
         List<Record> records = new ArrayList<>();
         for (int i = 0; i < pvList.size(); i++) {
             Record record = new Record();
+            record.setInterval(i+1);
             record.setPv(pvList.get(i));
             record.setPcif(PcifList.get(i));
 
@@ -78,6 +79,7 @@ public class RecordService {
 
         for (int i = pvList.size(); i < PcifList.size(); i++) {
             Record record = new Record();
+            record.setInterval(i+1);
             record.setPcif(PcifList.get(i));
 
             records.add(record);
