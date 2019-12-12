@@ -87,15 +87,10 @@ class EditProject extends React.Component {
                 <div className="card-body">
                     <h3 style={{ color: "black" }}>Project details</h3>
                     <br></br>
-
                         <div class="container-fluid">
                             <div className="form-group col-md-5">
-
-
-
                                 <div>
                                     <label>ProjectId</label>
-
                                     <input
                                         type="text"
                                         className="form-control"
@@ -105,9 +100,6 @@ class EditProject extends React.Component {
                                 </div>
                             </div>
                             <div className="form-group col-md-5">
-
-
-
                                 <div>
                                     <label>ProjectName</label>
 
@@ -119,31 +111,23 @@ class EditProject extends React.Component {
                                     />
                                 </div>
                             </div>
-
                             <div className="form-group col-md-4">
                                 <label>Duration</label>
-
-
                                 <input
                                     type="text"
                                     className="form-control"
                                     value={this.state.duration}
                                     onChange={e => this.setState({ duration: e.target.value })}
                                 />
-
-
                             </div>
                             <div className="form-group col-md-4">
                                 <label>Budget</label>
-
-
                                 <input
                                     type="text"
                                     className="form-control"
                                     value={this.state.budget}
                                     onChange={e => this.setState({ budget: e.target.value })}
                                 />
-
                             </div>
                             <div className="form-group col-md-4">
                                 <label>Peak Interval</label>
@@ -155,7 +139,6 @@ class EditProject extends React.Component {
                                         this.setState({ peakInterval: e.target.value })
                                     }
                                 />
-
                             </div>
                             <div className="form-group col-md-4">
                                 <label>First Planned Value</label>
@@ -166,12 +149,9 @@ class EditProject extends React.Component {
                                     value={this.state.firstPV}
                                     onChange={e => this.setState({ firstPV: e.target.value })}
                                 />
-
                             </div>
                             <div className="form-group col-md-4">
                                 <label>Last Planned Value</label>
-
-
                                 <input
                                     type="text"
                                     className="form-control"
@@ -180,11 +160,8 @@ class EditProject extends React.Component {
                                 />
 
                             </div>
-
                             <div className="form-group col-md-4">
                                 <label>Advanced Payment</label>
-
-
                                 <input
                                     type="text"
 
@@ -195,7 +172,6 @@ class EditProject extends React.Component {
                                     }
                                 />
                                 </div>
-
                                 <div className="form-group col-md-4">
                                     <label>Performed Bond</label>
 
@@ -206,12 +182,9 @@ class EditProject extends React.Component {
                                         value={this.state.perfBond}
                                         onChange={e => this.setState({ perfBond: e.target.value })}
                                     />
-
                                 </div>
                                 <div className="form-group col-md-4">
                                     <label>Credit Time</label>
-
-
                                     <input
                                         type="text"
 
@@ -219,7 +192,6 @@ class EditProject extends React.Component {
                                         value={this.state.creditTime}
                                         onChange={e => this.setState({ creditTime: e.target.value })}
                                     />
-
                                 </div>
                                 <div className="form-group col-md-4">
                                     <label>Discount Rate</label>
@@ -230,12 +202,8 @@ class EditProject extends React.Component {
                                         value={this.state.discountRate}
                                         onChange={e => this.setState({ discountRate: e.target.value })}
                                     />
-
                                 </div>
-                            
                         </div>
-                   
-
                     <div class="container-fluid">
                         <div className="form-group">
                             <button
@@ -243,7 +211,6 @@ class EditProject extends React.Component {
                                 onClick={this.handleSubmit}>
                                 Save
                          </button>
-
                             <a href="/ProjPanel" className="btn btn-outline-primary btn-sm ml-4" role="button">Cancel</a>
                         </div>
                     </div>
