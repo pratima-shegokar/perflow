@@ -25,16 +25,11 @@ h1.Title {
    
     #title1, #title2{
       font-size: 80px;
-      background-image: url("/perflowShorterlowsat.png");
-        /*font-size: 80px;
-        background: rgb(152,106,217);
-        background: linear-gradient(0deg, rgba(152,106,217,1) 0%,
-        rgba(119,124,217,1) 24%, rgba(87,170,242,1) 57%,
-          rgba(87,198,242,1) 86%, rgba(99,216,242,1) 100%);
-        */    background-clip: text;
-            -webkit-background-clip: text;
-            color: rgba(0,0,0,.2);
-            background-size: cover;
+      background-image: url("/perflowsh.png");
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: rgba(0,0,0,.2);
+      background-size: cover;
             
     }
     
@@ -55,7 +50,7 @@ h1.Title {
   }
 
   .pwcRow.row{
-    background-image: url("/perflowShorterlowsat.png");
+    background-image: url("/perflowst.png");
     background-size: cover;
     background-attachment: fixed;
 
@@ -111,7 +106,7 @@ h1.Title {
     }
   
     #cardbody1, #cardbody2{
-      height: 320px;
+      height: 340px;
       margin-top: 0px;
     }
   
