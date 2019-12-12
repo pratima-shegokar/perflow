@@ -131,6 +131,34 @@ public class RecordService {
         return pvList;
     }
 
+    List<Double> getEvList(Project project) {
+        // get the list of records for the passed project
+        List<Record> records = getByProject(project);
+
+        // define an empty list of ev
+        List<Double> evList = new ArrayList<>();
+        for (Record record : records) {
+            evList.add(record.getEv());
+        }
+
+        // return the list
+        return evList;
+    }
+
+    List<Double> getAcList(Project project) {
+        // get the list of records for the passed project
+        List<Record> records = getByProject(project);
+
+        // define an empty list of ac
+        List<Double> acList = new ArrayList<>();
+        for (Record record : records) {
+            acList.add(record.getAc());
+        }
+
+        // return the list
+        return acList;
+    }
+
     List<Double> calcPcifList(List<Double> pvList, Project project) {
         int creditTime = project.getCreditTime();
         int intervals = project.getDuration();
