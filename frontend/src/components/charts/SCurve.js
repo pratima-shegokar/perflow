@@ -7,31 +7,80 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       pvList: [],
+      evList: [],
+      acList: [],
       chartState: {}
     };
+
+    //save the fetched PvList
+    this.fetchPvList();
+
+    //save the fetched EvList
+    this.fetchEvList();
+
+    //save the fetched AcList
+    this.fetchAcList();
   }
 
-  componentDidMount() {
-    //const { project } = this.props.location.state;
+  async fetchPvList() {
+    try {
+      /*console.log(
+        "Project ID is: " + this.props.location.state.project.projectId
+      );*/
+      const response = await RecordsApi.getPvList(
+        this.props.location.state.project.projectId
+      );
+      const fetchedPvList = response.data;
 
-    this.fetchPvList().then(() => console.log(this.state.pvList));
+      this.setState({ pvList: fetchedPvList });
+
+      this.setChart();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async fetchEvList() {
+    try {
+      const response = await RecordsApi.getEvList(
+        this.props.location.state.project.projectId
+      );
+      const fetchedEvList = response.data;
+
+      this.setState({ evList: fetchedEvList });
+
+      this.setChart();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async fetchAcList() {
+    try {
+      const response = await RecordsApi.getAcList(
+        this.props.location.state.project.projectId
+      );
+      const fetchedAcList = response.data;
+
+      this.setState({ acList: fetchedAcList });
+
+      this.setChart();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  setChart() {
+    let n = this.state.pvList.length;
+    let periods = [];
+
+    for (let i = 0; i < n; i++) {
+      periods.push("Month-" + (i + 1));
+    }
 
     //The state variable contains all the data and styling properties of the graph.
     const chartState = {
-      labels: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sept",
-        "Oct",
-        "Nov",
-        "Dec"
-      ],
+      labels: periods,
       fill: false,
       lineTension: 0.5, // lineTension is a property used to controls the curvature of the line joining the points.
       backgroundColor: "rgba(5,192,192,0.4)",
@@ -46,38 +95,24 @@ export default class App extends React.Component {
         {
           label: "Earned value",
           borderColor: "rgba(0,255,0)",
-          data: [65, 59, 89, 81, 56]
+          data: this.state.evList
         },
         {
           label: "Actual Cost",
           borderColor: "rgba(255,0,0)",
-          data: [65, 59, 89, 81, 56]
+          data: this.state.acList
         }
       ]
     };
 
     this.setState({ chartState: chartState });
   }
-
-  async fetchPvList() {
-    try {
-      const response = await RecordsApi.getPvList(
-        this.props.location.state.project.projectId
-      );
-      const fetchedPvList = response.data;
-
-      this.setState({ pvList: fetchedPvList });
-      return fetchedPvList;
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
   render() {
+    console.log("The PV List in render= " + this.state.pvList);
     return (
       <div>
         <Line
-          data={this.chartState}
+          data={this.state.chartState}
           options={{
             title: {
               display: true,
