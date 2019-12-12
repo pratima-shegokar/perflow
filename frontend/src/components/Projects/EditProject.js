@@ -88,9 +88,8 @@ class EditProject extends React.Component {
                     <h3 style={{ color: "black" }}>Project details</h3>
                     <br></br>
 
-                    <div>
                         <div class="container-fluid">
-                            <div className="form-group col-md-8">
+                            <div className="form-group col-md-5">
 
 
 
@@ -105,7 +104,7 @@ class EditProject extends React.Component {
                                     />
                                 </div>
                             </div>
-                            <div className="form-group col-md-8">
+                            <div className="form-group col-md-5">
 
 
 
@@ -121,7 +120,7 @@ class EditProject extends React.Component {
                                 </div>
                             </div>
 
-                            <div className="form-group col-md-8">
+                            <div className="form-group col-md-4">
                                 <label>Duration</label>
 
 
@@ -134,7 +133,7 @@ class EditProject extends React.Component {
 
 
                             </div>
-                            <div className="form-group col-md-8">
+                            <div className="form-group col-md-4">
                                 <label>Budget</label>
 
 
@@ -159,7 +158,7 @@ class EditProject extends React.Component {
 
                             </div>
                             <div className="form-group col-md-4">
-                                <label>FirstPV</label>
+                                <label>First Planned Value</label>
 
                                 <input
                                     type="text"
@@ -170,7 +169,7 @@ class EditProject extends React.Component {
 
                             </div>
                             <div className="form-group col-md-4">
-                                <label>Last PV</label>
+                                <label>Last Planned Value</label>
 
 
                                 <input
@@ -182,7 +181,7 @@ class EditProject extends React.Component {
 
                             </div>
 
-                            <div className="form-group col-md-6">
+                            <div className="form-group col-md-4">
                                 <label>Advanced Payment</label>
 
 
@@ -195,8 +194,9 @@ class EditProject extends React.Component {
                                         this.setState({ advPayment: e.target.value })
                                     }
                                 />
+                                </div>
 
-                                <div className="form-group col-md-6">
+                                <div className="form-group col-md-4">
                                     <label>Performed Bond</label>
 
                                     <input
@@ -208,7 +208,7 @@ class EditProject extends React.Component {
                                     />
 
                                 </div>
-                                <div className="form-group col-md-6">
+                                <div className="form-group col-md-4">
                                     <label>Credit Time</label>
 
 
@@ -221,7 +221,7 @@ class EditProject extends React.Component {
                                     />
 
                                 </div>
-                                <div className="form-group col-md-6">
+                                <div className="form-group col-md-4">
                                     <label>Discount Rate</label>
                                     <input
                                         type="text"
@@ -232,9 +232,9 @@ class EditProject extends React.Component {
                                     />
 
                                 </div>
-                            </div>
+                            
                         </div>
-                    </div>
+                   
 
                     <div class="container-fluid">
                         <div className="form-group">
