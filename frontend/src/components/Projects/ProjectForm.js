@@ -91,9 +91,9 @@ class ProjectForm extends React.Component {
           <h1 style={{ color: "black" }}>New Project Form</h1>
           <br></br>
           <div>
-            <div class="container-fluid">
+            <div className="container-fluid">
               <h4 style={{ color: "black" }}>General</h4>
-              <div class="form-row">
+              <div className="form-row">
                 {/**insert the Project Unique Number */}
                 <div className="form-group col-md-4">
                   <label>Project Unique Number</label>
@@ -190,7 +190,7 @@ class ProjectForm extends React.Component {
             <div className="container-fluid">
               <br></br>
               <h4 style={{ color: "black" }}>Financial</h4>
-              <div class="form-row">
+              <div className="form-row">
                 {/**insert the Advanced Payment */}
                 <div className="form-group col-md-6">
                   <label>Advanced Payment</label>
@@ -216,7 +216,7 @@ class ProjectForm extends React.Component {
                   />
                 </div>
               </div>
-              <div class="form-row">
+              <div className="form-row">
                 {/**insert the Credit Time */}
                 <div className="form-group col-md-6">
                   <label>Credit Time</label>
