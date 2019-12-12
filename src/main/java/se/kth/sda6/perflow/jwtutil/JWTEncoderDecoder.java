@@ -16,8 +16,11 @@ import java.util.Date;
 import java.util.Map;
 
 public class JWTEncoderDecoder {
-    public class InvalidTokenException extends Exception {}
-    public class InitializationException extends Exception {}
+    public class InvalidTokenException extends Exception {
+    }
+
+    public class InitializationException extends Exception {
+    }
 
     private static final String ALGORITHM_NAME = "RSA";
     private static final int KEY_SIZE = 2 * 1024;
@@ -44,7 +47,7 @@ public class JWTEncoderDecoder {
         KeyPair keyPair = kpg.generateKeyPair();
 
         RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
-        RSAPrivateKey privateKey =(RSAPrivateKey) keyPair.getPrivate();
+        RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();
 
         // Create RSA algorithm instance to encode and decode tokens
         return Algorithm.RSA256(publicKey, privateKey);
@@ -52,9 +55,7 @@ public class JWTEncoderDecoder {
 
     public String createToken(Map<String, String> claims) {
         Date expiresAt = getExpirationDate();
-        JWTCreator.Builder builder = JWT.create()
-                .withIssuer(ISSUER)
-                .withExpiresAt(expiresAt);
+        JWTCreator.Builder builder = JWT.create().withIssuer(ISSUER).withExpiresAt(expiresAt);
 
         // Add custom claims
         claims.forEach(builder::withClaim);

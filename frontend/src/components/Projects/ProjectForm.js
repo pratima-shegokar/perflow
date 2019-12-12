@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class ProjectForm extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class ProjectForm extends React.Component {
       discountRate: ""
     };
   }
+
   handleSubmit = () => {
     const {
       projectUniqueNumber,
@@ -31,6 +33,7 @@ class ProjectForm extends React.Component {
       creditTime,
       discountRate
     } = this.state;
+
     // Invoke the passed in event callback
     this.props.onSubmit({
       projectUniqueNumber: projectUniqueNumber,
@@ -43,11 +46,14 @@ class ProjectForm extends React.Component {
       creditTime: creditTime,
       discountRate: discountRate
     });
+
     //clear the form
     this.handleClearForm();
+
     //go to My Perojects page
     window.location = "/MyProjects";
   };
+
   // Clear the input field
   handleClearForm = () => {
     this.setState({
@@ -64,6 +70,7 @@ class ProjectForm extends React.Component {
       discountRate: ""
     });
   };
+
   render() {
     //object destructuring
     const {
@@ -79,6 +86,7 @@ class ProjectForm extends React.Component {
       creditTime,
       discountRate
     } = this.state;
+
     return (
       <div className="card">
         <div className="card-body">
@@ -101,6 +109,7 @@ class ProjectForm extends React.Component {
                     }
                   />
                 </div>
+
                 {/**insert the Project Name */}
                 <div className="form-group col-md-8">
                   <label>Project Name</label>
@@ -116,6 +125,7 @@ class ProjectForm extends React.Component {
                 </div>
               </div>
             </div>
+
             <div class="container-fluid">
               <br></br>
               <h4>Schedule</h4>
@@ -131,6 +141,7 @@ class ProjectForm extends React.Component {
                     onChange={e => this.setState({ duration: e.target.value })}
                   />
                 </div>
+
                 {/**insert the Project Budget */}
                 <div className="form-group col-md-4">
                   <label>Budget</label>
@@ -156,6 +167,7 @@ class ProjectForm extends React.Component {
                   />
                 </div>
               </div>
+
               <div class="form-row">
                 {/**insert the First planned value */}
                 <div className="form-group col-md-6">
@@ -181,6 +193,7 @@ class ProjectForm extends React.Component {
                 </div>
               </div>
             </div>
+
             <div class="container-fluid">
               <br></br>
               <h4>Financial</h4>
@@ -210,6 +223,7 @@ class ProjectForm extends React.Component {
                   />
                 </div>
               </div>
+
               <div class="form-row">
                 {/**insert the Credit Time */}
                 <div className="form-group col-md-6">
@@ -248,6 +262,7 @@ class ProjectForm extends React.Component {
                 >
                   Save
                 </button>
+
                 <a
                   href="/MyProjects"
                   className="btn btn-outline-primary btn-lg ml-4"
@@ -263,4 +278,5 @@ class ProjectForm extends React.Component {
     );
   }
 }
+
 export default ProjectForm;

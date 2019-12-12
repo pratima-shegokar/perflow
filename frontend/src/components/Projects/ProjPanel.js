@@ -1,7 +1,10 @@
-
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
+
+
+
 
 
 export class ProjPanel extends Component {
@@ -9,6 +12,7 @@ export class ProjPanel extends Component {
     super(props);
     this.state = { proj: {} };
   }
+
   componentDidMount() {
     const {
       projectUniqueNumber,
@@ -38,6 +42,9 @@ export class ProjPanel extends Component {
       discountRate
     });
   }
+
+
+
   render() {
     const { project } = this.props.location.state;
 
@@ -47,7 +54,11 @@ export class ProjPanel extends Component {
         <p
           className="Table-header"
           style={{ color: "black", fontSize: 20, fontWeight: 4 }}
+
         >Project Specific Details
+
+
+
         </p>
         <div class="container">
           <div class="row justify-content-center">
@@ -60,23 +71,95 @@ export class ProjPanel extends Component {
                       <th>Value</th>
                     </tr>
                   </thead>
+
                   <tbody>
-                    
-                      
                         <tr >
                           <td>Project Id</td>
                           <td>{this.state.projectUniqueNumber}</td>
                         </tr>
-                      
-                    
+
+                  </tbody>
+                  <tbody>
+                        <tr >
+                          <td>Project Name</td>
+                          <td>{this.state.projectName}</td>
+                        </tr>
+
+                  </tbody>
+                  <tbody>
+                        <tr >
+                          <td>Project Duration</td>
+                          <td>{this.state.duration}</td>
+                        </tr>
+
+                  </tbody>
+                  <tbody>
+                        <tr >
+                          <td>Budget</td>
+                          <td>{this.state.budget}</td>
+                        </tr>
+
+                  </tbody>
+                  <tbody>
+                        <tr >
+                          <td>Peak Interval</td>
+                          <td>{this.state.peakInterval}</td>
+                        </tr>
+
+                  </tbody>
+                  <tbody>
+                        <tr >
+                          <td>First PV</td>
+                          <td>{this.state.firstPV}</td>
+                        </tr>
+
+                  </tbody>
+                  <tbody>
+                        <tr >
+                          <td>Last PV</td>
+                          <td>{this.state.lastPV}</td>
+                        </tr>
+
+                  </tbody>
+                  <tbody>
+                        <tr >
+                          <td>Advanced Payment</td>
+                          <td>{this.state.advPayment}</td>
+                        </tr>
+
+                  </tbody>
+                  <tbody>
+                        <tr >
+                          <td>PerfBond</td>
+                          <td>{this.state.perfBond}</td>
+                        </tr>
+
+                  </tbody>
+                  <tbody>
+                        <tr >
+                          <td>Credit Time</td>
+                          <td>{this.state.creditTime}</td>
+                        </tr>
+
+                  </tbody>
+                  <tbody>
+                        <tr >
+                          <td>Discount Rate</td>
+                          <td>{this.state.discountRate}</td>
+                        </tr>
+
+
+
+
                   </tbody>
                 </Table>
               </div>
             </div>
           </div>
         </div>
-                        
-                            
+
+
+
 
           <div class="wrapper">
             <Link
@@ -121,5 +204,7 @@ export class ProjPanel extends Component {
         );
       }
     }
-    
+
 export default ProjPanel;
+
+
