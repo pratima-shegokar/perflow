@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ProjectsApi from "./../../api/ProjectsApi";
-
+import "./MyProjects.css";
 
 class MyProjects extends React.Component {
   constructor(props) {
