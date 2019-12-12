@@ -8,6 +8,8 @@ import ProjPanel from "./components/Projects/ProjPanel";
 import EditProject from "./components/Projects/EditProject";
 import Navbar from "./components/Navbar";
 import ProjectsPage from "./components/Projects/ProjectsPage";
+import AboutUs from "./components/about/AboutUs";
+import LandingPage from "./components/landing/LandingPage"
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
 import Auth from "./services/Auth";
@@ -31,29 +33,29 @@ class App extends React.Component {
     const loggedInRouter = (
       <Router>
         <Switch>
-          <Route path="/" component={App}>
+            <Route path="/" exact component={LandingPage} />
             <Route path="/Homepage" component={Home} />
+            <Route path="/AboutUs" component={AboutUs} />
             <Route path="/WhyPerflow" component={WhyPerflow} />
             <Route path="/MyProjects" component={MyProjects} />
             <Route path="/ProjectForm" component={ProjectsPage} />
             <Route path="/ProjPanel" component={ProjPanel} />
             <Route path="/EditProject" component={EditProject} />
             <Route path="/scurve" component={SCurve} />
-          </Route>
         </Switch>
       </Router>
     );
 
     const defaultRouter = (
       <Router>
-        <div className="container mt-5">
-          <Route path="/" component={App}>
+        <Switch>
+            <Route path="/" exact component={LandingPage} />
             <Route path="/Homepage" component={Home} />
+            <Route path="/AboutUs" component={AboutUs} />
             <Route path="/WhyPerflow" component={WhyPerflow} />
             <Route path="/LoginPage" component={LoginPage} />
             <Route path="/RegistrationPage" component={RegistrationPage} />
-          </Route>
-        </div>
+        </Switch>
       </Router>
     );
 
