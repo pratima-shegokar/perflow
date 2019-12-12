@@ -2,18 +2,17 @@ import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export class ProjPanel extends Component {
+class ProjPanel extends Component {
   constructor(props) {
     super(props);
-    this.state = { proj: {} };
+    this.state = { project: {} };
   }
 
   render() {
     const { project } = this.props.location.state;
-
+    console.log(project);
     return (
       <div className="App">
-        <p>{this.props.location.state.proj}</p>
         <p
           className="Table-header"
           style={{ color: "black", fontSize: 20, fontWeight: 4 }}
