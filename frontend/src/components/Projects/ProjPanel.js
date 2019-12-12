@@ -57,7 +57,7 @@ export class ProjPanel extends Component {
 
         >Project Specific Details
 
-        >
+        
 
         </p>
         <div class="container">

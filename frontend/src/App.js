@@ -36,7 +36,7 @@ class App extends React.Component {
   render() {
     const loggedInRouter = (
       <Router>
-        <div className="container mt-5">
+        
           <Switch>
             <Route path="/" component={App}>
               <Route path="/Homepage" component={Home} />
@@ -48,7 +48,7 @@ class App extends React.Component {
               <Route path="/scurve" component={SCurve} />
             </Route>
           </Switch>
-        </div>
+       
       </Router>
     );
 
