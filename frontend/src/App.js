@@ -7,17 +7,12 @@ import WhyPerflow from "./components/WhyPerflow/WhyPerflow";
 
 import ProjPanel from "./components/Projects/ProjPanel";
 import EditProject from "./components/Projects/EditProject";
-
-
 import Navbar from "./components/Navbar";
-
 import ProjectForm from "./components/Projects/ProjectForm";
 import ProjectsPage from "./components/Projects/ProjectsPage";
-
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
 import Auth from "./services/Auth";
-
 import SCurve from "./components/charts/SCurve";
 
 class App extends React.Component {
@@ -26,7 +21,6 @@ class App extends React.Component {
     this.state = {
       loggedIn: Auth.isLoggedIn()
     };
-
     Auth.bindLoggedInStateSetter(this.setLoggedIn);
   }
 
@@ -37,7 +31,6 @@ class App extends React.Component {
   render() {
     const loggedInRouter = (
       <Router>
-
           <Switch>
             <Route path="/" component={App}>
               <Route path="/Homepage" component={Home} />
@@ -49,7 +42,6 @@ class App extends React.Component {
               <Route path="/scurve" component={SCurve} />
             </Route>
           </Switch>
-
       </Router>
     );
 

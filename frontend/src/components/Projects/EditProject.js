@@ -46,7 +46,6 @@ class EditProject extends React.Component {
             discountRate: discountRate
         });
     }
-
     componentDidMount() {
         const {
             projectUniqueNumber,
@@ -75,15 +74,11 @@ class EditProject extends React.Component {
             creditTime,
             discountRate
         });
-
     }
-
     render() {
         const { project } = this.props.location.state;
-
         return (
-
-            <div className="card">
+           <div className="card">
                 <div className="card-body">
                     <h3 style={{ color: "black" }}>Project details</h3>
                     <br></br>
@@ -218,6 +213,5 @@ class EditProject extends React.Component {
             </div>
         )
     }
-
 }
 export default EditProject;
