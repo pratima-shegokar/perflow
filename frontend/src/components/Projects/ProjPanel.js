@@ -50,11 +50,7 @@ export class ProjPanel extends Component {
         <p
           className="Table-header"
           style={{ color: "black", fontSize: 20, fontWeight: 4 }}
-
-        >Project Specific Details
-
-
-
+          >Project Specific Details
         </p>
         <div class="container">
           <div class="row justify-content-center">
