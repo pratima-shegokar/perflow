@@ -1,6 +1,7 @@
 import React from "react";
 import LoginForm from "./LoginForm";
 import Auth from "../../services/Auth";
+import "./Login.css";
 
 class LoginPage extends React.Component {
     async login(loginData) {
