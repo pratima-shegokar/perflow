@@ -20,6 +20,7 @@ class MyProjects extends React.Component {
       this.setState({
         projects: fetchedProjects
       });
+      console.log(this.state.projects);
     } catch (e) {
       console.error(e);
     }
@@ -50,6 +51,15 @@ class MyProjects extends React.Component {
                       }
                     }}
                   >
+                    {/*<Link
+                    key={p.projectId}
+                    to={{
+                      pathname: "/ProjPanel",
+                      state: {
+                        project: p
+                      }
+                    }}
+                  >*/}
                     {p.projectUniqueNumber} &nbsp;&nbsp;&nbsp;&nbsp;{" "}
                     {p.projectName}
                   </Link>
