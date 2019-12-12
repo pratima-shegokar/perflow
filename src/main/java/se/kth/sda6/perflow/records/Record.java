@@ -1,5 +1,6 @@
 package se.kth.sda6.perflow.records;
 
+import com.sun.xml.bind.v2.runtime.output.DOMOutput;
 import se.kth.sda6.perflow.projects.Project;
 
 import javax.persistence.Column;
@@ -24,7 +25,7 @@ public class Record {
 
     //This is the planned value should be calculated from given project information
     @Column (name = "pv")
-    private double pv;
+    private Double pv;
 
     //This is derived from the planned value and the financial in
     @Column (name = "pcif")
@@ -85,11 +86,11 @@ public class Record {
         this.interval = interval;
     }
 
-    public double getPv() {
+    public Double getPv() {
         return pv;
     }
 
-    public void setPv(double pv) {
+    public void setPv(Double pv) {
         this.pv = pv;
     }
 

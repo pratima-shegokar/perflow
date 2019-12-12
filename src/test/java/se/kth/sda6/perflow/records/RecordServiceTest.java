@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import se.kth.sda6.perflow.projects.Project;
+import se.kth.sda6.perflow.projects.ProjectService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class RecordServiceTest {
     @Autowired
     RecordService recordService;
+
+    @Autowired
+    ProjectService projectService;
 
     @Test
     void calcCPVListTest() {
@@ -124,6 +128,25 @@ class RecordServiceTest {
         approxEquality = approxEquality && (Math.abs((pcif.get(0) - comparePcif.get(0))) < 1);
         for (int i = 1; i < pcif.size(); i++){
             approxEquality = approxEquality && (Math.abs((pcif.get(i) - comparePcif.get(i))) < 1);
+        }
+
+        assertTrue(approxEquality);
+    }
+
+    @Test
+    void getPvList() {
+        //define a project obj
+        Project project = new Project("P111","Swiss Tower",12,150000000
+                ,6,50000,50000,30000000,0.05,2,0.08);
+
+        project = projectService.add(project);
+        List<Double> comparePv = recordService.calcPvList(project);
+        recordService.addNewProjectRecords(project);
+        List<Double> pvList = recordService.getPvList(project);
+
+        boolean approxEquality = (Math.abs((pvList.get(0) - comparePv.get(0))) < 1);
+        for (int i = 1; i < comparePv.size(); i++){
+            approxEquality = approxEquality && (Math.abs((pvList.get(i) - comparePv.get(i))) < 1);
         }
 
         assertTrue(approxEquality);
