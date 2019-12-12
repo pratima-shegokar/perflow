@@ -3,14 +3,10 @@ import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
-
-
-
-
 export class ProjPanel extends Component {
   constructor(props) {
     super(props);
-    this.state = { proj: {} };
+    this.state = { project: {} };
   }
 
   componentDidMount() {
