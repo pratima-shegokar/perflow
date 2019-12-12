@@ -17,6 +17,7 @@ class RegistrationPage extends React.Component {
     componentDidMount() {
         document.body.style = 'background-image: linear-gradient(to bottom right, #177b91, #63D8F2, #177b91); color: white;';
     }
+  
     render() {
         return (
             <React.Fragment>
