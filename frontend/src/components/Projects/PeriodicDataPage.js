@@ -45,7 +45,7 @@ class PeriodicDataPage extends React.Component {
                                                    data.push(newData);
                                                    return { ...prevState, data };
                                                });
-                                           }, 600);
+                                           }, 300);
                                        }),
                                    onRowUpdate: (newData, oldData) =>
                                        new Promise(resolve => {
@@ -58,7 +58,7 @@ class PeriodicDataPage extends React.Component {
                                                        return { ...prevState, data };
                                                    });
                                                }
-                                           }, 600);
+                                           }, 300);
                                        }),
                                    onRowDelete: oldData =>
                                        new Promise(resolve => {
@@ -69,7 +69,7 @@ class PeriodicDataPage extends React.Component {
                                                    data.splice(data.indexOf(oldData), 1);
                                                    return { ...prevState, data };
                                                });
-                                           }, 600);
+                                           }, 300);
                                        }),
                                }}
                 />
