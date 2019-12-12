@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './components/Home/Home'
 import MyProjects from './components/Projects/MyProject';
@@ -8,51 +8,68 @@ import LandingPage from './components/landing/LandingPage';
 import ProjPanel from './components/Projects/ProjPanel';
 import EditProject from './components/Projects/EditProject';
 import Navbar from './components/Navbar';
-import ProjectForm from './components/Projects/ProjectForm';
 import AboutUs from './components/about/AboutUs';
 import ProjectsPage from './components/Projects/ProjectsPage';
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
-import Auth from "./services/Auth"
-import LoggedInNavbar from "./components/layout/LoggedInNavbar";
-import Footer from './components/footer/Footer';
+import Auth from "./services/Auth";
+import SCurve from "./components/charts/SCurve";
 
-function App() {
-    const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
-    Auth.bindLoggedInStateSetter(setLoggedIn);
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      loggedIn: Auth.isLoggedIn()
+    };
 
+    Auth.bindLoggedInStateSetter(this.setLoggedIn);
+  }
+
+  setLoggedIn = isLoggedIn => {
+    this.setState({ loggedIn: isLoggedIn });
+  };
+
+  render() {
     const loggedInRouter = (
-        <React.Fragment>
-            <Router>
-                <LoggedInNavbar onLogout={() => Auth.logout()} />
-                <Switch>
-                    <Route path="/" component={App}>
-                        <Route path="/MyProjects" component={MyProjects} />
-                        <Route path="/ProjectForm" component={ProjectsPage} />
-                        <Route path="/ProjPanel" component={ProjPanel} />
-                        <Route path="/EditProject" component={EditProject} />
-                    </Route>
-                </Switch>
-            </Router>
-        </React.Fragment>
+      <Router>
+        <Switch>
+          <Route path="/" component={App}>
+            <Route path="/Homepage" component={Home} />
+            <Route path="/WhyPerflow" component={WhyPerflow} />
+            <Route path="/MyProjects" component={MyProjects} />
+            <Route path="/ProjectForm" component={ProjectsPage} />
+            <Route path="/ProjPanel" component={ProjPanel} />
+            <Route path="/EditProject" component={EditProject} />
+            <Route path="/scurve" component={SCurve} />
+          </Route>
+        </Switch>
+      </Router>
     );
 
     const defaultRouter = (
-        <React.Fragment>
-            <Router>
-                <Navbar />
-                <Route path="/" exact component={LandingPage}>
-                    <Route path="/Homepage" component={Home} />
-                    <Route path="/WhyPerflow" component={WhyPerflow} />
-                    <Route path="/LoginPage" component={LoginPage} />
-                    <Route path="/RegistrationPage" component={RegistrationPage} />
-                    <Route path="/AboutUs" component={AboutUs} />
-                </Route>
-            </Router>
-            <Footer></Footer>
-        </React.Fragment>
+      <Router>
+        <div className="container mt-5">
+          <Route path="/" exact component={LandingPage}>
+            <Route path="/Homepage" component={Home} />
+            <Route path="/WhyPerflow" component={WhyPerflow} />
+            <Route path="/AboutUs" component={AboutUs} />
+            <Route path="/LoginPage" component={LoginPage} />
+            <Route path="/RegistrationPage" component={RegistrationPage} />
+          </Route>
+        </div>
+      </Router>
     );
-    return (loggedIn ? loggedInRouter : defaultRouter);
+
+    return (
+      <div>
+        <Navbar
+          isLoggedIn={this.state.loggedIn}
+          onLogout={() => Auth.logout()}
+        />
+        {this.state.loggedIn ? loggedInRouter : defaultRouter}
+      </div>
+    );
+  }
 }
 
 export default App;
