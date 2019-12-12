@@ -20,6 +20,8 @@ class ProjectsPage extends React.Component {
       this.setState({
         projects: newProjects
       });
+      //go to My Perojects page
+      window.location = "/MyProjects";
     } catch (e) {
       console.error(e);
     }
