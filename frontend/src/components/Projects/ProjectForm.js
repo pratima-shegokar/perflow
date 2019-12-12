@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 class ProjectForm extends React.Component {
   constructor(props) {
@@ -108,7 +107,6 @@ class ProjectForm extends React.Component {
                     }
                   />
                 </div>
-
                 {/**insert the Project Name */}
                 <div className="form-group col-md-8">
                   <label>Project Name</label>
@@ -124,11 +122,10 @@ class ProjectForm extends React.Component {
                 </div>
               </div>
             </div>
-
-            <div class="container-fluid">
+            <div className="container-fluid">
               <br></br>
               <h4 style={{ color: "black" }}>Schedule</h4>
-              <div class="form-row">
+              <div className="form-row">
                 {/**insert the Project Duration in months */}
                 <div className="form-group col-md-4">
                   <label>Duration</label>
@@ -140,7 +137,6 @@ class ProjectForm extends React.Component {
                     onChange={e => this.setState({ duration: e.target.value })}
                   />
                 </div>
-
                 {/**insert the Project Budget */}
                 <div className="form-group col-md-4">
                   <label>Budget</label>
@@ -166,8 +162,7 @@ class ProjectForm extends React.Component {
                   />
                 </div>
               </div>
-
-              <div class="form-row">
+              <div className="form-row">
                 {/**insert the First planned value */}
                 <div className="form-group col-md-6">
                   <label>First planned value</label>
@@ -192,8 +187,7 @@ class ProjectForm extends React.Component {
                 </div>
               </div>
             </div>
-
-            <div class="container-fluid">
+            <div className="container-fluid">
               <br></br>
               <h4 style={{ color: "black" }}>Financial</h4>
               <div class="form-row">
@@ -222,7 +216,6 @@ class ProjectForm extends React.Component {
                   />
                 </div>
               </div>
-
               <div class="form-row">
                 {/**insert the Credit Time */}
                 <div className="form-group col-md-6">
@@ -252,7 +245,7 @@ class ProjectForm extends React.Component {
                 </div>
               </div>
             </div>
-            <div class="container-fluid">
+            <div className="container-fluid">
               {/**click either save or cancel */}
               <div className="form-group">
                 <button
@@ -261,7 +254,6 @@ class ProjectForm extends React.Component {
                 >
                   Save
                 </button>
-
                 <a
                   href="/MyProjects"
                   className="btn btn-outline-primary btn-lg ml-4"

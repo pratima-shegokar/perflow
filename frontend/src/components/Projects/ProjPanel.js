@@ -8,21 +8,49 @@ class ProjPanel extends Component {
     this.state = { project: {} };
   }
 
+  componentDidMount() {
+    const {
+      projectUniqueNumber,
+      projectName,
+      duration,
+      budget,
+      peakInterval,
+      firstPV,
+      lastPV,
+      advPayment,
+      perfBond,
+      creditTime,
+      discountRate
+    } = this.props.location.state.project;
+
+    this.setState({
+      projectUniqueNumber,
+      projectName,
+      duration,
+      budget,
+      peakInterval,
+      firstPV,
+      lastPV,
+      advPayment,
+      perfBond,
+      creditTime,
+      discountRate
+    });
+  }
+
   render() {
     const { project } = this.props.location.state;
-    console.log(project);
     return (
       <div className="App">
         <p
           className="Table-header"
           style={{ color: "black", fontSize: 20, fontWeight: 4 }}
-        >
-          Project Specific Details
+        >Project Specific Details
         </p>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-8">
-              <div class="card-body">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-8">
+              <div className="card-body">
                 <Table className="mt-2" striped bordered hover size="sm">
                   <thead>
                     <tr>
@@ -31,22 +59,77 @@ class ProjPanel extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {Object.entries(project).map(([name, value]) => {
-                      return (
-                        <tr key={name}>
-                          <td>{name}</td>
-                          <td>{value}</td>
-                        </tr>
-                      );
-                    })}
+                    <tr >
+                      <td>Project Id</td>
+                      <td>{this.state.projectUniqueNumber}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr >
+                      <td>Project Name</td>
+                      <td>{this.state.projectName}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr >
+                      <td>Project Duration</td>
+                      <td>{this.state.duration}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr >
+                      <td>Budget</td>
+                      <td>{this.state.budget}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr >
+                      <td>Peak Interval</td>
+                      <td>{this.state.peakInterval}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr >
+                      <td>First PV</td>
+                      <td>{this.state.firstPV}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr >
+                      <td>Last PV</td>
+                      <td>{this.state.lastPV}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr >
+                      <td>Advanced Payment</td>
+                      <td>{this.state.advPayment}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr >
+                      <td>PerfBond</td>
+                      <td>{this.state.perfBond}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr >
+                      <td>Credit Time</td>
+                      <td>{this.state.creditTime}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr >
+                      <td>Discount Rate</td>
+                      <td>{this.state.discountRate}</td>
+                    </tr>
                   </tbody>
                 </Table>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="wrapper">
+        <div className="wrapper">
           <a
             href="/EditProject"
             className="btn btn-outline-primary btn-sm ml-4"
@@ -56,7 +139,7 @@ class ProjPanel extends Component {
           </a>
           <br /> <br />
         </div>
-        <div class="graph-button">
+        <div className="graph-button">
           <Link
             to={{ pathname: "/SCurve", state: { project: project } }}
             type="button-gr"
@@ -65,23 +148,23 @@ class ProjPanel extends Component {
             Periodical S-Curve Graph
           </Link>{" "}
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" class="btn btn-outline-primary">
+          <button type="button-gr" className="btn btn-outline-primary">
             Periodical Cash Flow Graph
-          </button>{" "}
+          </button>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" class="btn btn-outline-primary">
+          <button type="button-gr" className="btn btn-outline-primary">
             Cumulative S-Curve Graph
-          </button>{" "}
+          </button>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" class="btn btn-outline-primary">
+          <button type="button-gr" className="btn btn-outline-primary">
             Cumulative Cash Flow Graph
-          </button>{" "}
+          </button>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" class="btn btn-outline-primary">
+          <button type="button-gr" className="btn btn-outline-primary">
             EVM Board
-          </button>{" "}
+          </button>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" class="btn btn-outline-primary">
+          <button type="button-gr" className="btn btn-outline-primary">
             CFM Board
           </button>
         </div>
