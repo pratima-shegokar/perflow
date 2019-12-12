@@ -9,7 +9,35 @@ export class ProjPanel extends Component {
     super(props);
     this.state = { proj: {} };
   }
+  componentDidMount() {
+    const {
+      projectUniqueNumber,
+      projectName,
+      duration,
+      budget,
+      peakInterval,
+      firstPV,
+      lastPV,
+      advPayment,
+      perfBond,
+      creditTime,
+      discountRate
+    } = this.props.location.state.project;
 
+    this.setState({
+      projectUniqueNumber,
+      projectName,
+      duration,
+      budget,
+      peakInterval,
+      firstPV,
+      lastPV,
+      advPayment,
+      perfBond,
+      creditTime,
+      discountRate
+    });
+  }
   render() {
     const { project } = this.props.location.state;
 
@@ -33,60 +61,65 @@ export class ProjPanel extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {Object.entries(project).map(([name, value]) => {
-                      return (
-                        <tr key={name}>
-                          <td>{name}</td>
-                          <td>{value}</td>
+                    
+                      
+                        <tr >
+                          <td>Project Id</td>
+                          <td>{this.state.projectUniqueNumber}</td>
                         </tr>
-                      );
-                    })}
+                      
+                    
                   </tbody>
                 </Table>
               </div>
             </div>
           </div>
         </div>
+                        
+                            
 
-        <div class="wrapper">
-          <Link
-            to={{pathname:"/EditProject",  state: {
-              project: project}}}
-            className="btn btn-outline-primary btn-sm ml-4"
-            role="button"
-          >
-            Edit
+          <div class="wrapper">
+            <Link
+              to={{
+                pathname: "/EditProject", state: {
+                  project: project
+                }
+              }}
+              className="btn btn-outline-primary btn-sm ml-4"
+              role="button"
+            >
+              Edit
           </Link>
-          <br /> <br />
-        </div>
-        <div class="graph-button mr-auto ml-auto">
-          <a href="/SCurve" type="button-gr" class="btn btn-outline-primary">
-            Periodical S-Curve Graph
+            <br /> <br />
+          </div>
+          <div class="graph-button mr-auto ml-auto">
+            <a href="/SCurve" type="button-gr" class="btn btn-outline-primary">
+              Periodical S-Curve Graph
           </a>{" "}
-          &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
           <button type="button-gr" class="btn btn-outline-primary">
-            Periodical Cash Flow Graph
+              Periodical Cash Flow Graph
           </button>
-          &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
           <button type="button-gr" class="btn btn-outline-primary">
-            Cumulative S-Curve Graph
+              Cumulative S-Curve Graph
           </button>
-          &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
           <button type="button-gr" class="btn btn-outline-primary">
-            Cumulative Cash Flow Graph
+              Cumulative Cash Flow Graph
           </button>
-          &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
           <button type="button-gr" class="btn btn-outline-primary">
-            EVM Board
+              EVM Board
           </button>
-          &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
           <button type="button-gr" class="btn btn-outline-primary">
-            CFM Board
+              CFM Board
           </button>
+          </div>
         </div>
-      </div>
-    );
-  }
-}
-
+        );
+      }
+    }
+    
 export default ProjPanel;
