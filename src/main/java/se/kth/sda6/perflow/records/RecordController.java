@@ -64,4 +64,16 @@ public class RecordController {
     public List<Double> getPvList(@PathVariable Long projectId) {
         return recordService.getPvList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
     }
+
+    // get the planned value list from records
+    @GetMapping("/records/evs/{projectId}")
+    public List<Double> getEvList(@PathVariable Long projectId) {
+        return recordService.getEvList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
+    }
+
+    // get the planned value list from records
+    @GetMapping("/records/acs/{projectId}")
+    public List<Double> getAcList(@PathVariable Long projectId) {
+        return recordService.getAcList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
+    }
 }
