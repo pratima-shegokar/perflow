@@ -40,8 +40,10 @@ class ProjectForm extends React.Component {
       projectName: projectName,
       duration: duration,
       budget: budget,
+      peakInterval: peakInterval,
       firstPV: firstPV,
       lastPV: lastPV,
+      advPayment: advPayment,
       perfBond: perfBond,
       creditTime: creditTime,
       discountRate: discountRate
@@ -49,9 +51,6 @@ class ProjectForm extends React.Component {
 
     //clear the form
     this.handleClearForm();
-
-    //go to My Perojects page
-    window.location = "/MyProjects";
   };
 
   // Clear the input field
@@ -94,7 +93,7 @@ class ProjectForm extends React.Component {
           <br></br>
           <div>
             <div class="container-fluid">
-              <h4>General</h4>
+              <h4 style={{ color: "black" }}>General</h4>
               <div class="form-row">
                 {/**insert the Project Unique Number */}
                 <div className="form-group col-md-4">
@@ -128,7 +127,7 @@ class ProjectForm extends React.Component {
 
             <div class="container-fluid">
               <br></br>
-              <h4>Schedule</h4>
+              <h4 style={{ color: "black" }}>Schedule</h4>
               <div class="form-row">
                 {/**insert the Project Duration in months */}
                 <div className="form-group col-md-4">
@@ -196,7 +195,7 @@ class ProjectForm extends React.Component {
 
             <div class="container-fluid">
               <br></br>
-              <h4>Financial</h4>
+              <h4 style={{ color: "black" }}>Financial</h4>
               <div class="form-row">
                 {/**insert the Advanced Payment */}
                 <div className="form-group col-md-6">
