@@ -1,6 +1,7 @@
 import React from "react";
 import Auth from "../../services/Auth";
 import RegistrationForm from "./RegistrationForm";
+import "./Login.css";
 
 class RegistrationPage extends React.Component {
     async register(registrationData) {
@@ -12,6 +13,11 @@ class RegistrationPage extends React.Component {
             alert("User created successfully. Please login with new user.");
         }
     }
+
+    componentDidMount() {
+        document.body.style = 'background-image: linear-gradient(to bottom right, #177b91, #63D8F2, #177b91); color: white;';
+    }
+  
     render() {
         return (
             <React.Fragment>

@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import se.kth.sda6.perflow.projects.Project;
+import se.kth.sda6.perflow.projects.ProjectService;
 
 import java.util.List;
 
@@ -12,6 +13,9 @@ import java.util.List;
 public class RecordController {
     @Autowired
     private RecordService recordService;
+
+    @Autowired
+    private ProjectService projectService;
 
     // get all records
     @GetMapping("/records")
@@ -28,8 +32,7 @@ public class RecordController {
     // get a specific record by ID
     @GetMapping("/records/{id}")
     public Record getById(@PathVariable Long id) {
-        return recordService.getById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return recordService.getById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     // get all records by Project, and sorted by interval
@@ -54,5 +57,23 @@ public class RecordController {
     @DeleteMapping("/records/{id}")
     public void delete(@PathVariable Long id) {
         recordService.deleteById(id);
+    }
+
+    // get the planned value list from records
+    @GetMapping("/records/pvs/{projectId}")
+    public List<Double> getPvList(@PathVariable Long projectId) {
+        return recordService.getPvList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
+    }
+
+    // get the planned value list from records
+    @GetMapping("/records/evs/{projectId}")
+    public List<Double> getEvList(@PathVariable Long projectId) {
+        return recordService.getEvList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
+    }
+
+    // get the planned value list from records
+    @GetMapping("/records/acs/{projectId}")
+    public List<Double> getAcList(@PathVariable Long projectId) {
+        return recordService.getAcList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
     }
 }

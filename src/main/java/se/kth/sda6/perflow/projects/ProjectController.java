@@ -25,21 +25,20 @@ public class ProjectController {
     // create a project
     @PostMapping("/projects")
     public Project add(@RequestBody Project newProject) {
-        //add the project to DB
+        // add the project to DB
         Project project = projectService.add(newProject);
 
-        //add the planned values and planned cash inflow to the DB
+        // add the planned values and planned cash inflow to the DB
         recordService.addNewProjectRecords(project);
 
-        //return the stored project
+        // return the stored project
         return project;
     }
 
     // get a specific project by ID
     @GetMapping("/projects/{id}")
     public Project getById(@PathVariable Long id) {
-        return projectService.getById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return projectService.getById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     // update a project
@@ -53,4 +52,5 @@ public class ProjectController {
     public void delete(@PathVariable Long id) {
         projectService.deleteById(id);
     }
+
 }
