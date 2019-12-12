@@ -16,10 +16,6 @@ class ProjectsApi {
   updateProject(project) {
     return Api.put("/projects", project);
   }
-
-  getPv(project) {
-    return Api.get("/records/pvs", project);
-  }
 }
 
 export default new ProjectsApi();

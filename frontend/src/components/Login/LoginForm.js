@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-function LoginForm({onSubmit}) {
+function LoginForm({ onSubmit }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -18,7 +18,6 @@ function LoginForm({onSubmit}) {
                             value={email}
                             onChange={e => setEmail(e.target.value)} />
                     </div>
-
                     <div className="form-group">
                         <label>Password:</label>
                         <input
@@ -30,10 +29,10 @@ function LoginForm({onSubmit}) {
                     </div>
                     <div className="container">
                         <div className="row mt-12">
-                            <div className="form-group col-md-6 offset-md-5">
+                            <div className="form-group col-md-6 offset-md-3">
                                 <button
                                     className="btn btn-info"
-                                    onClick={() => onSubmit({email, password})}>
+                                    onClick={() => onSubmit({ email, password })}>
                                     Login
                                 </button>
                             </div>

@@ -106,3 +106,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# Credits
+
+### Image Slider
+
+To build the image slider on our landing page, we are indebted to [this walkthrough](https://medium.com/@ItsMeDannyZ/build-an-image-slider-with-react-es6-264368de68e4).
