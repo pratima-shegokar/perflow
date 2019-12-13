@@ -9,6 +9,9 @@ class LoginPage extends React.Component {
         if (!loginSuccess) {
             alert("Invalid credentials");
         }
+        else {
+            window.location = "/MyProjects";
+        }
     }
 
     componentDidMount() {
