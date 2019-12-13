@@ -44,7 +44,14 @@ public class ProjectController {
     // update a project
     @PutMapping("/projects")
     public Project update(@RequestBody Project project) {
-        return projectService.update(project);
+        // update the project in DB
+        project = projectService.update(project);
+
+        // update the planned values and planned cash inflow in the DB
+        recordService.updateRecordsPlannedValues(project);
+
+        // return the stored project
+        return project;
     }
 
     // delete a project
