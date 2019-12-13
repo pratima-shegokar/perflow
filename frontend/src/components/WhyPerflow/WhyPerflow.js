@@ -3,10 +3,6 @@ import './WhyPerflow.css';
 
 
 class WhyPerflow extends React.Component {
-    componentDidMount() {
-        document.body.style = 'background-image: linear-gradient(to bottom right, #177b91, #63D8F2, #177b91); color: white;';
-    }
-
     render() {
        
         return (
@@ -22,7 +18,7 @@ class WhyPerflow extends React.Component {
                             <div className="col-lg-4 ml-lg-auto mt-lg-auto mb-lg-auto 
                                             col-md-6 ml-md-auto mt-md-auto mb-md-auto 
                                             col-sm-6 ml-sm-auto mr-sm-auto mt-sm-2 " id="wcpGraph">
-                                <img alt="placeholdergraph" src="sample_graph.jpg" width="80%" height="auto" className="d-inline-block align-top" />
+                                <img id="samplegraph" alt="placeholdergraph" src="sample_graph.jpg" className="d-inline-block align-top" />
                                 <p className="mr-5 ml-5" id= "graphText">This graph shows the cashflow of a project at any given time</p>
                             </div>
                             <div className="col-lg-4 mt-lg-auto mr-lg-auto mb-lg-auto ml-lg-1
@@ -30,7 +26,7 @@ class WhyPerflow extends React.Component {
                                             col-sm-6 mr-sm-6" id="why-pf-info-column">
                                 <h3 className="part1">Perflow is a precision tool designed to be used by experienced Project Managers.</h3>
                                 <br></br>
-                                <p className="part2">It provides visual representations of KPI, EV, (Abed finish this list) that are updated each month to reflect the ongoing status of a given project.</p>
+                                <p className="part2">It provides visual representations of SPI, CPI, KPI, EV and many more Earned Value Management metrics that are updated each month to reflect the ongoing status of a given project.</p>
                                 <br></br>
                                 <p className="part3">To use PerFlow and get nearly instantaneous graphical representations, all a PM needs to enter is a few pieces of information
                         and update them each month. It's that easy!</p>
