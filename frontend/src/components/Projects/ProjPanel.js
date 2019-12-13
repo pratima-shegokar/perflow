@@ -8,6 +8,48 @@ class ProjPanel extends Component {
     this.state = { project: {} };
   }
 
+  getFullName(name) {
+    let fullName = "";
+    switch (name) {
+      case "projectId":
+        fullName = "Project ID";
+        break;
+      case "projectUniqueNumber":
+        fullName = "Project Unique Number";
+        break;
+      case "projectName":
+        fullName = "Project Name";
+        break;
+      case "duration":
+        fullName = "Duration";
+        break;
+      case "budget":
+        fullName = "Budget";
+        break;
+      case "peakInterval":
+        fullName = "Peak Interval";
+        break;
+      case "firstPV":
+        fullName = "First Planned Value ($)";
+        break;
+      case "lastPV":
+        fullName = "Last Planned Value ($)";
+        break;
+      case "advPayment":
+        fullName = "Advance Payment";
+        break;
+      case "perfBond":
+        fullName = "Performance Bond";
+        break;
+      case "creditTime":
+        fullName = "Credit Time";
+        break;
+      case "discountRate":
+        fullName = "Discount Rate";
+    }
+    return fullName;
+  }
+
   render() {
     const { project } = this.props.location.state;
     console.log(project);
@@ -34,7 +76,7 @@ class ProjPanel extends Component {
                     {Object.entries(project).map(([name, value]) => {
                       return (
                         <tr key={name}>
-                          <td>{name}</td>
+                          <td>{this.getFullName(name)}</td>
                           <td>{value}</td>
                         </tr>
                       );
@@ -47,13 +89,13 @@ class ProjPanel extends Component {
         </div>
 
         <div class="wrapper">
-          <a
-            href="/EditProject"
+          <Link
+            to={{ pathname: "/EditProject", state: { project: project } }}
             className="btn btn-outline-primary btn-sm ml-4"
             role="button"
           >
             Edit
-          </a>
+          </Link>
           <br /> <br />
         </div>
         <div class="graph-button">
