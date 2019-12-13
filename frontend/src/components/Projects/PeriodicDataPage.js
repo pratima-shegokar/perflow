@@ -29,8 +29,9 @@ class PeriodicDataPage extends React.Component {
         this.state.records.interval = recs;
         return (
             <React.Fragment>
+                <div align="center">
                 <MaterialTable
-                    title="Periodic Data"
+                    title="Periodic Data "
                     data={this.state.records}
                     columns={this.state.columns}
                     options={{
@@ -75,7 +76,11 @@ class PeriodicDataPage extends React.Component {
                                 }, 300);
                             }),
                     }}
+               style={{
+                   width: "60%",
+               }}
                 />
+                </div>
             </React.Fragment>
         )
     }
