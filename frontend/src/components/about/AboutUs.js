@@ -91,7 +91,7 @@ class AboutUs extends React.Component {
                                     <img className="rounded-circle" src="./aboutUs-Abed.jpg" alt="..." />
                                 </div>
                                 <div className="card-body text-center">
-                                    <h5 className="card-title">Abed</h5>
+                                    <h5 className="card-title">Abdul Hamid</h5>
                                 </div>
                             </div>
                         </div>
