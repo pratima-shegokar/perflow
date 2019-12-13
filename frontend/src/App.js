@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home/Home";
 import MyProjects from "./components/Projects/MyProject";
@@ -14,6 +13,8 @@ import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
 import Auth from "./services/Auth";
 import SCurve from "./components/charts/SCurve";
+import Footer from "./components/footer/Footer";
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -33,29 +34,31 @@ class App extends React.Component {
     const loggedInRouter = (
       <Router>
         <Switch>
-            <Route path="/" exact component={LandingPage} />
-            <Route path="/Homepage" component={Home} />
-            <Route path="/AboutUs" component={AboutUs} />
-            <Route path="/WhyPerflow" component={WhyPerflow} />
-            <Route path="/MyProjects" component={MyProjects} />
-            <Route path="/ProjectForm" component={ProjectsPage} />
-            <Route path="/ProjPanel" component={ProjPanel} />
-            <Route path="/EditProject" component={EditProject} />
-            <Route path="/scurve" component={SCurve} />
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/Homepage" component={Home} />
+          <Route path="/AboutUs" component={AboutUs} />
+          <Route path="/WhyPerflow" component={WhyPerflow} />
+          <Route path="/MyProjects" component={MyProjects} />
+          <Route path="/ProjectForm" component={ProjectsPage} />
+          <Route path="/ProjPanel" component={ProjPanel} />
+          <Route path="/EditProject" component={EditProject} />
+          <Route path="/scurve" component={SCurve} />
         </Switch>
+        <Footer></Footer>
       </Router>
     );
 
     const defaultRouter = (
       <Router>
         <Switch>
-            <Route path="/" exact component={LandingPage} />
-            <Route path="/Homepage" component={Home} />
-            <Route path="/AboutUs" component={AboutUs} />
-            <Route path="/WhyPerflow" component={WhyPerflow} />
-            <Route path="/LoginPage" component={LoginPage} />
-            <Route path="/RegistrationPage" component={RegistrationPage} />
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/Homepage" component={Home} />
+          <Route path="/AboutUs" component={AboutUs} />
+          <Route path="/WhyPerflow" component={WhyPerflow} />
+          <Route path="/LoginPage" component={LoginPage} />
+          <Route path="/RegistrationPage" component={RegistrationPage} />
         </Switch>
+        <Footer></Footer>
       </Router>
     );
 

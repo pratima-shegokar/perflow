@@ -10,14 +10,15 @@ class RegistrationPage extends React.Component {
             alert("Couldn't register check credentials and try again");
         }
         else {
-            alert("User created successfully. Please login with new user.");
+            alert("User created successfully.");
+            window.location = "/MyProjects";
         }
     }
 
     componentDidMount() {
         document.body.style = 'background-image: linear-gradient(to bottom right, #177b91, #63D8F2, #177b91); color: white;';
     }
-  
+
     render() {
         return (
             <React.Fragment>
