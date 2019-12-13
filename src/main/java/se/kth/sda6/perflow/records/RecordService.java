@@ -282,6 +282,7 @@ public class RecordService {
 
         for (int i = pvList.size(); i < pCifList.size(); i++) {
             currRecords.get(i).setInterval(i+1);
+            currRecords.get(i).setPv(null);
             currRecords.get(i).setPcif(pCifList.get(i));
 
         }
