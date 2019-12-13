@@ -10,6 +10,7 @@ export default class Slider extends Component {
 
     this.state = {
         images: [
+            "./PerflowLogo.png",
             "./scurve1.png",
             "./scurve2.png"
         ],
