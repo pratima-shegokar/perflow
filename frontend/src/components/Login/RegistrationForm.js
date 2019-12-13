@@ -49,11 +49,13 @@ function RegisterForm({ onSubmit }) {
                     </div>
 
                     <div className="form-group row justify-content-center">
-                        <button
-                            className="btn btn-info"
-                            onClick={() => onSubmit({ name, email, companyName, password })}>
-                            Create account
-                        </button>
+                        <a href="/LoginPage">
+                            <button
+                                className="btn btn-info"
+                                onClick={() => onSubmit({ name, email, companyName, password })}>
+                                Create account
+                            </button>
+                        </a>
                     </div>
 
                     <div className="col-md-6 offset-md-3">
