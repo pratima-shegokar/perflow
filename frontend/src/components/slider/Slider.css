@@ -5,6 +5,7 @@
   height: 650px;
   overflow: hidden;
   white-space: nowrap;
+  background-color: white;
 }
 
 .slider-wrapper {
