@@ -13,10 +13,6 @@ class RegistrationPage extends React.Component {
             alert("User created successfully and logging in.");
         }
     }
-
-    componentDidMount() {
-        document.body.style = 'background-image: linear-gradient(to bottom right, #177b91, #63D8F2, #177b91); color: white; background-size: cover; background-repeat: no-repeat';
-    }
   
     render() {
         return (
