@@ -10,7 +10,7 @@ class RegistrationPage extends React.Component {
             alert("Couldn't register check credentials and try again");
         }
         else {
-            alert("User created successfully. Please login with new user.");
+            alert("User created successfully and logging in.");
         }
     }
 
