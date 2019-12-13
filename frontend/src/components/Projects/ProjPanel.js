@@ -52,7 +52,6 @@ class ProjPanel extends Component {
 
   render() {
     const { project } = this.props.location.state;
-    console.log(project);
     return (
       <div className="App">
         <p
@@ -61,10 +60,10 @@ class ProjPanel extends Component {
         >
           Project Specific Details
         </p>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-8">
-              <div class="card-body">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-8">
+              <div className="card-body">
                 <Table className="mt-2" striped bordered hover size="sm">
                   <thead>
                     <tr>
@@ -98,7 +97,7 @@ class ProjPanel extends Component {
           </Link>
           <br /> <br />
         </div>
-        <div class="graph-button">
+        <div className="graph-button">
           <Link
             to={{ pathname: "/SCurve", state: { project: project } }}
             type="button-gr"
@@ -107,23 +106,23 @@ class ProjPanel extends Component {
             Periodical S-Curve Graph
           </Link>{" "}
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" class="btn btn-outline-primary">
+          <button type="button-gr" className="btn btn-outline-primary">
             Periodical Cash Flow Graph
-          </button>{" "}
+          </button>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" class="btn btn-outline-primary">
+          <button type="button-gr" className="btn btn-outline-primary">
             Cumulative S-Curve Graph
-          </button>{" "}
+          </button>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" class="btn btn-outline-primary">
+          <button type="button-gr" className="btn btn-outline-primary">
             Cumulative Cash Flow Graph
-          </button>{" "}
+          </button>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" class="btn btn-outline-primary">
+          <button type="button-gr" className="btn btn-outline-primary">
             EVM Board
-          </button>{" "}
+          </button>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" class="btn btn-outline-primary">
+          <button type="button-gr" className="btn btn-outline-primary">
             CFM Board
           </button>
         </div>

@@ -15,12 +15,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(152, 61, 61);
-  
 }
 
 .App-link {
   color: #09d3ac;
-
 }
 
 .wrapper {
@@ -64,57 +62,6 @@ h1, h2, h3, h4 {
   color: white;
 }
 
-h1.Title {
-  margin-bottom: 10px;
-}
-
-p.part2, p.part3 {
-  margin-right: 45px;
-}
-
-
-.whyChoosePerflowSection {
-  background: rgb(31,36,62);
-  background: radial-gradient(circle, rgba(31,36,62,1) 0%, rgba(25,34,49,1) 100%);
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 0px;
-  padding-left: 30px;
-  margin-bottom: 0px;
-}
-
-#wcpGraph{
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-  padding-left: 30px;  
-  margin-bottom: 0px;
-  margin-left: 0px;
-  text-align: center;
-
-}
-
-#why-pf-info-column {
-  padding-top: 23px;
-  padding-right: 20px;
-  padding-bottom: 0px;
-  padding-left: 20px;
-  margin-bottom: 0px;
-}
-.testimonialsSection {
-  background: rgb(132,206,235);
-  background: radial-gradient(circle, rgba(132,206,235,1) 0%, rgba(99,216,242,1) 38%, rgba(87,198,242,1) 90%);
-  padding-top: 0px;
-  padding-right: 30px;
-  padding-bottom: 0px;
-  padding-left: 30px;
-  margin-bottom: 0px;
-}
-.pwcRow{
-  margin:auto;
-  display: inline-block;
-}
-
 #home-header {
   font-size: 350%;
   text-align: center;
@@ -142,11 +89,6 @@ p.part2, p.part3 {
   vertical-align: middle
 }
 
-#loginLogoDiv {
-  margin: 0px;
-  padding: 0px;
-}
-
 .graph-button{
   text-align: bottom;
 }
@@ -155,4 +97,8 @@ p.part2, p.part3 {
   position:absolute;
   bottom: 5%;
   right:20%;
+}
+#navbarbar{
+  margin-left: 40px;
+  margin-right: 40px;
 }
