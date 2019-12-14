@@ -94,7 +94,7 @@ public class RecordService {
     List<Double> calcPvList(Project project) {
         double a = project.getBudget();
         double n = (double) project.getDuration();
-        double p = (double) project.getPeakInterval();
+        double p = (double) project.getPeakInterval()-1d;
         double t = n - p - 1;
         double y0 = project.getFirstPV();
         double yw = project.getLastPV();
