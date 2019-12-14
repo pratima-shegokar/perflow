@@ -27,19 +27,14 @@ class EditProject extends React.Component {
         project: project,
         prevProject: this.props.location.state.project
       });
-
-      console.log(this.state.prevProject, this.state.project);
-      //go to My Perojects page
-      //window.location = "/ProjPanel";
     } catch (e) {
       console.error(e);
     }
   }
   render() {
     let { project, prevProject } = this.state;
-    console.log(prevProject, project);
     return (
-      <div className="card">
+      <div>
         <div className="card-body">
           <h3 style={{ color: "black" }}>Project details</h3>
           <br></br>
