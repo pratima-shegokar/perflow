@@ -41,9 +41,17 @@ public class RecordController {
         return recordService.getByProject(project);
     }
 
+    // get all records by Project, and sorted by interval
+    @GetMapping("/records-project-id/{projectId}")
+    public List<Record> getByProject(@PathVariable Long projectId) {
+        Project project = projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return recordService.getByProject(project);
+    }
+
     // get the latest updated records in a Project
-    @GetMapping("/project-latest-record")
-    public Record getLatestOnProject(@RequestBody Project project) {
+    @GetMapping("/project-latest-record/{projectId}")
+    public Record getLatestOnProject(@PathVariable Long projectId) {
+        Project project = projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return recordService.getLatestOnProject(project);
     }
 
