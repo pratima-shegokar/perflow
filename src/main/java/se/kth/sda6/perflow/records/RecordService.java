@@ -71,6 +71,9 @@ public class RecordService {
             record.setPv(pvList.get(i));
             record.setPcif(PcifList.get(i));
 
+            record.setEv(null);
+            record.setAc(null);
+
             records.add(record);
         }
 
@@ -78,6 +81,9 @@ public class RecordService {
             Record record = new Record();
             record.setInterval(i+1);
             record.setPcif(PcifList.get(i));
+
+            record.setEv(null);
+            record.setAc(null);
 
             records.add(record);
         }
