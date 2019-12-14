@@ -95,6 +95,13 @@ class ProjPanel extends Component {
           >
             Edit
           </Link>
+          <Link
+            to={{ pathname: "/PeriodicUpdate", state: { project: project } }}
+            className="btn btn-outline-primary btn-sm ml-4"
+            role="button"
+          >
+            Periodic Update
+          </Link>
           <br /> <br />
         </div>
         <div className="graph-button">
@@ -118,9 +125,13 @@ class ProjPanel extends Component {
             Cumulative Cash Flow Graph
           </button>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" className="btn btn-outline-primary">
+          <Link
+            to={{ pathname: "/EvmBoard", state: { project: project } }}
+            className="btn btn-outline-primary btn-sm ml-4"
+            role="button"
+          >
             EVM Board
-          </button>
+          </Link>
           &nbsp;&nbsp;&nbsp;
           <button type="button-gr" className="btn btn-outline-primary">
             CFM Board
