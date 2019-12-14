@@ -31,38 +31,35 @@ class MyProjects extends React.Component {
       // /ProjectForm should be the page where you can create a new project.
       <React.Fragment>
         <div className="text-center mt-5">
-            <a className="btn btn-outline-info" href="/ProjectForm">
-              Create a new project
-            </a>
-          <ul>
-            {this.state.projects.map(p => {
-              return (
-                <li align="left">
-                  <Link
-                    key={p.projectId}
-                    to={{
-                      pathname: "/ProjPanel",
-                      state: {
-                        project: p
-                      }
-                    }}
+          <a className="btn btn-outline-info" href="/ProjectForm">
+            Create a new project
+          </a>
+          <br /> <br />
+          <div class="mx-auto" style={{ width: 200 }}>
+            <ul className="list-group">
+              {this.state.projects.map(p => {
+                return (
+                  <li
+                    align="left"
+                    className="list-group-item list-group-item-action"
                   >
-                    {/*<Link
-                    key={p.projectId}
-                    to={{
-                      pathname: "/ProjPanel",
-                      state: {
-                        project: p
-                      }
-                    }}
-                  >*/}
-                    {p.projectUniqueNumber} &nbsp;&nbsp;&nbsp;&nbsp;{" "}
-                    {p.projectName}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+                    <Link
+                      key={p.projectId}
+                      to={{
+                        pathname: "/ProjPanel",
+                        state: {
+                          project: p
+                        }
+                      }}
+                    >
+                      {p.projectUniqueNumber} &nbsp;&nbsp;&nbsp;&nbsp;{" "}
+                      {p.projectName}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </React.Fragment>
     );
