@@ -29,21 +29,21 @@ public class Record {
 
     //This is derived from the planned value and the financial in
     @Column (name = "pcif")
-    private double pcif;
+    private Double pcif;
 
     //This is the earned value achieved every month (or reporting period), considered as credit
     @Column (name = "ev")
-    private double ev;
+    private Double ev;
 
     //This is the actual value cost considered as debit on the work done
     @Column (name = "ac")
-    private double ac;
+    private Double ac;
 
     @Column (name = "cif")
-    private double cif;
+    private Double cif;
 
     @Column (name = "cof")
-    private double cof;
+    private Double cof;
 
     @Column (name = "updated")
     private boolean updated;
@@ -54,7 +54,7 @@ public class Record {
     public Record() {
     }
 
-    public Record(int interval, double pv, double ev, double ac, double pcif, double cif, double cof, boolean updated
+    public Record(int interval, Double pv, Double ev, Double ac, Double pcif, Double cif, Double cof, boolean updated
                     , Project project) {
         this.interval = interval;
         this.pv = pv;
@@ -94,43 +94,43 @@ public class Record {
         this.pv = pv;
     }
 
-    public double getEv() {
+    public Double getEv() {
         return ev;
     }
 
-    public void setEv(double ev) {
+    public void setEv(Double ev) {
         this.ev = ev;
     }
 
-    public double getAc() {
+    public Double getAc() {
         return ac;
     }
 
-    public void setAc(double ac) {
+    public void setAc(Double ac) {
         this.ac = ac;
     }
 
-    public double getPcif() {
+    public Double getPcif() {
         return pcif;
     }
 
-    public void setPcif(double pcif) {
+    public void setPcif(Double pcif) {
         this.pcif = pcif;
     }
 
-    public double getCif() {
+    public Double getCif() {
         return cif;
     }
 
-    public void setCif(double cif) {
+    public void setCif(Double cif) {
         this.cif = cif;
     }
 
-    public double getCof() {
+    public Double getCof() {
         return cof;
     }
 
-    public void setCof(double cof) {
+    public void setCof(Double cof) {
         this.cof = cof;
     }
 
