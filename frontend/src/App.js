@@ -9,11 +9,13 @@ import EditProject from "./components/Projects/EditProject";
 import Navbar from "./components/Navbar";
 import ProjectsPage from "./components/Projects/ProjectsPage";
 import AboutUs from "./components/about/AboutUs";
-import LandingPage from "./components/landing/LandingPage"
+import LandingPage from "./components/landing/LandingPage";
 import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
 import Auth from "./services/Auth";
 import SCurve from "./components/charts/SCurve";
+import PeriodicUpdate from "./components/Projects/PeriodicUpdate";
+import EvmBoard from "./components/Projects/EvmBoard";
 
 class App extends React.Component {
   constructor() {
@@ -33,15 +35,17 @@ class App extends React.Component {
     const loggedInRouter = (
       <Router>
         <Switch>
-            <Route path="/" exact component={LandingPage} />
-            <Route path="/Homepage" component={Home} />
-            <Route path="/AboutUs" component={AboutUs} />
-            <Route path="/WhyPerflow" component={WhyPerflow} />
-            <Route path="/MyProjects" component={MyProjects} />
-            <Route path="/ProjectForm" component={ProjectsPage} />
-            <Route path="/ProjPanel" component={ProjPanel} />
-            <Route path="/EditProject" component={EditProject} />
-            <Route path="/scurve" component={SCurve} />
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/Homepage" component={Home} />
+          <Route path="/AboutUs" component={AboutUs} />
+          <Route path="/WhyPerflow" component={WhyPerflow} />
+          <Route path="/MyProjects" component={MyProjects} />
+          <Route path="/ProjectForm" component={ProjectsPage} />
+          <Route path="/ProjPanel" component={ProjPanel} />
+          <Route path="/EditProject" component={EditProject} />
+          <Route path="/scurve" component={SCurve} />
+          <Route path="/PeriodicUpdate" component={PeriodicUpdate} />
+          <Route path="/EvmBoard" component={EvmBoard} />
         </Switch>
       </Router>
     );
@@ -49,12 +53,12 @@ class App extends React.Component {
     const defaultRouter = (
       <Router>
         <Switch>
-            <Route path="/" exact component={LandingPage} />
-            <Route path="/Homepage" component={Home} />
-            <Route path="/AboutUs" component={AboutUs} />
-            <Route path="/WhyPerflow" component={WhyPerflow} />
-            <Route path="/LoginPage" component={LoginPage} />
-            <Route path="/RegistrationPage" component={RegistrationPage} />
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/Homepage" component={Home} />
+          <Route path="/AboutUs" component={AboutUs} />
+          <Route path="/WhyPerflow" component={WhyPerflow} />
+          <Route path="/LoginPage" component={LoginPage} />
+          <Route path="/RegistrationPage" component={RegistrationPage} />
         </Switch>
       </Router>
     );
