@@ -13,6 +13,7 @@ import LoginPage from "./components/Login/LoginPage";
 import RegistrationPage from "./components/Login/RegistrationPage";
 import Auth from "./services/Auth";
 import SCurve from "./components/charts/SCurve";
+import MonthlySCurve from "./components/charts/MonthlySCurve";
 import PeriodicUpdate from "./components/Projects/PeriodicUpdate";
 import EvmBoard from "./components/Projects/EvmBoard";
 import Footer from "./components/footer/Footer";
@@ -45,6 +46,7 @@ class App extends React.Component {
           <Route path="/ProjPanel" component={ProjPanel} />
           <Route path="/EditProject" component={EditProject} />
           <Route path="/scurve" component={SCurve} />
+          <Route path="/MonthlySCurve" component={MonthlySCurve} />
           <Route path="/PeriodicUpdate" component={PeriodicUpdate} />
           <Route path="/EvmBoard" component={EvmBoard} />
         </Switch>

@@ -114,9 +114,13 @@ class ProjPanel extends Component {
             S-Curve Graph - Cumulative
           </Link>{" "}
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" className="btn btn-outline-primary">
+          <Link
+            to={{ pathname: "/MonthlySCurve", state: { project: project } }}
+            type="button-gr"
+            class="btn btn-outline-primary"
+          >
             S-Curve Graph - Periodic
-          </button>
+          </Link>
           &nbsp;&nbsp;&nbsp;
           <button type="button-gr" className="btn btn-outline-primary">
             Cash Flow Graph - Periodic
