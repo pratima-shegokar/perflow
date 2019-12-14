@@ -12,6 +12,18 @@ class RecordsApi {
   getAcList(projectId) {
     return Api.get("/records/acs/" + projectId);
   }
+
+  getByProjectId(projectId) {
+    return Api.get("/records-project-id/" + projectId);
+  }
+
+  getLastByProjectId(projectId) {
+    return Api.get("/project-latest-record/" + projectId);
+  }
+
+  updateRecord(record) {
+    return Api.put("/records", record);
+  }
 }
 
 export default new RecordsApi();
