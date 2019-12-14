@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home/Home";
 import MyProjects from "./components/Projects/MyProject";
@@ -16,6 +15,8 @@ import Auth from "./services/Auth";
 import SCurve from "./components/charts/SCurve";
 import PeriodicUpdate from "./components/Projects/PeriodicUpdate";
 import EvmBoard from "./components/Projects/EvmBoard";
+import Footer from "./components/footer/Footer";
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -47,6 +48,7 @@ class App extends React.Component {
           <Route path="/PeriodicUpdate" component={PeriodicUpdate} />
           <Route path="/EvmBoard" component={EvmBoard} />
         </Switch>
+        <Footer></Footer>
       </Router>
     );
 
@@ -60,6 +62,7 @@ class App extends React.Component {
           <Route path="/LoginPage" component={LoginPage} />
           <Route path="/RegistrationPage" component={RegistrationPage} />
         </Switch>
+        <Footer></Footer>
       </Router>
     );
 
