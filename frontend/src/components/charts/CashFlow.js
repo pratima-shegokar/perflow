@@ -7,8 +7,8 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       pCifList: [],
-      evList: [],
-      acList: [],
+      cifList: [],
+      cofList: [],
       chartState: {}
     };
 
@@ -16,10 +16,10 @@ export default class App extends React.Component {
     this.fetchPcifList();
 
     //save the fetched EvList
-    this.fetchEvList();
+    this.fetchCifList();
 
     //save the fetched AcList
-    this.fetchAcList();
+    this.fetchCofList();
   }
 
   async fetchPcifList() {
@@ -40,14 +40,14 @@ export default class App extends React.Component {
     }
   }
 
-  async fetchEvList() {
+  async fetchCifList() {
     try {
-      const response = await RecordsApi.getEvList(
+      const response = await RecordsApi.getCifList(
         this.props.location.state.project.projectId
       );
-      const fetchedEvList = response.data;
+      const fetchedCifList = response.data;
 
-      this.setState({ evList: fetchedEvList });
+      this.setState({ cifList: fetchedCifList });
 
       this.setChart();
     } catch (e) {
@@ -55,14 +55,14 @@ export default class App extends React.Component {
     }
   }
 
-  async fetchAcList() {
+  async fetchCofList() {
     try {
-      const response = await RecordsApi.getAcList(
+      const response = await RecordsApi.getCofList(
         this.props.location.state.project.projectId
       );
-      const fetchedAcList = response.data;
+      const fetchedCofList = response.data;
 
-      this.setState({ acList: fetchedAcList });
+      this.setState({ cofList: fetchedCofList });
 
       this.setChart();
     } catch (e) {
@@ -93,14 +93,14 @@ export default class App extends React.Component {
           data: this.state.pCifList
         },
         {
-          label: "Earned value",
+          label: "Cash Inflow",
           borderColor: "rgba(0,255,0)",
-          data: this.state.evList
+          data: this.state.cifList
         },
         {
-          label: "Actual Cost",
+          label: "Cash Outflow",
           borderColor: "rgba(255,0,0)",
-          data: this.state.acList
+          data: this.state.cofList
         }
       ]
     };
@@ -108,7 +108,6 @@ export default class App extends React.Component {
     this.setState({ chartState: chartState });
   }
   render() {
-    console.log("The PV List in render= " + this.state.pvList);
     return (
       <div>
         <Line
