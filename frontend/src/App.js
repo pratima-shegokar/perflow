@@ -15,6 +15,7 @@ import Auth from "./services/Auth";
 import SCurve from "./components/charts/SCurve";
 import MonthlySCurve from "./components/charts/MonthlySCurve";
 import CashFlow from "./components/charts/CashFlow";
+import MonthlyCashFlow from "./components/charts/MonthlyCashFlow";
 import PeriodicUpdate from "./components/Projects/PeriodicUpdate";
 import EvmBoard from "./components/Projects/EvmBoard";
 import Footer from "./components/footer/Footer";
@@ -49,6 +50,7 @@ class App extends React.Component {
           <Route path="/scurve" component={SCurve} />
           <Route path="/MonthlySCurve" component={MonthlySCurve} />
           <Route path="/CashFlow" component={CashFlow} />
+          <Route path="/MonthlyCashFlow" component={MonthlyCashFlow} />
           <Route path="/PeriodicUpdate" component={PeriodicUpdate} />
           <Route path="/EvmBoard" component={EvmBoard} />
         </Switch>
