@@ -179,6 +179,34 @@ public class RecordService {
         return pCifList;
     }
 
+    List<Double> getCifList(Project project) {
+        // get the list of records for the passed project
+        List<Record> records = getByProject(project);
+
+        // define an empty list of cif
+        List<Double> cifList = new ArrayList<>();
+        for (Record record : records) {
+            cifList.add(record.getCif());
+        }
+
+        // return the list
+        return cifList;
+    }
+
+    List<Double> getCofList(Project project) {
+        // get the list of records for the passed project
+        List<Record> records = getByProject(project);
+
+        // define an empty list of cof
+        List<Double> cofList = new ArrayList<>();
+        for (Record record : records) {
+            cofList.add(record.getCof());
+        }
+
+        // return the list
+        return cofList;
+    }
+
     List<Double> calcPcifList(List<Double> pvList, Project project) {
         int creditTime = project.getCreditTime();
         int intervals = project.getDuration();
@@ -313,7 +341,52 @@ public class RecordService {
 
 
     Record update(Record record) {
+        //updating is only allowed for ev and ac, but cif and cof to be derived from them in addition to the adv payment
+        //from project info
+        record = updateRecordActualCash(record);
+
+        //updating the record in the database
         return recordRepo.save(record);
+    }
+
+    private Record updateRecordActualCash(Record record) {
+        //project info is important to calc the cif & cof of the record
+        Project project = record.getProject();
+
+        //advance payment of the project
+        Double advPayment = project.getAdvPayment();
+        Double budget = project.getBudget();
+        Double advPaymentPercent = advPayment / budget;
+
+        //Interval of the record
+        int interval = record.getInterval();
+
+        //Credit Time of the project
+        int creditTime = project.getCreditTime();
+
+        Double cif, cof, ev, ac;
+        if ((interval - 1 - creditTime) < 0){
+            cif = advPayment;
+            cof = 0d;
+        } else {
+            //matching record in the records list to calculate cif & cof from
+            List<Record> records = getByProject(project);
+            Record matchRecord = records.get(interval - 1 - creditTime);
+
+            ev = matchRecord.getEv();
+            ac = matchRecord.getAc();
+
+            cif = (1 - advPaymentPercent) * ev + advPayment;
+            cof = (1 - advPaymentPercent) * ac;
+        }
+
+
+
+        record.setCif(cif);
+        record.setCof(cof);
+
+        return record;
+
     }
 
     void deleteById(long id) {
