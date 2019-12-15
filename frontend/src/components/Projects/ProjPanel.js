@@ -130,9 +130,13 @@ class ProjPanel extends Component {
             Cash Flow Graph - Cumulative
           </Link>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" className="btn btn-outline-primary">
+          <Link
+            to={{ pathname: "/MonthlyCashFlow", state: { project: project } }}
+            type="button-gr"
+            class="btn btn-outline-primary"
+          >
             Cash Flow Graph - Periodic
-          </button>
+          </Link>
           &nbsp;&nbsp;&nbsp;
           <Link
             to={{ pathname: "/EvmBoard", state: { project: project } }}
