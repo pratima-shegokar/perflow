@@ -25,7 +25,10 @@ class PeriodicUpdate extends React.Component {
   }
 
   render() {
-    let decimalFormatter = new Intl.NumberFormat("en-IN", {
+    let decimalFormatter = new Intl.NumberFormat("en-En", {
+      style: "decimal",
+      minimumSignificantDigits: 3,
+      maximumSignificantDigits: 3,
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     });
@@ -35,8 +38,6 @@ class PeriodicUpdate extends React.Component {
       record.formattedPv = decimalFormatter.format(record.pv);
       return record;
     });
-    //this.state.records.interval = recs;
-    console.log("recs = " + recs);
 
     return (
       <React.Fragment>
