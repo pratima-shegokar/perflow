@@ -90,4 +90,17 @@ public class RecordController {
     public List<Double> getPcifList(@PathVariable Long projectId) {
         return recordService.getPcifList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
     }
+
+    // get the planned cash inflow list from records
+    @GetMapping("/records/cifs/{projectId}")
+    public List<Double> getCifList(@PathVariable Long projectId) {
+        return recordService.getCifList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
+    }
+
+    // get the planned cash outflow list from records
+    @GetMapping("/records/cofs/{projectId}")
+    public List<Double> getCofList(@PathVariable Long projectId) {
+        return recordService.getCofList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
+    }
+
 }
