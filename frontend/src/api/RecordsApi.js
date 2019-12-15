@@ -17,6 +17,14 @@ class RecordsApi {
     return Api.get("/records/pcifs/" + projectId);
   }
 
+  getCifList(projectId) {
+    return Api.get("/records/cifs/" + projectId);
+  }
+
+  getCofList(projectId) {
+    return Api.get("/records/cofs/" + projectId);
+  }
+
   getByProjectId(projectId) {
     return Api.get("/records-project-id/" + projectId);
   }
