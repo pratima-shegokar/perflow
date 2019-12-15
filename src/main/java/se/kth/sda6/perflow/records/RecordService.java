@@ -164,6 +164,21 @@ public class RecordService {
         return acList;
     }
 
+
+    List<Double> getPcifList(Project project) {
+        // get the list of records for the passed project
+        List<Record> records = getByProject(project);
+
+        // define an empty list of pcif
+        List<Double> pCifList = new ArrayList<>();
+        for (Record record : records) {
+            pCifList.add(record.getPcif());
+        }
+
+        // return the list
+        return pCifList;
+    }
+
     List<Double> calcPcifList(List<Double> pvList, Project project) {
         int creditTime = project.getCreditTime();
         int intervals = project.getDuration();

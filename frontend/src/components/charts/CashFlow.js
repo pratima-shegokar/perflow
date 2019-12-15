@@ -1,19 +1,19 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
-import RecordsApi from "./../../api/RecordsApi";
+import RecordsApi from "../../api/RecordsApi";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pvList: [],
+      pCifList: [],
       evList: [],
       acList: [],
       chartState: {}
     };
 
     //save the fetched PvList
-    this.fetchPvList();
+    this.fetchPcifList();
 
     //save the fetched EvList
     this.fetchEvList();
@@ -22,17 +22,17 @@ export default class App extends React.Component {
     this.fetchAcList();
   }
 
-  async fetchPvList() {
+  async fetchPcifList() {
     try {
       /*console.log(
         "Project ID is: " + this.props.location.state.project.projectId
       );*/
-      const response = await RecordsApi.getPvList(
+      const response = await RecordsApi.getPcifList(
         this.props.location.state.project.projectId
       );
-      const fetchedPvList = response.data;
-
-      this.setState({ pvList: fetchedPvList });
+      const fetchedPcifList = response.data;
+      console.log(fetchedPcifList);
+      this.setState({ pCifList: fetchedPcifList });
 
       this.setChart();
     } catch (e) {
@@ -71,7 +71,7 @@ export default class App extends React.Component {
   }
 
   setChart() {
-    let n = this.state.pvList.length;
+    let n = this.state.pCifList.length;
     let periods = [];
 
     for (let i = 0; i < n; i++) {
@@ -88,9 +88,9 @@ export default class App extends React.Component {
       //the dataset sub-set contains information such as bar color, border width, ​and height of the bar.
       datasets: [
         {
-          label: "Planned value",
+          label: "Planned Cash Inflow",
           borderColor: "rgba(0,0,255)",
-          data: this.state.pvList
+          data: this.state.pCifList
         },
         {
           label: "Earned value",
@@ -116,7 +116,7 @@ export default class App extends React.Component {
           options={{
             title: {
               display: true,
-              text: "S-Curve",
+              text: "Cash Flow Curve",
               fontSize: 20
             },
             legend: {

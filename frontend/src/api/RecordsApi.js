@@ -13,6 +13,10 @@ class RecordsApi {
     return Api.get("/records/acs/" + projectId);
   }
 
+  getPcifList(projectId) {
+    return Api.get("/records/pcifs/" + projectId);
+  }
+
   getByProjectId(projectId) {
     return Api.get("/records-project-id/" + projectId);
   }

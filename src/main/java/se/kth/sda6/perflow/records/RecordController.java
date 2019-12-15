@@ -84,4 +84,10 @@ public class RecordController {
     public List<Double> getAcList(@PathVariable Long projectId) {
         return recordService.getAcList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
     }
+
+    // get the planned cash inflow list from records
+    @GetMapping("/records/pcifs/{projectId}")
+    public List<Double> getPcifList(@PathVariable Long projectId) {
+        return recordService.getPcifList(projectService.getById(projectId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
+    }
 }
