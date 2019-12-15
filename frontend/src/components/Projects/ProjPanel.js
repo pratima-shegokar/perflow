@@ -122,12 +122,16 @@ class ProjPanel extends Component {
             S-Curve Graph - Periodic
           </Link>
           &nbsp;&nbsp;&nbsp;
-          <button type="button-gr" className="btn btn-outline-primary">
-            Cash Flow Graph - Periodic
-          </button>
+          <Link
+            to={{ pathname: "/CashFlow", state: { project: project } }}
+            type="button-gr"
+            class="btn btn-outline-primary"
+          >
+            Cash Flow Graph - Cumulative
+          </Link>
           &nbsp;&nbsp;&nbsp;
           <button type="button-gr" className="btn btn-outline-primary">
-            Cash Flow Graph - Cumulative
+            Cash Flow Graph - Periodic
           </button>
           &nbsp;&nbsp;&nbsp;
           <Link
