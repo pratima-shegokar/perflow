@@ -17,7 +17,7 @@ class Navbar extends React.Component {
 
   render() {
     const loggedInNavBar = (
-      <nav className="navbar navbar-expand-lg navbar-light bg-info">
+      <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <a className="nav-link" href="/Homepage">
