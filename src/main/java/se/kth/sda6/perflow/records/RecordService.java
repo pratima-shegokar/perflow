@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.kth.sda6.perflow.projects.Project;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.lang.Math.pow;
@@ -29,7 +26,7 @@ public class RecordService {
     // Warning: This must be tested
     // get all records belong to a certain project, and sorted by interval
     List<Record> getByProject(Project project) {
-        return recordRepo.findByProject(project).stream().sorted(new Comparator<Record>() {
+        return recordRepo.findAllByProject(project).stream().sorted(new Comparator<Record>() {
             @Override
             public int compare(Record r1, Record r2) {
                 return r1.getInterval() - r2.getInterval();
@@ -70,6 +67,7 @@ public class RecordService {
         List<Record> records = new ArrayList<>();
         for (int i = 0; i < pvList.size(); i++) {
             Record record = new Record();
+            record.setInterval(i+1);
             record.setPv(pvList.get(i));
             record.setPcif(PcifList.get(i));
 
@@ -78,6 +76,7 @@ public class RecordService {
 
         for (int i = pvList.size(); i < PcifList.size(); i++) {
             Record record = new Record();
+            record.setInterval(i+1);
             record.setPcif(PcifList.get(i));
 
             records.add(record);
@@ -237,12 +236,78 @@ public class RecordService {
         return addList(records);
     }
 
+
+    // not tested yet
+    // This update all records planned values for a project in DB
+    public List<Record> updateRecordsPlannedValues(Project project) {
+        //get all project records sorted as per interval
+        List<Record> currRecords = getByProject(project);
+
+        //delete all project records from DB
+        deleteByProject(project);
+
+        // create the planned values records of the new project without adding to DB
+        List<Record> records = overrideRecordsPlannedValues(project, currRecords);
+
+        // make the project field in all records to equal the new project
+        for (Record record : records) {
+            record.setProject(project);
+        }
+
+        // add the created list of records to the DB
+        return addList(records);
+    }
+
+    private List<Record> overrideRecordsPlannedValues(Project project, List<Record> currRecords) {
+
+        // get the cum planned values and cum planned CIF calculated
+        List<Double> pvList = calcPvList(project);
+        List<Double> pCifList = calcPcifList(pvList, project);
+
+        //if the records interval is greater than pCifList size, then delete the extra records
+        currRecords.removeIf(record -> record.getInterval() > pCifList.size());
+
+        //if the records no. is less than pCifList size, then add empty records
+        while (pCifList.size() > currRecords.size()){
+            Record record = new Record();
+            currRecords.add(record);
+        }
+
+
+        for (int i = 0; i < pvList.size(); i++) {
+            currRecords.get(i).setInterval(i+1);
+            currRecords.get(i).setPv(pvList.get(i));
+            currRecords.get(i).setPcif(pCifList.get(i));
+        }
+
+        for (int i = pvList.size(); i < pCifList.size(); i++) {
+            currRecords.get(i).setInterval(i+1);
+            currRecords.get(i).setPv(null);
+            currRecords.get(i).setPcif(pCifList.get(i));
+
+        }
+
+        return currRecords;
+    }
+
+
     Record update(Record record) {
         return recordRepo.save(record);
     }
 
     void deleteById(long id) {
         recordRepo.deleteById(id);
+    }
+
+    //delete all records of certain project
+    void deleteByProject(Project project){
+        //get all project records sorted as per interval
+        List<Record> records = getByProject(project);
+
+        //delete each
+        for (Record record : records){
+            deleteById(record.getRecordId());
+        }
     }
 
 }

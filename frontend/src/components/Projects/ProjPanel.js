@@ -8,34 +8,46 @@ class ProjPanel extends Component {
     this.state = { project: {} };
   }
 
-  componentDidMount() {
-    const {
-      projectUniqueNumber,
-      projectName,
-      duration,
-      budget,
-      peakInterval,
-      firstPV,
-      lastPV,
-      advPayment,
-      perfBond,
-      creditTime,
-      discountRate
-    } = this.props.location.state.project;
-
-    this.setState({
-      projectUniqueNumber,
-      projectName,
-      duration,
-      budget,
-      peakInterval,
-      firstPV,
-      lastPV,
-      advPayment,
-      perfBond,
-      creditTime,
-      discountRate
-    });
+  getFullName(name) {
+    let fullName = "";
+    switch (name) {
+      case "projectId":
+        fullName = "Project ID";
+        break;
+      case "projectUniqueNumber":
+        fullName = "Project Unique Number";
+        break;
+      case "projectName":
+        fullName = "Project Name";
+        break;
+      case "duration":
+        fullName = "Duration";
+        break;
+      case "budget":
+        fullName = "Budget";
+        break;
+      case "peakInterval":
+        fullName = "Peak Interval";
+        break;
+      case "firstPV":
+        fullName = "First Planned Value ($)";
+        break;
+      case "lastPV":
+        fullName = "Last Planned Value ($)";
+        break;
+      case "advPayment":
+        fullName = "Advance Payment";
+        break;
+      case "perfBond":
+        fullName = "Performance Bond";
+        break;
+      case "creditTime":
+        fullName = "Credit Time";
+        break;
+      case "discountRate":
+        fullName = "Discount Rate";
+    }
+    return fullName;
   }
 
   render() {
@@ -45,7 +57,8 @@ class ProjPanel extends Component {
         <p
           className="Table-header"
           style={{ color: "black", fontSize: 20, fontWeight: 4 }}
-        >Project Specific Details
+        >
+          Project Specific Details
         </p>
         <div className="container">
           <div className="row justify-content-center">
@@ -59,84 +72,29 @@ class ProjPanel extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr >
-                      <td>Project Id</td>
-                      <td>{this.state.projectUniqueNumber}</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr >
-                      <td>Project Name</td>
-                      <td>{this.state.projectName}</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr >
-                      <td>Project Duration</td>
-                      <td>{this.state.duration}</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr >
-                      <td>Budget</td>
-                      <td>{this.state.budget}</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr >
-                      <td>Peak Interval</td>
-                      <td>{this.state.peakInterval}</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr >
-                      <td>First PV</td>
-                      <td>{this.state.firstPV}</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr >
-                      <td>Last PV</td>
-                      <td>{this.state.lastPV}</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr >
-                      <td>Advanced Payment</td>
-                      <td>{this.state.advPayment}</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr >
-                      <td>PerfBond</td>
-                      <td>{this.state.perfBond}</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr >
-                      <td>Credit Time</td>
-                      <td>{this.state.creditTime}</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr >
-                      <td>Discount Rate</td>
-                      <td>{this.state.discountRate}</td>
-                    </tr>
+                    {Object.entries(project).map(([name, value]) => {
+                      return (
+                        <tr key={name}>
+                          <td>{this.getFullName(name)}</td>
+                          <td>{value}</td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </Table>
               </div>
             </div>
           </div>
         </div>
-        <div className="wrapper">
-          <a
-            href="/EditProject"
+
+        <div class="wrapper">
+          <Link
+            to={{ pathname: "/EditProject", state: { project: project } }}
             className="btn btn-outline-primary btn-sm ml-4"
             role="button"
           >
             Edit
-          </a>
+          </Link>
           <br /> <br />
         </div>
         <div className="graph-button">

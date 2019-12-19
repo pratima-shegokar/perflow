@@ -6,5 +6,5 @@ import se.kth.sda6.perflow.projects.Project;
 import java.util.List;
 
 public interface RecordRepo extends JpaRepository<Record, Long> {
-    List<Record> findByProject(Project project);
+    List<Record> findAllByProject(Project project);
 }
